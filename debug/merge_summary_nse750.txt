@@ -3,757 +3,757 @@ NSE 750 STOCKS MERGE SUMMARY
 ================================================================================
 
     Symbol  Status  Before  New_Downloaded  After  Net_Added  Last_Date
-       AGI Updated    2689               1   2690          1 2025-11-24
-ASKAUTOLTD Updated     495               1    496          1 2025-11-24
-AARTIDRUGS Updated    2689               1   2690          1 2025-11-24
-   ACUTAAS Updated     120               1    121          1 2025-11-24
-AARTIPHARM Updated     694               1    695          1 2025-11-24
-ADVENZYMES Updated    2300               1   2301          1 2025-11-24
-  AJAXENGG Updated     188               1    189          1 2025-11-24
-    AETHER Updated     858               1    859          1 2025-11-24
-  AHLUCONT Updated    2689               1   2690          1 2025-11-24
-    ALIVUS Updated     214               1    215          1 2025-11-24
-      ABDL Updated     347               1    348          1 2025-11-24
-    ANURAS Updated    1153               1   1154          1 2025-11-24
-PARKHOTELS Updated     440               1    441          1 2025-11-24
-       ACI Updated     743               1    744          1 2025-11-24
-ARVINDFASN Updated    1657               1   1658          1 2025-11-24
-    ASHOKA Updated    2689               1   2690          1 2025-11-24
-    ARVIND Updated    2689               1   2690          1 2025-11-24
-ASTRAMICRO Updated    2689               1   2690          1 2025-11-24
- AURIONPRO Updated    2689               1   2690          1 2025-11-24
-    AVALON Updated     643               1    644          1 2025-11-24
-AVANTIFEED Updated    2689               1   2690          1 2025-11-24
-     AWFIS Updated     369               1    370          1 2025-11-24
-      AZAD Updated     470               1    471          1 2025-11-24
- BAJAJELEC Updated    2689               1   2690          1 2025-11-24
- BALAMINES Updated    2689               1   2690          1 2025-11-24
- BALUFORGE Updated     390               1    391          1 2025-11-24
-BANCOINDIA Updated    2689               1   2690          1 2025-11-24
-   BELRISE Updated     123               1    124          1 2025-11-24
-       BBL Updated    2689               1   2690          1 2025-11-24
-BIRLACORPN Updated    2689               1   2690          1 2025-11-24
- BLACKBUCK Updated     249               1    250          1 2025-11-24
- BORORENEW Updated    1851               1   1852          1 2025-11-24
-  CIEINDIA Updated    2689               1   2690          1 2025-11-24
-   CMSINFO Updated     962               1    963          1 2025-11-24
-   CSBBANK Updated    1479               1   1480          1 2025-11-24
-  CARTRADE Updated    1053               1   1054          1 2025-11-24
-   CEIGALL Updated     318               1    319          1 2025-11-24
-     CELLO Updated     505               1    506          1 2025-11-24
-    CEMPRO Updated    2695               1   2696          1 2025-11-24
-CIGNITITEC Updated    2689               1   2690          1 2025-11-24
- CYIENTDLM Updated     586               1    587          1 2025-11-24
-   DCBBANK Updated    2689               1   2690          1 2025-11-24
-DATAMATICS Updated    2689               1   2690          1 2025-11-24
-   DHANUKA Updated    2689               1   2690          1 2025-11-24
-   DIACABS Updated    2689               1   2690          1 2025-11-24
-       DBL Updated    2292               1   2293          1 2025-11-24
-      DCAL Updated    2689               1   2690          1 2025-11-24
-     DODLA Updated    1090               1   1091          1 2025-11-24
-DYNAMATECH Updated    2689               1   2690          1 2025-11-24
-       EPL Updated    2689               1   2690          1 2025-11-24
-EASEMYTRIP Updated    1156               1   1157          1 2025-11-24
- EDELWEISS Updated    2689               1   2690          1 2025-11-24
-      EMIL Updated     766               1    767          1 2025-11-24
- ELECTCAST Updated    2689               1   2690          1 2025-11-24
-     EMBDL Updated     347               1    348          1 2025-11-24
-    ENTERO Updated     436               1    437          1 2025-11-24
-      EIEL Updated     244               1    245          1 2025-11-24
-   EPIGRAL Updated     545               1    546          1 2025-11-24
-EQUITASBNK Updated    1251               1   1252          1 2025-11-24
-  ETHOSLTD Updated     862               1    863          1 2025-11-24
-EUREKAFORB Updated     296               1    297          1 2025-11-24
-       FDC Updated    2689               1   2690          1 2025-11-24
-   FIEMIND Updated    2689               1   2690          1 2025-11-24
-   FINEORG Updated    1825               1   1826          1 2025-11-24
-   GRINFRA Updated    1075               1   1076          1 2025-11-24
-      GHCL Updated    2689               1   2690          1 2025-11-24
-   GMRP&UI Updated     907               1    908          1 2025-11-24
-GMMPFAUDLR Updated    1907               1   1908          1 2025-11-24
-   GABRIEL Updated    2689               1   2690          1 2025-11-24
- GANESHHOU Updated    2695               1   2696          1 2025-11-24
-  GALLANTT Updated    2689               1   2690          1 2025-11-24
-   GANECOS Updated    2645               1   2646          1 2025-11-24
-GRWRHITECH Updated     939               1    940          1 2025-11-24
- GARFIBRES Updated    2689               1   2690          1 2025-11-24
-   GATEWAY Updated     908               1    909          1 2025-11-24
-     GOKEX Updated    2689               1   2690          1 2025-11-24
-GREAVESCOT Updated    2689               1   2690          1 2025-11-24
-GREENPANEL Updated    1508               1   1509          1 2025-11-24
-      GAEL Updated    2689               1   2690          1 2025-11-24
-      GNFC Updated    2689               1   2690          1 2025-11-24
-      GPPL Updated    2689               1   2690          1 2025-11-24
-      GSFC Updated    2689               1   2690          1 2025-11-24
-GULFOILLUB Updated    2689               1   2690          1 2025-11-24
-   HGINFRA Updated    1903               1   1904          1 2025-11-24
-       HCG Updated    2383               1   2384          1 2025-11-24
-  HEMIPROP Updated    1258               1   1259          1 2025-11-24
-HERITGFOOD Updated    2689               1   2690          1 2025-11-24
-     HIKAL Updated    2689               1   2690          1 2025-11-24
-       HCC Updated    2689               1   2690          1 2025-11-24
-    IFBIND Updated    2689               1   2690          1 2025-11-24
-  IMAGICAA Updated    2627               1   2628          1 2025-11-24
-  IIFLCAPS Updated     248               1    249          1 2025-11-24
-INDIAGLYCO Updated    2689               1   2690          1 2025-11-24
-INDIASHLTR Updated     475               1    476          1 2025-11-24
-      IMFA Updated    2689               1   2690          1 2025-11-24
-INDIGOPNTS Updated    1188               1   1189          1 2025-11-24
-      ICIL Updated    2689               1   2690          1 2025-11-24
-  INFIBEAM Updated    2381               1   2382          1 2025-11-24
- INGERRAND Updated    2689               1   2690          1 2025-11-24
- INNOVACAP Updated     469               1    470          1 2025-11-24
- INOXGREEN Updated     741               1    742          1 2025-11-24
-IONEXCHANG Updated     926               1    927          1 2025-11-24
-     ISGEC Updated    1127               1   1128          1 2025-11-24
-      JKIL Updated    2689               1   2690          1 2025-11-24
- JKLAKSHMI Updated    2689               1   2690          1 2025-11-24
-   JKPAPER Updated    2689               1   2690          1 2025-11-24
- JAIBALAJI Updated    2689               1   2690          1 2025-11-24
-JISLJALEQS Updated    2689               1   2690          1 2025-11-24
- JAMNAAUTO Updated    2689               1   2690          1 2025-11-24
-      JSFB Updated     438               1    439          1 2025-11-24
- JINDWORLD Updated    2689               1   2690          1 2025-11-24
-     JCHAC Updated    2689               1   2690          1 2025-11-24
-  JUSTDIAL Updated    2689               1   2690          1 2025-11-24
-    KNRCON Updated    2689               1   2690          1 2025-11-24
-  KPIGREEN Updated    1070               1   1071          1 2025-11-24
-      KRBL Updated    2689               1   2690          1 2025-11-24
-       KRN Updated     283               1    284          1 2025-11-24
-       KSL Updated    2689               1   2690          1 2025-11-24
-   KTKBANK Updated    2689               1   2690          1 2025-11-24
-      KSCL Updated    2689               1   2690          1 2025-11-24
-   KIRLPNU Updated     637               1    638          1 2025-11-24
-     KITEX Updated    2689               1   2690          1 2025-11-24
-       LMW Updated    2689               1   2690          1 2025-11-24
-     IXIGO Updated     357               1    358          1 2025-11-24
-    LXCHEM Updated    1152               1   1153          1 2025-11-24
-LLOYDSENGG Updated     522               1    523          1 2025-11-24
- LLOYDSENT Updated     273               1    274          1 2025-11-24
- LUMAXTECH Updated    2689               1   2690          1 2025-11-24
-    LUXIND Updated    2465               1   2466          1 2025-11-24
-      MOIL Updated    2689               1   2690          1 2025-11-24
-   MSTCLTD Updated    1643               1   1644          1 2025-11-24
-  MTARTECH Updated    1160               1   1161          1 2025-11-24
-   MAHLIFE Updated    2689               1   2690          1 2025-11-24
-  MANINFRA Updated    2689               1   2690          1 2025-11-24
-  MANORAMA Updated     838               1    839          1 2025-11-24
-  MARKSANS Updated    2689               1   2690          1 2025-11-24
-    MASTEK Updated    2689               1   2690          1 2025-11-24
-MAXESTATES Updated     506               1    507          1 2025-11-24
-   MEDPLUS Updated     968               1    969          1 2025-11-24
-   MIDHANI Updated    1887               1   1888          1 2025-11-24
-BECTORFOOD Updated    1214               1   1215          1 2025-11-24
-    NEOGEN Updated    1620               1   1621          1 2025-11-24
-     NESCO Updated    2689               1   2690          1 2025-11-24
-       NFL Updated    2689               1   2690          1 2025-11-24
-    NAZARA Updated    1150               1   1151          1 2025-11-24
- NETWORK18 Updated    2689               1   2690          1 2025-11-24
-  OPTIEMUS Updated    2048               1   2049          1 2025-11-24
-ORCHPHARMA Updated    2688               1   2689          1 2025-11-24
- ORIENTCEM Updated    2689               1   2690          1 2025-11-24
-OSWALPUMPS Updated     106               1    107          1 2025-11-24
-     PNGJL Updated     292               1    293          1 2025-11-24
-PCJEWELLER Updated    2689               1   2690          1 2025-11-24
-  PNCINFRA Updated    2593               1   2594          1 2025-11-24
-       PTC Updated    2689               1   2690          1 2025-11-24
-  PARADEEP Updated     863               1    864          1 2025-11-24
-     PARAS Updated    1024               1   1025          1 2025-11-24
-  PATELENG Updated    2689               1   2690          1 2025-11-24
-      PGIL Updated    2689               1   2690          1 2025-11-24
-  POLYPLEX Updated    2689               1   2690          1 2025-11-24
- POWERMECH Updated    2527               1   2528          1 2025-11-24
- PRICOLLTD Updated    2689               1   2690          1 2025-11-24
-PRINCEPIPE Updated    1462               1   1463          1 2025-11-24
-PRSMJOHNSN Updated    2689               1   2690          1 2025-11-24
-  PRIVISCL Updated    2605               1   2606          1 2025-11-24
-   PRUDENT Updated     868               1    869          1 2025-11-24
-     PURVA Updated    2689               1   2690          1 2025-11-24
-     QUESS Updated    2314               1   2315          1 2025-11-24
-      RAIN Updated    2689               1   2690          1 2025-11-24
-RAJESHEXPO Updated    2689               1   2690          1 2025-11-24
-    RALLIS Updated    2689               1   2690          1 2025-11-24
-  RATEGAIN Updated     972               1    973          1 2025-11-24
- RATNAMANI Updated    2689               1   2690          1 2025-11-24
-  RTNINDIA Updated    2689               1   2690          1 2025-11-24
-  RTNPOWER Updated    2689               1   2690          1 2025-11-24
-RAYMONDLSL Updated     300               1    301          1 2025-11-24
-     REFEX Updated    2689               1   2690          1 2025-11-24
-    RELAXO Updated    2689               1   2690          1 2025-11-24
-  RELIGARE Updated    2689               1   2690          1 2025-11-24
-       RBA Updated    1222               1   1223          1 2025-11-24
-     ROUTE Updated    1280               1   1281          1 2025-11-24
-   SKYGOLD Updated     709               1    710          1 2025-11-24
-    SAFARI Updated    1534               1   1535          1 2025-11-24
-     SAMHI Updated     534               1    535          1 2025-11-24
-   SANDUMA Updated     544               1    545          1 2025-11-24
-SANOFICONR Updated     294               1    295          1 2025-11-24
-    SANOFI Updated    2689               1   2690          1 2025-11-24
-   SANSERA Updated    1029               1   1030          1 2025-11-24
-     SENCO Updated     582               1    583          1 2025-11-24
-   SEQUENT Updated    2396               1   2397          1 2025-11-24
-    SHAILY Updated     899               1    900          1 2025-11-24
-SHAKTIPUMP Updated    2689               1   2690          1 2025-11-24
-SHARDACROP Updated    2689               1   2690          1 2025-11-24
-SHARDAMOTR Updated    2521               1   2522          1 2025-11-24
-SHAREINDIA Updated    1280               1   1281          1 2025-11-24
-       SFL Updated    2212               1   2213          1 2025-11-24
- SHILPAMED Updated    2689               1   2690          1 2025-11-24
-    RENUKA Updated    2689               1   2690          1 2025-11-24
-SHRIPISTON Updated    2336               1   2337          1 2025-11-24
-   SKIPPER Updated    2592               1   2593          1 2025-11-24
- SOUTHBANK Updated    2689               1   2690          1 2025-11-24
-STARCEMENT Updated    2083               1   2084          1 2025-11-24
-   SWSOLAR Updated    1549               1   1550          1 2025-11-24
-   STLTECH Updated    2689               1   2690          1 2025-11-24
-      STAR Updated    2689               1   2690          1 2025-11-24
-  STYRENIX Updated    2689               1   2690          1 2025-11-24
-    SUBROS Updated    2689               1   2690          1 2025-11-24
-SUDARSCHEM Updated    2689               1   2690          1 2025-11-24
-     SPARC Updated    2689               1   2690          1 2025-11-24
-   SUNFLAG Updated    2689               1   2690          1 2025-11-24
-   SUNTECK Updated    2689               1   2690          1 2025-11-24
-   SUPRIYA Updated     965               1    966          1 2025-11-24
-SURYAROSNI Updated    2689               1   2690          1 2025-11-24
-  SYMPHONY Updated    2689               1   2690          1 2025-11-24
-      TARC Updated    1218               1   1219          1 2025-11-24
-TDPOWERSYS Updated    2689               1   2690          1 2025-11-24
-    TSFINV Updated    1897               1   1898          1 2025-11-24
-    TVSSCS Updated     551               1    552          1 2025-11-24
-     TANLA Updated    2689               1   2690          1 2025-11-24
- TEAMLEASE Updated    2414               1   2415          1 2025-11-24
-      TEGA Updated     976               1    977          1 2025-11-24
-   TEXRAIL Updated    2689               1   2690          1 2025-11-24
-THANGAMAYL Updated    2689               1   2690          1 2025-11-24
-      ANUP Updated    1661               1   1662          1 2025-11-24
-THOMASCOOK Updated    2689               1   2690          1 2025-11-24
- THYROCARE Updated    2359               1   2360          1 2025-11-24
-        TI Updated    2689               1   2690          1 2025-11-24
-TIMETECHNO Updated    2689               1   2690          1 2025-11-24
- TIPSMUSIC Updated    2689               1   2690          1 2025-11-24
-TRANSRAILL Updated     225               1    226          1 2025-11-24
-UJJIVANSFB Updated    1473               1   1474          1 2025-11-24
-   UNIMECH Updated     223               1    224          1 2025-11-24
-     VMART Updated    2689               1   2690          1 2025-11-24
-    VIPIND Updated    2689               1   2690          1 2025-11-24
-  V2RETAIL Updated    2689               1   2690          1 2025-11-24
-    VSTIND Updated    2689               1   2690          1 2025-11-24
-     WABAG Updated    2689               1   2690          1 2025-11-24
-VAIBHAVGBL Updated    2689               1   2690          1 2025-11-24
-    VARROC Updated    1820               1   1821          1 2025-11-24
-  VESUVIUS Updated    2689               1   2690          1 2025-11-24
-VINATIORGA Updated    2689               1   2690          1 2025-11-24
-   VOLTAMP Updated    2689               1   2690          1 2025-11-24
- WAAREERTL Updated     154               1    155          1 2025-11-24
-WEBELSOLAR Updated    2689               1   2690          1 2025-11-24
-    WELENT Updated    2689               1   2690          1 2025-11-24
-  WESTLIFE Updated    1550               1   1551          1 2025-11-24
-  YATHARTH Updated     566               1    567          1 2025-11-24
-    ZAGGLE Updated     530               1    531          1 2025-11-24
- ZYDUSWELL Updated    2689               1   2690          1 2025-11-24
-   EMUDHRA Updated     860               1    861          1 2025-11-24
-    360ONE Updated    1529               1   1530          1 2025-11-24
-   3MINDIA Updated    2689               1   2690          1 2025-11-24
-       ABB Updated    2689               1   2690          1 2025-11-24
-       ACC Updated    2689               1   2690          1 2025-11-24
- ACMESOLAR Updated     254               1    255          1 2025-11-24
-    AIAENG Updated    2689               1   2690          1 2025-11-24
- APLAPOLLO Updated    2689               1   2690          1 2025-11-24
-    AUBANK Updated    2068               1   2069          1 2025-11-24
-       AWL Updated     936               1    937          1 2025-11-24
- AADHARHFC Updated     379               1    380          1 2025-11-24
-  AARTIIND Updated    2689               1   2690          1 2025-11-24
-     AAVAS Updated    1760               1   1761          1 2025-11-24
-ABBOTINDIA Updated    2689               1   2690          1 2025-11-24
-       ACE Updated    2689               1   2690          1 2025-11-24
-ADANIENSOL Updated     556               1    557          1 2025-11-24
-  ADANIENT Updated    2689               1   2690          1 2025-11-24
-ADANIGREEN Updated    1835               1   1836          1 2025-11-24
-ADANIPORTS Updated    2689               1   2690          1 2025-11-24
-ADANIPOWER Updated    2689               1   2690          1 2025-11-24
-      ATGL Updated    1741               1   1742          1 2025-11-24
- ABCAPITAL Updated    2032               1   2033          1 2025-11-24
-     ABFRL Updated    2689               1   2690          1 2025-11-24
-     ABLBL Updated     105               1    106          1 2025-11-24
-     ABREL Updated    2689               1   2690          1 2025-11-24
-   ABSLAMC Updated    1018               1   1019          1 2025-11-24
-  AEGISLOG Updated     366               1    367          1 2025-11-24
-AEGISVOPAK Updated     120               1    121          1 2025-11-24
-    AFCONS Updated     261               1    262          1 2025-11-24
-     AFFLE Updated    1555               1   1556          1 2025-11-24
-AJANTPHARM Updated    2689               1   2690          1 2025-11-24
-     AKUMS Updated     320               1    321          1 2025-11-24
- AKZOINDIA Updated    2689               1   2690          1 2025-11-24
-    APLLTD Updated    2689               1   2690          1 2025-11-24
-     ALKEM Updated    2449               1   2450          1 2025-11-24
-ALKYLAMINE Updated    2689               1   2690          1 2025-11-24
-  ALOKINDS Updated    2689               1   2690          1 2025-11-24
-     ARE&M Updated     513               1    514          1 2025-11-24
-     AMBER Updated    1929               1   1930          1 2025-11-24
- AMBUJACEM Updated    2689               1   2690          1 2025-11-24
-ANANDRATHI Updated     975               1    976          1 2025-11-24
-  ANANTRAJ Updated    2689               1   2690          1 2025-11-24
-  ANGELONE Updated    1271               1   1272          1 2025-11-24
-  APARINDS Updated    2689               1   2690          1 2025-11-24
-APOLLOHOSP Updated    2689               1   2690          1 2025-11-24
-APOLLOTYRE Updated    2689               1   2690          1 2025-11-24
-     APTUS Updated    1051               1   1052          1 2025-11-24
-ASAHIINDIA Updated    2689               1   2690          1 2025-11-24
-  ASHOKLEY Updated    2689               1   2690          1 2025-11-24
-ASIANPAINT Updated    2689               1   2690          1 2025-11-24
-   ASTERDM Updated    1911               1   1912          1 2025-11-24
-  ASTRAZEN Updated    2689               1   2690          1 2025-11-24
-    ASTRAL Updated    2689               1   2690          1 2025-11-24
-ATHERENERG Updated     139               1    140          1 2025-11-24
-      ATUL Updated    2689               1   2690          1 2025-11-24
-AUROPHARMA Updated    2689               1   2690          1 2025-11-24
-      AIIL Updated     391               1    392          1 2025-11-24
-     DMART Updated    2144               1   2145          1 2025-11-24
-  AXISBANK Updated    2689               1   2690          1 2025-11-24
-      BASF Updated    2689               1   2690          1 2025-11-24
-      BEML Updated    2689               1   2690          1 2025-11-24
-       BLS Updated    2332               1   2333          1 2025-11-24
-       BSE Updated    2174               1   2175          1 2025-11-24
-BAJAJ-AUTO Updated    2689               1   2690          1 2025-11-24
-BAJFINANCE Updated    2689               1   2690          1 2025-11-24
-BAJAJFINSV Updated    2689               1   2690          1 2025-11-24
-BAJAJHLDNG Updated    2689               1   2690          1 2025-11-24
-  BAJAJHFL Updated     295               1    296          1 2025-11-24
-BALKRISIND Updated    2689               1   2690          1 2025-11-24
-BALRAMCHIN Updated    2689               1   2690          1 2025-11-24
-BANDHANBNK Updated    1891               1   1892          1 2025-11-24
-BANKBARODA Updated    2689               1   2690          1 2025-11-24
- BANKINDIA Updated    2689               1   2690          1 2025-11-24
-  MAHABANK Updated    2689               1   2690          1 2025-11-24
- BATAINDIA Updated    2689               1   2690          1 2025-11-24
- BAYERCROP Updated    2689               1   2690          1 2025-11-24
-BERGEPAINT Updated    2689               1   2690          1 2025-11-24
-       BDL Updated    1893               1   1894          1 2025-11-24
-       BEL Updated    2689               1   2690          1 2025-11-24
-BHARATFORG Updated    2689               1   2690          1 2025-11-24
-      BHEL Updated    2689               1   2690          1 2025-11-24
-      BPCL Updated    2689               1   2690          1 2025-11-24
-BHARTIARTL Updated    2689               1   2690          1 2025-11-24
-BHARTIHEXA Updated     400               1    401          1 2025-11-24
-    BIKAJI Updated     746               1    747          1 2025-11-24
-    BIOCON Updated    2689               1   2690          1 2025-11-24
-     BSOFT Updated    2689               1   2690          1 2025-11-24
-  BLUEDART Updated    2689               1   2690          1 2025-11-24
-   BLUEJET Updated     508               1    509          1 2025-11-24
-BLUESTARCO Updated    2689               1   2690          1 2025-11-24
-      BBTC Updated    2689               1   2690          1 2025-11-24
-  BOSCHLTD Updated    2689               1   2690          1 2025-11-24
-  FIRSTCRY Updated     318               1    319          1 2025-11-24
-   BRIGADE Updated    2689               1   2690          1 2025-11-24
- BRITANNIA Updated    2689               1   2690          1 2025-11-24
-MAPMYINDIA Updated     970               1    971          1 2025-11-24
-       CCL Updated    2689               1   2690          1 2025-11-24
-      CESC Updated    2689               1   2690          1 2025-11-24
-   CGPOWER Updated    2689               1   2690          1 2025-11-24
-    CRISIL Updated    2689               1   2690          1 2025-11-24
-    CAMPUS Updated     877               1    878          1 2025-11-24
-CANFINHOME Updated    2689               1   2690          1 2025-11-24
-     CANBK Updated    2689               1   2690          1 2025-11-24
-CAPLIPOINT Updated    2689               1   2690          1 2025-11-24
-      CGCL Updated    2689               1   2690          1 2025-11-24
-CARBORUNIV Updated    2689               1   2690          1 2025-11-24
-CASTROLIND Updated    2689               1   2690          1 2025-11-24
-   CEATLTD Updated    2689               1   2690          1 2025-11-24
- CENTRALBK Updated    2689               1   2690          1 2025-11-24
-      CDSL Updated    2075               1   2076          1 2025-11-24
-CENTURYPLY Updated    2689               1   2690          1 2025-11-24
-      CERA Updated    2689               1   2690          1 2025-11-24
-    CHALET Updated    1676               1   1677          1 2025-11-24
-CHAMBLFERT Updated    2689               1   2690          1 2025-11-24
-CHENNPETRO Updated    2689               1   2690          1 2025-11-24
-  CHOICEIN Updated     895               1    896          1 2025-11-24
-CHOLAHLDNG Updated    2689               1   2690          1 2025-11-24
-  CHOLAFIN Updated    2689               1   2690          1 2025-11-24
-     CIPLA Updated    2689               1   2690          1 2025-11-24
-       CUB Updated    2689               1   2690          1 2025-11-24
-     CLEAN Updated    1075               1   1076          1 2025-11-24
- COALINDIA Updated    2689               1   2690          1 2025-11-24
-COCHINSHIP Updated    2045               1   2046          1 2025-11-24
-   COFORGE Updated    2689               1   2690          1 2025-11-24
-   COHANCE Updated     137               1    138          1 2025-11-24
-    COLPAL Updated    2689               1   2690          1 2025-11-24
-      CAMS Updated    1271               1   1272          1 2025-11-24
-CONCORDBIO Updated     558               1    559          1 2025-11-24
-    CONCOR Updated    2689               1   2690          1 2025-11-24
-COROMANDEL Updated    2689               1   2690          1 2025-11-24
- CRAFTSMAN Updated    1152               1   1153          1 2025-11-24
- CREDITACC Updated    1789               1   1790          1 2025-11-24
-  CROMPTON Updated    2355               1   2356          1 2025-11-24
-CUMMINSIND Updated    2689               1   2690          1 2025-11-24
-    CYIENT Updated    2689               1   2690          1 2025-11-24
-DCMSHRIRAM Updated    2689               1   2690          1 2025-11-24
-       DLF Updated    2689               1   2690          1 2025-11-24
-      DOMS Updated     475               1    476          1 2025-11-24
-     DABUR Updated    2689               1   2690          1 2025-11-24
- DALBHARAT Updated    1709               1   1710          1 2025-11-24
-DATAPATTNS Updated     967               1    968          1 2025-11-24
-DEEPAKFERT Updated    2689               1   2690          1 2025-11-24
- DEEPAKNTR Updated    2689               1   2690          1 2025-11-24
- DELHIVERY Updated     866               1    867          1 2025-11-24
-   DEVYANI Updated    1056               1   1057          1 2025-11-24
-  DIVISLAB Updated    2689               1   2690          1 2025-11-24
-     DIXON Updated    2021               1   2022          1 2025-11-24
-AGARWALEYE Updated     197               1    198          1 2025-11-24
-LALPATHLAB Updated    2449               1   2450          1 2025-11-24
-   DRREDDY Updated    2689               1   2690          1 2025-11-24
-  EIDPARRY Updated    2689               1   2690          1 2025-11-24
-   EIHOTEL Updated    2689               1   2690          1 2025-11-24
- EICHERMOT Updated    2689               1   2690          1 2025-11-24
-    ELECON Updated    2689               1   2690          1 2025-11-24
- ELGIEQUIP Updated    2689               1   2690          1 2025-11-24
-  EMAMILTD Updated    2689               1   2690          1 2025-11-24
-    EMCURE Updated     338               1    339          1 2025-11-24
- ENDURANCE Updated    2248               1   2249          1 2025-11-24
-ENGINERSIN Updated    2689               1   2690          1 2025-11-24
-      ERIS Updated    2075               1   2076          1 2025-11-24
-   ESCORTS Updated    2689               1   2690          1 2025-11-24
-   ETERNAL Updated    1051               1   1052          1 2025-11-24
-  EXIDEIND Updated    2689               1   2690          1 2025-11-24
-     NYKAA Updated     998               1    999          1 2025-11-24
-FEDERALBNK Updated    2689               1   2690          1 2025-11-24
-      FACT Updated    2689               1   2690          1 2025-11-24
- FINCABLES Updated    2689               1   2690          1 2025-11-24
-   FINPIPE Updated    2689               1   2690          1 2025-11-24
-       FSL Updated    2689               1   2690          1 2025-11-24
-  FIVESTAR Updated     743               1    744          1 2025-11-24
-  FORCEMOT Updated    1509               1   1510          1 2025-11-24
-    FORTIS Updated    2689               1   2690          1 2025-11-24
-      GAIL Updated    2689               1   2690          1 2025-11-24
-     GVT&D Updated    2689               1   2690          1 2025-11-24
-GMRAIRPORT Updated    2689               1   2690          1 2025-11-24
-      GRSE Updated    1749               1   1750          1 2025-11-24
-     GICRE Updated    1996               1   1997          1 2025-11-24
-  GILLETTE Updated    2689               1   2690          1 2025-11-24
-     GLAND Updated    1237               1   1238          1 2025-11-24
-     GLAXO Updated    2689               1   2690          1 2025-11-24
-  GLENMARK Updated    2689               1   2690          1 2025-11-24
-   MEDANTA Updated     744               1    745          1 2025-11-24
-   GODIGIT Updated     374               1    375          1 2025-11-24
-      GPIL Updated    2689               1   2690          1 2025-11-24
-GODFRYPHLP Updated    2689               1   2690          1 2025-11-24
-GODREJAGRO Updated    2002               1   2003          1 2025-11-24
-  GODREJCP Updated    2689               1   2690          1 2025-11-24
- GODREJIND Updated    2689               1   2690          1 2025-11-24
-GODREJPROP Updated    2689               1   2690          1 2025-11-24
-  GRANULES Updated    2689               1   2690          1 2025-11-24
-  GRAPHITE Updated    2689               1   2690          1 2025-11-24
-    GRASIM Updated    2689               1   2690          1 2025-11-24
-   GRAVITA Updated    2689               1   2690          1 2025-11-24
-    GESHIP Updated    2689               1   2690          1 2025-11-24
-FLUOROCHEM Updated    1512               1   1513          1 2025-11-24
- GUJGASLTD Updated    2513               1   2514          1 2025-11-24
-   GMDCLTD Updated    2689               1   2690          1 2025-11-24
-      GSPL Updated    2689               1   2690          1 2025-11-24
-       HEG Updated    2689               1   2690          1 2025-11-24
- HBLENGINE Updated     235               1    236          1 2025-11-24
-   HCLTECH Updated    2689               1   2690          1 2025-11-24
-   HDFCAMC Updated    1800               1   1801          1 2025-11-24
-  HDFCBANK Updated    2689               1   2690          1 2025-11-24
-  HDFCLIFE Updated    1979               1   1980          1 2025-11-24
-      HFCL Updated    2689               1   2690          1 2025-11-24
-HAPPSTMNDS Updated    1282               1   1283          1 2025-11-24
-   HAVELLS Updated    2689               1   2690          1 2025-11-24
-HEROMOTOCO Updated    2689               1   2690          1 2025-11-24
-      HEXT Updated     186               1    187          1 2025-11-24
-      HSCL Updated    2689               1   2690          1 2025-11-24
-  HINDALCO Updated    2689               1   2690          1 2025-11-24
-       HAL Updated    1889               1   1890          1 2025-11-24
-HINDCOPPER Updated    2689               1   2690          1 2025-11-24
- HINDPETRO Updated    2689               1   2690          1 2025-11-24
-HINDUNILVR Updated    2689               1   2690          1 2025-11-24
-  HINDZINC Updated    2689               1   2690          1 2025-11-24
-POWERINDIA Updated    1399               1   1400          1 2025-11-24
- HOMEFIRST Updated    1187               1   1188          1 2025-11-24
-    HONASA Updated     504               1    505          1 2025-11-24
-    HONAUT Updated    2689               1   2690          1 2025-11-24
-     HUDCO Updated    2104               1   2105          1 2025-11-24
-   HYUNDAI Updated     270               1    271          1 2025-11-24
- ICICIBANK Updated    2689               1   2690          1 2025-11-24
-   ICICIGI Updated    2014               1   2015          1 2025-11-24
-ICICIPRULI Updated    2260               1   2261          1 2025-11-24
-      IDBI Updated    2689               1   2690          1 2025-11-24
-IDFCFIRSTB Updated    2479               1   2480          1 2025-11-24
-      IFCI Updated    2689               1   2690          1 2025-11-24
-      IIFL Updated    2689               1   2690          1 2025-11-24
- INOXINDIA Updated     474               1    475          1 2025-11-24
-       IRB Updated    2689               1   2690          1 2025-11-24
-     IRCON Updated    1765               1   1766          1 2025-11-24
- ITCHOTELS Updated     202               1    203          1 2025-11-24
-       ITC Updated    2689               1   2690          1 2025-11-24
-       ITI Updated    2689               1   2690          1 2025-11-24
-     INDGN Updated     381               1    382          1 2025-11-24
-  INDIACEM Updated    2689               1   2690          1 2025-11-24
- INDIAMART Updated    1580               1   1581          1 2025-11-24
-   INDIANB Updated    2689               1   2690          1 2025-11-24
-       IEX Updated    1998               1   1999          1 2025-11-24
-  INDHOTEL Updated    2689               1   2690          1 2025-11-24
-       IOC Updated    2689               1   2690          1 2025-11-24
-       IOB Updated    2689               1   2690          1 2025-11-24
-     IRCTC Updated    1514               1   1515          1 2025-11-24
-      IRFC Updated    1190               1   1191          1 2025-11-24
-     IREDA Updated     490               1    491          1 2025-11-24
-       IGL Updated    2689               1   2690          1 2025-11-24
-INDUSTOWER Updated    2689               1   2690          1 2025-11-24
-INDUSINDBK Updated    2689               1   2690          1 2025-11-24
-    NAUKRI Updated    2689               1   2690          1 2025-11-24
-      INFY Updated    2689               1   2690          1 2025-11-24
-  INOXWIND Updated    2624               1   2625          1 2025-11-24
- INTELLECT Updated    2689               1   2690          1 2025-11-24
-      IGIL Updated     229               1    230          1 2025-11-24
-    INDIGO Updated    2477               1   2478          1 2025-11-24
-       IKS Updated     230               1    231          1 2025-11-24
-   IPCALAB Updated    2689               1   2690          1 2025-11-24
-JBCHEPHARM Updated    2689               1   2690          1 2025-11-24
-  JKCEMENT Updated    2689               1   2690          1 2025-11-24
-      JBMA Updated    2689               1   2690          1 2025-11-24
-    JKTYRE Updated    2689               1   2690          1 2025-11-24
-JMFINANCIL Updated    2689               1   2690          1 2025-11-24
- JSWENERGY Updated    2689               1   2690          1 2025-11-24
-  JSWINFRA Updated     524               1    525          1 2025-11-24
-  JSWSTEEL Updated    2689               1   2690          1 2025-11-24
-   JPPOWER Updated    2689               1   2690          1 2025-11-24
-   J&KBANK Updated    2689               1   2690          1 2025-11-24
- JINDALSAW Updated    2689               1   2690          1 2025-11-24
-       JSL Updated    2689               1   2690          1 2025-11-24
-JINDALSTEL Updated    2689               1   2690          1 2025-11-24
-    JIOFIN Updated     553               1    554          1 2025-11-24
-  JUBLFOOD Updated    2689               1   2690          1 2025-11-24
-JUBLINGREA Updated    1156               1   1157          1 2025-11-24
-JUBLPHARMA Updated    2689               1   2690          1 2025-11-24
-       JWL Updated    2689               1   2690          1 2025-11-24
- JYOTHYLAB Updated    2689               1   2690          1 2025-11-24
-  JYOTICNC Updated     457               1    458          1 2025-11-24
-   KPRMILL Updated    2689               1   2690          1 2025-11-24
-       KEI Updated    2689               1   2690          1 2025-11-24
-  KPITTECH Updated    1630               1   1631          1 2025-11-24
-       KSB Updated    2689               1   2690          1 2025-11-24
-KAJARIACER Updated    2689               1   2690          1 2025-11-24
-      KPIL Updated     597               1    598          1 2025-11-24
-KALYANKJIL Updated    1151               1   1152          1 2025-11-24
-KARURVYSYA Updated    2689               1   2690          1 2025-11-24
-    KAYNES Updated     742               1    743          1 2025-11-24
-       KEC Updated    2689               1   2690          1 2025-11-24
-  KFINTECH Updated     715               1    716          1 2025-11-24
-KIRLOSBROS Updated    2689               1   2690          1 2025-11-24
- KIRLOSENG Updated    2689               1   2690          1 2025-11-24
- KOTAKBANK Updated    2689               1   2690          1 2025-11-24
-      KIMS Updated    1090               1   1091          1 2025-11-24
-       LTF Updated    2689               1   2690          1 2025-11-24
-      LTTS Updated    2264               1   2265          1 2025-11-24
- LICHSGFIN Updated    2689               1   2690          1 2025-11-24
-   LTFOODS Updated     506               1    507          1 2025-11-24
-      LTIM Updated    2307               1   2308          1 2025-11-24
-        LT Updated    2689               1   2690          1 2025-11-24
-LATENTVIEW Updated     990               1    991          1 2025-11-24
-LAURUSLABS Updated    2207               1   2208          1 2025-11-24
-  THELEELA Updated     120               1    121          1 2025-11-24
- LEMONTREE Updated    1884               1   1885          1 2025-11-24
-      LICI Updated     871               1    872          1 2025-11-24
-LINDEINDIA Updated    2689               1   2690          1 2025-11-24
-  LLOYDSME Updated     581               1    582          1 2025-11-24
-     LODHA Updated    1138               1   1139          1 2025-11-24
-     LUPIN Updated    2689               1   2690          1 2025-11-24
-      MMTC Updated    2689               1   2690          1 2025-11-24
-       MRF Updated    2689               1   2690          1 2025-11-24
-       MGL Updated    2320               1   2321          1 2025-11-24
-MAHSCOOTER Updated    2687               1   2688          1 2025-11-24
-MAHSEAMLES Updated    2689               1   2690          1 2025-11-24
-    M&MFIN Updated    2689               1   2690          1 2025-11-24
-       M&M Updated    2689               1   2690          1 2025-11-24
-MANAPPURAM Updated    2689               1   2690          1 2025-11-24
-      MRPL Updated    2689               1   2690          1 2025-11-24
-   MANKIND Updated     629               1    630          1 2025-11-24
-    MARICO Updated    2689               1   2690          1 2025-11-24
-    MARUTI Updated    2689               1   2690          1 2025-11-24
-      MFSL Updated    2689               1   2690          1 2025-11-24
- MAXHEALTH Updated    1301               1   1302          1 2025-11-24
-   MAZDOCK Updated    1266               1   1267          1 2025-11-24
-METROPOLIS Updated    1633               1   1634          1 2025-11-24
- MINDACORP Updated    2689               1   2690          1 2025-11-24
-     MSUMI Updated     904               1    905          1 2025-11-24
-MOTILALOFS Updated    2689               1   2690          1 2025-11-24
-   MPHASIS Updated    2689               1   2690          1 2025-11-24
-       MCX Updated    2689               1   2690          1 2025-11-24
-MUTHOOTFIN Updated    2689               1   2690          1 2025-11-24
-NATCOPHARM Updated    2689               1   2690          1 2025-11-24
-      NBCC Updated    2689               1   2690          1 2025-11-24
-       NCC Updated    2689               1   2690          1 2025-11-24
-      NHPC Updated    2689               1   2690          1 2025-11-24
-  NLCINDIA Updated    2689               1   2690          1 2025-11-24
-      NMDC Updated    2689               1   2690          1 2025-11-24
-   NSLNISP Updated     679               1    680          1 2025-11-24
- NTPCGREEN Updated     246               1    247          1 2025-11-24
-      NTPC Updated    2689               1   2690          1 2025-11-24
-        NH Updated    2440               1   2441          1 2025-11-24
-NATIONALUM Updated    2689               1   2690          1 2025-11-24
-      NAVA Updated    2689               1   2690          1 2025-11-24
-NAVINFLUOR Updated    2689               1   2690          1 2025-11-24
- NESTLEIND Updated    2689               1   2690          1 2025-11-24
-    NETWEB Updated     573               1    574          1 2025-11-24
-NEULANDLAB Updated    2689               1   2690          1 2025-11-24
-    NEWGEN Updated    1930               1   1931          1 2025-11-24
- NAM-INDIA Updated    1988               1   1989          1 2025-11-24
-  NIVABUPA Updated     253               1    254          1 2025-11-24
-    NUVAMA Updated     528               1    529          1 2025-11-24
-    NUVOCO Updated    1052               1   1053          1 2025-11-24
-OBEROIRLTY Updated    2689               1   2690          1 2025-11-24
-      ONGC Updated    2689               1   2690          1 2025-11-24
-   OLECTRA Updated    2689               1   2690          1 2025-11-24
-       OIL Updated    2689               1   2690          1 2025-11-24
-     PAYTM Updated     992               1    993          1 2025-11-24
- ONESOURCE Updated     205               1    206          1 2025-11-24
-      OFSS Updated    2689               1   2690          1 2025-11-24
- POLICYBZR Updated     995               1    996          1 2025-11-24
-      PCBL Updated    2689               1   2690          1 2025-11-24
-      PGEL Updated    2689               1   2690          1 2025-11-24
-     PIIND Updated    2689               1   2690          1 2025-11-24
-PNBHOUSING Updated    2236               1   2237          1 2025-11-24
-     PTCIL Updated     606               1    607          1 2025-11-24
-   PVRINOX Updated     731               1    732          1 2025-11-24
-   PAGEIND Updated    2689               1   2690          1 2025-11-24
- PATANJALI Updated    2689               1   2690          1 2025-11-24
-PERSISTENT Updated    2689               1   2690          1 2025-11-24
-  PETRONET Updated    2689               1   2690          1 2025-11-24
-    PFIZER Updated    2689               1   2690          1 2025-11-24
-PHOENIXLTD Updated    2689               1   2690          1 2025-11-24
-PIDILITIND Updated    2689               1   2690          1 2025-11-24
- PPLPHARMA Updated     764               1    765          1 2025-11-24
-   POLYMED Updated    2689               1   2690          1 2025-11-24
-   POLYCAB Updated    1632               1   1633          1 2025-11-24
-POONAWALLA Updated    2689               1   2690          1 2025-11-24
-       PFC Updated    2689               1   2690          1 2025-11-24
- POWERGRID Updated    2689               1   2690          1 2025-11-24
-   PRAJIND Updated    2689               1   2690          1 2025-11-24
-PREMIERENE Updated     304               1    305          1 2025-11-24
-  PRESTIGE Updated    2689               1   2690          1 2025-11-24
-      PGHH Updated    2689               1   2690          1 2025-11-24
-       PNB Updated    2689               1   2690          1 2025-11-24
-   RRKABEL Updated     533               1    534          1 2025-11-24
-   RBLBANK Updated    2279               1   2280          1 2025-11-24
-    RECLTD Updated    2689               1   2690          1 2025-11-24
-      RHIM Updated    2689               1   2690          1 2025-11-24
-     RITES Updated    1824               1   1825          1 2025-11-24
-    RADICO Updated    2689               1   2690          1 2025-11-24
-      RVNL Updated    1635               1   1636          1 2025-11-24
-   RAILTEL Updated    1170               1   1171          1 2025-11-24
-   RAINBOW Updated     876               1    877          1 2025-11-24
-   RKFORGE Updated    2689               1   2690          1 2025-11-24
-       RCF Updated    2689               1   2690          1 2025-11-24
- REDINGTON Updated    2689               1   2690          1 2025-11-24
-  RELIANCE Updated    2689               1   2690          1 2025-11-24
-    RPOWER Updated    2689               1   2690          1 2025-11-24
-      SBFC Updated     556               1    557          1 2025-11-24
-   SBICARD Updated    1409               1   1410          1 2025-11-24
-   SBILIFE Updated    2011               1   2012          1 2025-11-24
-      SJVN Updated    2689               1   2690          1 2025-11-24
-  SKFINDIA Updated    2689               1   2690          1 2025-11-24
-       SRF Updated    2689               1   2690          1 2025-11-24
-  SAGILITY Updated     255               1    256          1 2025-11-24
-   SAILIFE Updated     231               1    232          1 2025-11-24
-SAMMAANCAP Updated    2689               1   2690          1 2025-11-24
- MOTHERSON Updated    2689               1   2690          1 2025-11-24
-  SAPPHIRE Updated     992               1    993          1 2025-11-24
-   SARDAEN Updated    2689               1   2690          1 2025-11-24
-  SAREGAMA Updated    2689               1   2690          1 2025-11-24
-SCHAEFFLER Updated    2689               1   2690          1 2025-11-24
- SCHNEIDER Updated    2689               1   2690          1 2025-11-24
-       SCI Updated    2689               1   2690          1 2025-11-24
-  SHREECEM Updated    2689               1   2690          1 2025-11-24
-SHRIRAMFIN Updated    2689               1   2690          1 2025-11-24
- SHYAMMETL Updated    1092               1   1093          1 2025-11-24
-     ENRIN Updated     107               1    108          1 2025-11-24
-   SIEMENS Updated    2689               1   2690          1 2025-11-24
- SIGNATURE Updated     531               1    532          1 2025-11-24
-     SOBHA Updated    2689               1   2690          1 2025-11-24
- SOLARINDS Updated    2689               1   2690          1 2025-11-24
-  SONACOMS Updated    1092               1   1093          1 2025-11-24
-SONATSOFTW Updated    2689               1   2690          1 2025-11-24
-STARHEALTH Updated     977               1    978          1 2025-11-24
-      SBIN Updated    2689               1   2690          1 2025-11-24
-      SAIL Updated    2689               1   2690          1 2025-11-24
-  SUMICHEM Updated    1442               1   1443          1 2025-11-24
- SUNPHARMA Updated    2689               1   2690          1 2025-11-24
-     SUNTV Updated    2689               1   2690          1 2025-11-24
-SUNDARMFIN Updated    2689               1   2690          1 2025-11-24
-SUNDRMFAST Updated    2689               1   2690          1 2025-11-24
-SUPREMEIND Updated    2689               1   2690          1 2025-11-24
-    SUZLON Updated    2689               1   2690          1 2025-11-24
-  SWANCORP Updated    2695               1   2696          1 2025-11-24
-    SWIGGY Updated     254               1    255          1 2025-11-24
-   SYNGENE Updated    2538               1   2539          1 2025-11-24
-     SYRMA Updated     800               1    801          1 2025-11-24
-    TBOTEK Updated     379               1    380          1 2025-11-24
-  TVSMOTOR Updated    2689               1   2690          1 2025-11-24
-  TATACHEM Updated    2689               1   2690          1 2025-11-24
-  TATACOMM Updated    2689               1   2690          1 2025-11-24
-       TCS Updated    2689               1   2690          1 2025-11-24
-TATACONSUM Updated    2689               1   2690          1 2025-11-24
- TATAELXSI Updated    2689               1   2690          1 2025-11-24
-TATAINVEST Updated    2689               1   2690          1 2025-11-24
-      TMPV Updated    2695               1   2696          1 2025-11-24
- TATAPOWER Updated    2689               1   2690          1 2025-11-24
- TATASTEEL Updated    2689               1   2690          1 2025-11-24
-  TATATECH Updated     485               1    486          1 2025-11-24
-      TTML Updated    2689               1   2690          1 2025-11-24
-     TECHM Updated    2689               1   2690          1 2025-11-24
-   TECHNOE Updated    2689               1   2690          1 2025-11-24
-  TEJASNET Updated    2078               1   2079          1 2025-11-24
-     NIACL Updated    1983               1   1984          1 2025-11-24
-  RAMCOCEM Updated    2689               1   2690          1 2025-11-24
-   THERMAX Updated    2689               1   2690          1 2025-11-24
-    TIMKEN Updated    2689               1   2690          1 2025-11-24
-  TITAGARH Updated    2689               1   2690          1 2025-11-24
-     TITAN Updated    2689               1   2690          1 2025-11-24
-TORNTPHARM Updated    2689               1   2690          1 2025-11-24
-TORNTPOWER Updated    2689               1   2690          1 2025-11-24
-     TARIL Updated    2689               1   2690          1 2025-11-24
-     TRENT Updated    2689               1   2690          1 2025-11-24
-   TRIDENT Updated    2689               1   2690          1 2025-11-24
-   TRIVENI Updated    2689               1   2690          1 2025-11-24
-TRITURBINE Updated    2689               1   2690          1 2025-11-24
-   TIINDIA Updated    1990               1   1991          1 2025-11-24
-   UCOBANK Updated    2689               1   2690          1 2025-11-24
-  UNOMINDA Updated    2689               1   2690          1 2025-11-24
-       UPL Updated    2689               1   2690          1 2025-11-24
-    UTIAMC Updated    1265               1   1266          1 2025-11-24
-ULTRACEMCO Updated    2689               1   2690          1 2025-11-24
- UNIONBANK Updated    2689               1   2690          1 2025-11-24
-       UBL Updated    2689               1   2690          1 2025-11-24
-  UNITDSPR Updated     366               1    367          1 2025-11-24
-  USHAMART Updated    2689               1   2690          1 2025-11-24
-    VGUARD Updated    2689               1   2690          1 2025-11-24
-  DBREALTY Updated    2689               1   2690          1 2025-11-24
-       VTL Updated    2689               1   2690          1 2025-11-24
-       VBL Updated    2235               1   2236          1 2025-11-24
-  MANYAVAR Updated     930               1    931          1 2025-11-24
-      VEDL Updated    2689               1   2690          1 2025-11-24
-   VENTIVE Updated     224               1    225          1 2025-11-24
-    VIJAYA Updated    1037               1   1038          1 2025-11-24
-       VMM Updated     231               1    232          1 2025-11-24
-      IDEA Updated    2689               1   2690          1 2025-11-24
-    VOLTAS Updated    2689               1   2690          1 2025-11-24
-WAAREEENER Updated     266               1    267          1 2025-11-24
-   WELCORP Updated    2689               1   2690          1 2025-11-24
-WELSPUNLIV Updated    2689               1   2690          1 2025-11-24
- WHIRLPOOL Updated    2689               1   2690          1 2025-11-24
-     WIPRO Updated    2689               1   2690          1 2025-11-24
-WOCKPHARMA Updated    2689               1   2690          1 2025-11-24
-   YESBANK Updated    2689               1   2690          1 2025-11-24
- ZFCVINDIA Updated    2689               1   2690          1 2025-11-24
-      ZEEL Updated    2689               1   2690          1 2025-11-24
-    ZENTEC Updated    2630               1   2631          1 2025-11-24
-ZENSARTECH Updated    2689               1   2690          1 2025-11-24
- ZYDUSLIFE Updated    2689               1   2690          1 2025-11-24
-    ECLERX Updated    2689               1   2690          1 2025-11-24
+ASKAUTOLTD Updated     488               2    490          2 2025-11-14
+       AGI Updated    2682               2   2684          2 2025-11-14
+AARTIDRUGS Updated    2682               2   2684          2 2025-11-14
+AARTIPHARM Updated     687               2    689          2 2025-11-14
+   ACUTAAS Updated     113               2    115          2 2025-11-14
+ADVENZYMES Updated    2293               2   2295          2 2025-11-14
+    AETHER Updated     851               2    853          2 2025-11-14
+  AHLUCONT Updated    2682               2   2684          2 2025-11-14
+  AJAXENGG Updated     181               2    183          2 2025-11-14
+    ALIVUS Updated     207               2    209          2 2025-11-14
+      ABDL Updated     340               2    342          2 2025-11-14
+    ANURAS Updated    1146               2   1148          2 2025-11-14
+PARKHOTELS Updated     433               2    435          2 2025-11-14
+ARVINDFASN Updated    1650               2   1652          2 2025-11-14
+       ACI Updated     736               2    738          2 2025-11-14
+    ARVIND Updated    2682               2   2684          2 2025-11-14
+    ASHOKA Updated    2682               2   2684          2 2025-11-14
+ASTRAMICRO Updated    2682               2   2684          2 2025-11-14
+ AURIONPRO Updated    2682               2   2684          2 2025-11-14
+AVANTIFEED Updated    2682               2   2684          2 2025-11-14
+    AVALON Updated     636               2    638          2 2025-11-14
+     AWFIS Updated     362               2    364          2 2025-11-14
+      AZAD Updated     463               2    465          2 2025-11-14
+ BAJAJELEC Updated    2682               2   2684          2 2025-11-14
+ BALAMINES Updated    2682               2   2684          2 2025-11-14
+ BALUFORGE Updated     383               2    385          2 2025-11-14
+BANCOINDIA Updated    2682               2   2684          2 2025-11-14
+   BELRISE Updated     116               2    118          2 2025-11-14
+       BBL Updated    2682               2   2684          2 2025-11-14
+BIRLACORPN Updated    2682               2   2684          2 2025-11-14
+ BLACKBUCK Updated     242               2    244          2 2025-11-14
+ BORORENEW Updated    1844               2   1846          2 2025-11-14
+  CIEINDIA Updated    2682               2   2684          2 2025-11-14
+  CARTRADE Updated    1046               2   1048          2 2025-11-14
+   CSBBANK Updated    1472               2   1474          2 2025-11-14
+   CMSINFO Updated     955               2    957          2 2025-11-14
+    CEMPRO Updated    2688               2   2690          2 2025-11-14
+     CELLO Updated     498               2    500          2 2025-11-14
+   CEIGALL Updated     311               2    313          2 2025-11-14
+CIGNITITEC Updated    2682               2   2684          2 2025-11-14
+ CYIENTDLM Updated     579               2    581          2 2025-11-14
+   DCBBANK Updated    2682               2   2684          2 2025-11-14
+DATAMATICS Updated    2682               2   2684          2 2025-11-14
+   DIACABS Updated    2682               2   2684          2 2025-11-14
+   DHANUKA Updated    2682               2   2684          2 2025-11-14
+     DODLA Updated    1083               2   1085          2 2025-11-14
+       DBL Updated    2285               2   2287          2 2025-11-14
+      DCAL Updated    2682               2   2684          2 2025-11-14
+EASEMYTRIP Updated    1149               2   1151          2 2025-11-14
+       EPL Updated    2682               2   2684          2 2025-11-14
+DYNAMATECH Updated    2682               2   2684          2 2025-11-14
+ EDELWEISS Updated    2682               2   2684          2 2025-11-14
+ ELECTCAST Updated    2682               2   2684          2 2025-11-14
+      EMIL Updated     759               2    761          2 2025-11-14
+     EMBDL Updated     340               2    342          2 2025-11-14
+      EIEL Updated     237               2    239          2 2025-11-14
+    ENTERO Updated     429               2    431          2 2025-11-14
+   EPIGRAL Updated     538               2    540          2 2025-11-14
+EQUITASBNK Updated    1244               2   1246          2 2025-11-14
+  ETHOSLTD Updated     855               2    857          2 2025-11-14
+EUREKAFORB Updated     289               2    291          2 2025-11-14
+       FDC Updated    2682               2   2684          2 2025-11-14
+   FIEMIND Updated    2682               2   2684          2 2025-11-14
+   FINEORG Updated    1818               2   1820          2 2025-11-14
+      GHCL Updated    2682               2   2684          2 2025-11-14
+   GRINFRA Updated    1068               2   1070          2 2025-11-14
+GMMPFAUDLR Updated    1900               2   1902          2 2025-11-14
+   GMRP&UI Updated     900               2    902          2 2025-11-14
+   GABRIEL Updated    2682               2   2684          2 2025-11-14
+  GALLANTT Updated    2682               2   2684          2 2025-11-14
+   GANECOS Updated    2638               2   2640          2 2025-11-14
+ GANESHHOU Updated    2688               2   2690          2 2025-11-14
+   GATEWAY Updated     901               2    903          2 2025-11-14
+GRWRHITECH Updated     932               2    934          2 2025-11-14
+ GARFIBRES Updated    2682               2   2684          2 2025-11-14
+GREENPANEL Updated    1501               2   1503          2 2025-11-14
+     GOKEX Updated    2682               2   2684          2 2025-11-14
+GREAVESCOT Updated    2682               2   2684          2 2025-11-14
+      GAEL Updated    2682               2   2684          2 2025-11-14
+      GNFC Updated    2682               2   2684          2 2025-11-14
+      GPPL Updated    2682               2   2684          2 2025-11-14
+   HGINFRA Updated    1896               2   1898          2 2025-11-14
+GULFOILLUB Updated    2682               2   2684          2 2025-11-14
+      GSFC Updated    2682               2   2684          2 2025-11-14
+       HCG Updated    2376               2   2378          2 2025-11-14
+HERITGFOOD Updated    2682               2   2684          2 2025-11-14
+  HEMIPROP Updated    1251               2   1253          2 2025-11-14
+       HCC Updated    2682               2   2684          2 2025-11-14
+     HIKAL Updated    2682               2   2684          2 2025-11-14
+    IFBIND Updated    2682               2   2684          2 2025-11-14
+INDIAGLYCO Updated    2682               2   2684          2 2025-11-14
+  IMAGICAA Updated    2620               2   2622          2 2025-11-14
+  IIFLCAPS Updated     241               2    243          2 2025-11-14
+      IMFA Updated    2682               2   2684          2 2025-11-14
+INDIASHLTR Updated     468               2    470          2 2025-11-14
+INDIGOPNTS Updated    1181               2   1183          2 2025-11-14
+      ICIL Updated    2682               2   2684          2 2025-11-14
+  INFIBEAM Updated    2374               2   2376          2 2025-11-14
+ INGERRAND Updated    2682               2   2684          2 2025-11-14
+ INNOVACAP Updated     462               2    464          2 2025-11-14
+ INOXGREEN Updated     734               2    736          2 2025-11-14
+IONEXCHANG Updated     919               2    921          2 2025-11-14
+     ISGEC Updated    1120               2   1122          2 2025-11-14
+ JKLAKSHMI Updated    2682               2   2684          2 2025-11-14
+      JKIL Updated    2682               2   2684          2 2025-11-14
+   JKPAPER Updated    2682               2   2684          2 2025-11-14
+ JAIBALAJI Updated    2682               2   2684          2 2025-11-14
+JISLJALEQS Updated    2682               2   2684          2 2025-11-14
+ JAMNAAUTO Updated    2682               2   2684          2 2025-11-14
+      JSFB Updated     431               2    433          2 2025-11-14
+ JINDWORLD Updated    2682               2   2684          2 2025-11-14
+     JCHAC Updated    2682               2   2684          2 2025-11-14
+  JUSTDIAL Updated    2682               2   2684          2 2025-11-14
+    KNRCON Updated    2682               2   2684          2 2025-11-14
+  KPIGREEN Updated    1063               2   1065          2 2025-11-14
+      KRBL Updated    2682               2   2684          2 2025-11-14
+       KRN Updated     276               2    278          2 2025-11-14
+   KTKBANK Updated    2682               2   2684          2 2025-11-14
+       KSL Updated    2682               2   2684          2 2025-11-14
+      KSCL Updated    2682               2   2684          2 2025-11-14
+   KIRLPNU Updated     630               2    632          2 2025-11-14
+     KITEX Updated    2682               2   2684          2 2025-11-14
+       LMW Updated    2682               2   2684          2 2025-11-14
+    LXCHEM Updated    1145               2   1147          2 2025-11-14
+     IXIGO Updated     350               2    352          2 2025-11-14
+LLOYDSENGG Updated     515               2    517          2 2025-11-14
+ LLOYDSENT Updated     266               2    268          2 2025-11-14
+ LUMAXTECH Updated    2682               2   2684          2 2025-11-14
+    LUXIND Updated    2458               2   2460          2 2025-11-14
+      MOIL Updated    2682               2   2684          2 2025-11-14
+   MSTCLTD Updated    1636               2   1638          2 2025-11-14
+  MTARTECH Updated    1153               2   1155          2 2025-11-14
+   MAHLIFE Updated    2682               2   2684          2 2025-11-14
+  MANINFRA Updated    2682               2   2684          2 2025-11-14
+  MANORAMA Updated     831               2    833          2 2025-11-14
+    MASTEK Updated    2682               2   2684          2 2025-11-14
+  MARKSANS Updated    2682               2   2684          2 2025-11-14
+MAXESTATES Updated     499               2    501          2 2025-11-14
+   MEDPLUS Updated     961               2    963          2 2025-11-14
+   MIDHANI Updated    1880               2   1882          2 2025-11-14
+BECTORFOOD Updated    1207               2   1209          2 2025-11-14
+    NEOGEN Updated    1613               2   1615          2 2025-11-14
+     NESCO Updated    2682               2   2684          2 2025-11-14
+       NFL Updated    2682               2   2684          2 2025-11-14
+    NAZARA Updated    1143               2   1145          2 2025-11-14
+  OPTIEMUS Updated    2041               2   2043          2 2025-11-14
+ NETWORK18 Updated    2682               2   2684          2 2025-11-14
+ORCHPHARMA Updated    2681               2   2683          2 2025-11-14
+ ORIENTCEM Updated    2682               2   2684          2 2025-11-14
+OSWALPUMPS Updated      99               2    101          2 2025-11-14
+     PNGJL Updated     285               2    287          2 2025-11-14
+PCJEWELLER Updated    2682               2   2684          2 2025-11-14
+  PNCINFRA Updated    2586               2   2588          2 2025-11-14
+       PTC Updated    2682               2   2684          2 2025-11-14
+  PARADEEP Updated     856               2    858          2 2025-11-14
+     PARAS Updated    1017               2   1019          2 2025-11-14
+  PATELENG Updated    2682               2   2684          2 2025-11-14
+      PGIL Updated    2682               2   2684          2 2025-11-14
+  POLYPLEX Updated    2682               2   2684          2 2025-11-14
+ POWERMECH Updated    2520               2   2522          2 2025-11-14
+ PRICOLLTD Updated    2682               2   2684          2 2025-11-14
+PRINCEPIPE Updated    1455               2   1457          2 2025-11-14
+PRSMJOHNSN Updated    2682               2   2684          2 2025-11-14
+  PRIVISCL Updated    2598               2   2600          2 2025-11-14
+   PRUDENT Updated     861               2    863          2 2025-11-14
+     PURVA Updated    2682               2   2684          2 2025-11-14
+     QUESS Updated    2307               2   2309          2 2025-11-14
+      RAIN Updated    2682               2   2684          2 2025-11-14
+RAJESHEXPO Updated    2682               2   2684          2 2025-11-14
+    RALLIS Updated    2682               2   2684          2 2025-11-14
+  RATEGAIN Updated     965               2    967          2 2025-11-14
+ RATNAMANI Updated    2682               2   2684          2 2025-11-14
+  RTNINDIA Updated    2682               2   2684          2 2025-11-14
+  RTNPOWER Updated    2682               2   2684          2 2025-11-14
+RAYMONDLSL Updated     293               2    295          2 2025-11-14
+     REFEX Updated    2682               2   2684          2 2025-11-14
+    RELAXO Updated    2682               2   2684          2 2025-11-14
+  RELIGARE Updated    2682               2   2684          2 2025-11-14
+       RBA Updated    1215               2   1217          2 2025-11-14
+     ROUTE Updated    1273               2   1275          2 2025-11-14
+   SKYGOLD Updated     702               2    704          2 2025-11-14
+    SAFARI Updated    1527               2   1529          2 2025-11-14
+     SAMHI Updated     527               2    529          2 2025-11-14
+   SANDUMA Updated     537               2    539          2 2025-11-14
+SANOFICONR Updated     287               2    289          2 2025-11-14
+    SANOFI Updated    2682               2   2684          2 2025-11-14
+     SENCO Updated     575               2    577          2 2025-11-14
+   SANSERA Updated    1022               2   1024          2 2025-11-14
+   SEQUENT Updated    2389               2   2391          2 2025-11-14
+SHAKTIPUMP Updated    2682               2   2684          2 2025-11-14
+    SHAILY Updated     892               2    894          2 2025-11-14
+SHARDACROP Updated    2682               2   2684          2 2025-11-14
+SHARDAMOTR Updated    2514               2   2516          2 2025-11-14
+SHAREINDIA Updated    1273               2   1275          2 2025-11-14
+       SFL Updated    2205               2   2207          2 2025-11-14
+ SHILPAMED Updated    2682               2   2684          2 2025-11-14
+SHRIPISTON Updated    2329               2   2331          2 2025-11-14
+    RENUKA Updated    2682               2   2684          2 2025-11-14
+   SKIPPER Updated    2585               2   2587          2 2025-11-14
+ SOUTHBANK Updated    2682               2   2684          2 2025-11-14
+STARCEMENT Updated    2076               2   2078          2 2025-11-14
+   SWSOLAR Updated    1542               2   1544          2 2025-11-14
+   STLTECH Updated    2682               2   2684          2 2025-11-14
+      STAR Updated    2682               2   2684          2 2025-11-14
+  STYRENIX Updated    2682               2   2684          2 2025-11-14
+SUDARSCHEM Updated    2682               2   2684          2 2025-11-14
+    SUBROS Updated    2682               2   2684          2 2025-11-14
+     SPARC Updated    2682               2   2684          2 2025-11-14
+   SUNTECK Updated    2682               2   2684          2 2025-11-14
+   SUNFLAG Updated    2682               2   2684          2 2025-11-14
+   SUPRIYA Updated     958               2    960          2 2025-11-14
+  SYMPHONY Updated    2682               2   2684          2 2025-11-14
+SURYAROSNI Updated    2682               2   2684          2 2025-11-14
+      TARC Updated    1211               2   1213          2 2025-11-14
+TDPOWERSYS Updated    2682               2   2684          2 2025-11-14
+    TSFINV Updated    1890               2   1892          2 2025-11-14
+    TVSSCS Updated     544               2    546          2 2025-11-14
+ TEAMLEASE Updated    2407               2   2409          2 2025-11-14
+     TANLA Updated    2682               2   2684          2 2025-11-14
+      TEGA Updated     969               2    971          2 2025-11-14
+   TEXRAIL Updated    2682               2   2684          2 2025-11-14
+THANGAMAYL Updated    2682               2   2684          2 2025-11-14
+      ANUP Updated    1654               2   1656          2 2025-11-14
+THOMASCOOK Updated    2682               2   2684          2 2025-11-14
+ THYROCARE Updated    2352               2   2354          2 2025-11-14
+        TI Updated    2682               2   2684          2 2025-11-14
+TIMETECHNO Updated    2682               2   2684          2 2025-11-14
+ TIPSMUSIC Updated    2682               2   2684          2 2025-11-14
+TRANSRAILL Updated     218               2    220          2 2025-11-14
+UJJIVANSFB Updated    1466               2   1468          2 2025-11-14
+   UNIMECH Updated     216               2    218          2 2025-11-14
+     VMART Updated    2682               2   2684          2 2025-11-14
+  V2RETAIL Updated    2682               2   2684          2 2025-11-14
+    VIPIND Updated    2682               2   2684          2 2025-11-14
+    VSTIND Updated    2682               2   2684          2 2025-11-14
+     WABAG Updated    2682               2   2684          2 2025-11-14
+VAIBHAVGBL Updated    2682               2   2684          2 2025-11-14
+    VARROC Updated    1813               2   1815          2 2025-11-14
+  VESUVIUS Updated    2682               2   2684          2 2025-11-14
+VINATIORGA Updated    2682               2   2684          2 2025-11-14
+   VOLTAMP Updated    2682               2   2684          2 2025-11-14
+ WAAREERTL Updated     147               2    149          2 2025-11-14
+WEBELSOLAR Updated    2682               2   2684          2 2025-11-14
+    WELENT Updated    2682               2   2684          2 2025-11-14
+  YATHARTH Updated     559               2    561          2 2025-11-14
+  WESTLIFE Updated    1543               2   1545          2 2025-11-14
+    ZAGGLE Updated     523               2    525          2 2025-11-14
+   EMUDHRA Updated     853               2    855          2 2025-11-14
+ ZYDUSWELL Updated    2682               2   2684          2 2025-11-14
+    360ONE Updated    1522               2   1524          2 2025-11-14
+       ABB Updated    2682               2   2684          2 2025-11-14
+   3MINDIA Updated    2682               2   2684          2 2025-11-14
+       ACC Updated    2682               2   2684          2 2025-11-14
+ ACMESOLAR Updated     247               2    249          2 2025-11-14
+    AIAENG Updated    2682               2   2684          2 2025-11-14
+ APLAPOLLO Updated    2682               2   2684          2 2025-11-14
+       AWL Updated     929               2    931          2 2025-11-14
+    AUBANK Updated    2061               2   2063          2 2025-11-14
+ AADHARHFC Updated     372               2    374          2 2025-11-14
+     AAVAS Updated    1753               2   1755          2 2025-11-14
+  AARTIIND Updated    2682               2   2684          2 2025-11-14
+ABBOTINDIA Updated    2682               2   2684          2 2025-11-14
+ADANIENSOL Updated     549               2    551          2 2025-11-14
+       ACE Updated    2682               2   2684          2 2025-11-14
+  ADANIENT Updated    2682               2   2684          2 2025-11-14
+ADANIPORTS Updated    2682               2   2684          2 2025-11-14
+ADANIGREEN Updated    1828               2   1830          2 2025-11-14
+ ABCAPITAL Updated    2025               2   2027          2 2025-11-14
+      ATGL Updated    1734               2   1736          2 2025-11-14
+ADANIPOWER Updated    2682               2   2684          2 2025-11-14
+     ABREL Updated    2682               2   2684          2 2025-11-14
+     ABLBL Updated      98               2    100          2 2025-11-14
+     ABFRL Updated    2682               2   2684          2 2025-11-14
+   ABSLAMC Updated    1011               2   1013          2 2025-11-14
+AEGISVOPAK Updated     113               2    115          2 2025-11-14
+  AEGISLOG Updated     359               2    361          2 2025-11-14
+    AFCONS Updated     254               2    256          2 2025-11-14
+     AFFLE Updated    1548               2   1550          2 2025-11-14
+AJANTPHARM Updated    2682               2   2684          2 2025-11-14
+     AKUMS Updated     313               2    315          2 2025-11-14
+ AKZOINDIA Updated    2682               2   2684          2 2025-11-14
+    APLLTD Updated    2682               2   2684          2 2025-11-14
+     ALKEM Updated    2442               2   2444          2 2025-11-14
+ALKYLAMINE Updated    2682               2   2684          2 2025-11-14
+  ALOKINDS Updated    2682               2   2684          2 2025-11-14
+     AMBER Updated    1922               2   1924          2 2025-11-14
+     ARE&M Updated     506               2    508          2 2025-11-14
+ AMBUJACEM Updated    2682               2   2684          2 2025-11-14
+ANANDRATHI Updated     968               2    970          2 2025-11-14
+  ANGELONE Updated    1264               2   1266          2 2025-11-14
+  ANANTRAJ Updated    2682               2   2684          2 2025-11-14
+  APARINDS Updated    2682               2   2684          2 2025-11-14
+APOLLOHOSP Updated    2682               2   2684          2 2025-11-14
+APOLLOTYRE Updated    2682               2   2684          2 2025-11-14
+ASAHIINDIA Updated    2682               2   2684          2 2025-11-14
+  ASHOKLEY Updated    2682               2   2684          2 2025-11-14
+     APTUS Updated    1044               2   1046          2 2025-11-14
+  ASTRAZEN Updated    2682               2   2684          2 2025-11-14
+ASIANPAINT Updated    2682               2   2684          2 2025-11-14
+   ASTERDM Updated    1904               2   1906          2 2025-11-14
+    ASTRAL Updated    2682               2   2684          2 2025-11-14
+      ATUL Updated    2682               2   2684          2 2025-11-14
+ATHERENERG Updated     132               2    134          2 2025-11-14
+      AIIL Updated     384               2    386          2 2025-11-14
+AUROPHARMA Updated    2682               2   2684          2 2025-11-14
+     DMART Updated    2137               2   2139          2 2025-11-14
+      BEML Updated    2682               2   2684          2 2025-11-14
+      BASF Updated    2682               2   2684          2 2025-11-14
+  AXISBANK Updated    2682               2   2684          2 2025-11-14
+       BSE Updated    2167               2   2169          2 2025-11-14
+       BLS Updated    2325               2   2327          2 2025-11-14
+BAJAJ-AUTO Updated    2682               2   2684          2 2025-11-14
+BAJFINANCE Updated    2682               2   2684          2 2025-11-14
+BAJAJFINSV Updated    2682               2   2684          2 2025-11-14
+BAJAJHLDNG Updated    2682               2   2684          2 2025-11-14
+  BAJAJHFL Updated     288               2    290          2 2025-11-14
+BALKRISIND Updated    2682               2   2684          2 2025-11-14
+BALRAMCHIN Updated    2682               2   2684          2 2025-11-14
+BANDHANBNK Updated    1884               2   1886          2 2025-11-14
+ BANKINDIA Updated    2682               2   2684          2 2025-11-14
+BANKBARODA Updated    2682               2   2684          2 2025-11-14
+  MAHABANK Updated    2682               2   2684          2 2025-11-14
+ BAYERCROP Updated    2682               2   2684          2 2025-11-14
+ BATAINDIA Updated    2682               2   2684          2 2025-11-14
+BERGEPAINT Updated    2682               2   2684          2 2025-11-14
+       BEL Updated    2682               2   2684          2 2025-11-14
+       BDL Updated    1886               2   1888          2 2025-11-14
+BHARATFORG Updated    2682               2   2684          2 2025-11-14
+      BHEL Updated    2682               2   2684          2 2025-11-14
+      BPCL Updated    2682               2   2684          2 2025-11-14
+BHARTIARTL Updated    2682               2   2684          2 2025-11-14
+BHARTIHEXA Updated     393               2    395          2 2025-11-14
+    BIKAJI Updated     739               2    741          2 2025-11-14
+    BIOCON Updated    2682               2   2684          2 2025-11-14
+     BSOFT Updated    2682               2   2684          2 2025-11-14
+  BLUEDART Updated    2682               2   2684          2 2025-11-14
+   BLUEJET Updated     501               2    503          2 2025-11-14
+BLUESTARCO Updated    2682               2   2684          2 2025-11-14
+      BBTC Updated    2682               2   2684          2 2025-11-14
+  BOSCHLTD Updated    2682               2   2684          2 2025-11-14
+   BRIGADE Updated    2682               2   2684          2 2025-11-14
+  FIRSTCRY Updated     311               2    313          2 2025-11-14
+ BRITANNIA Updated    2682               2   2684          2 2025-11-14
+       CCL Updated    2682               2   2684          2 2025-11-14
+MAPMYINDIA Updated     963               2    965          2 2025-11-14
+      CESC Updated    2682               2   2684          2 2025-11-14
+   CGPOWER Updated    2682               2   2684          2 2025-11-14
+    CRISIL Updated    2682               2   2684          2 2025-11-14
+    CAMPUS Updated     870               2    872          2 2025-11-14
+CANFINHOME Updated    2682               2   2684          2 2025-11-14
+     CANBK Updated    2682               2   2684          2 2025-11-14
+CAPLIPOINT Updated    2682               2   2684          2 2025-11-14
+      CGCL Updated    2682               2   2684          2 2025-11-14
+CARBORUNIV Updated    2682               2   2684          2 2025-11-14
+CASTROLIND Updated    2682               2   2684          2 2025-11-14
+   CEATLTD Updated    2682               2   2684          2 2025-11-14
+ CENTRALBK Updated    2682               2   2684          2 2025-11-14
+      CDSL Updated    2068               2   2070          2 2025-11-14
+CENTURYPLY Updated    2682               2   2684          2 2025-11-14
+      CERA Updated    2682               2   2684          2 2025-11-14
+    CHALET Updated    1669               2   1671          2 2025-11-14
+CHENNPETRO Updated    2682               2   2684          2 2025-11-14
+CHAMBLFERT Updated    2682               2   2684          2 2025-11-14
+  CHOICEIN Updated     888               2    890          2 2025-11-14
+  CHOLAFIN Updated    2682               2   2684          2 2025-11-14
+CHOLAHLDNG Updated    2682               2   2684          2 2025-11-14
+     CIPLA Updated    2682               2   2684          2 2025-11-14
+     CLEAN Updated    1068               2   1070          2 2025-11-14
+       CUB Updated    2682               2   2684          2 2025-11-14
+ COALINDIA Updated    2682               2   2684          2 2025-11-14
+COCHINSHIP Updated    2038               2   2040          2 2025-11-14
+   COFORGE Updated    2682               2   2684          2 2025-11-14
+   COHANCE Updated     130               2    132          2 2025-11-14
+    COLPAL Updated    2682               2   2684          2 2025-11-14
+      CAMS Updated    1264               2   1266          2 2025-11-14
+CONCORDBIO Updated     551               2    553          2 2025-11-14
+    CONCOR Updated    2682               2   2684          2 2025-11-14
+COROMANDEL Updated    2682               2   2684          2 2025-11-14
+ CRAFTSMAN Updated    1145               2   1147          2 2025-11-14
+  CROMPTON Updated    2348               2   2350          2 2025-11-14
+ CREDITACC Updated    1782               2   1784          2 2025-11-14
+CUMMINSIND Updated    2682               2   2684          2 2025-11-14
+DCMSHRIRAM Updated    2682               2   2684          2 2025-11-14
+    CYIENT Updated    2682               2   2684          2 2025-11-14
+       DLF Updated    2682               2   2684          2 2025-11-14
+      DOMS Updated     468               2    470          2 2025-11-14
+     DABUR Updated    2682               2   2684          2 2025-11-14
+ DALBHARAT Updated    1702               2   1704          2 2025-11-14
+DATAPATTNS Updated     960               2    962          2 2025-11-14
+DEEPAKFERT Updated    2682               2   2684          2 2025-11-14
+ DEEPAKNTR Updated    2682               2   2684          2 2025-11-14
+ DELHIVERY Updated     859               2    861          2 2025-11-14
+   DEVYANI Updated    1049               2   1051          2 2025-11-14
+  DIVISLAB Updated    2682               2   2684          2 2025-11-14
+     DIXON Updated    2014               2   2016          2 2025-11-14
+AGARWALEYE Updated     190               2    192          2 2025-11-14
+LALPATHLAB Updated    2442               2   2444          2 2025-11-14
+   DRREDDY Updated    2682               2   2684          2 2025-11-14
+  EIDPARRY Updated    2682               2   2684          2 2025-11-14
+   EIHOTEL Updated    2682               2   2684          2 2025-11-14
+ EICHERMOT Updated    2682               2   2684          2 2025-11-14
+    ELECON Updated    2682               2   2684          2 2025-11-14
+ ELGIEQUIP Updated    2682               2   2684          2 2025-11-14
+    EMCURE Updated     331               2    333          2 2025-11-14
+  EMAMILTD Updated    2682               2   2684          2 2025-11-14
+ ENDURANCE Updated    2241               2   2243          2 2025-11-14
+ENGINERSIN Updated    2682               2   2684          2 2025-11-14
+      ERIS Updated    2068               2   2070          2 2025-11-14
+   ESCORTS Updated    2682               2   2684          2 2025-11-14
+   ETERNAL Updated    1044               2   1046          2 2025-11-14
+  EXIDEIND Updated    2682               2   2684          2 2025-11-14
+     NYKAA Updated     991               2    993          2 2025-11-14
+FEDERALBNK Updated    2682               2   2684          2 2025-11-14
+      FACT Updated    2682               2   2684          2 2025-11-14
+ FINCABLES Updated    2682               2   2684          2 2025-11-14
+   FINPIPE Updated    2682               2   2684          2 2025-11-14
+       FSL Updated    2682               2   2684          2 2025-11-14
+  FIVESTAR Updated     736               2    738          2 2025-11-14
+  FORCEMOT Updated    1502               2   1504          2 2025-11-14
+    FORTIS Updated    2682               2   2684          2 2025-11-14
+      GAIL Updated    2682               2   2684          2 2025-11-14
+     GVT&D Updated    2682               2   2684          2 2025-11-14
+GMRAIRPORT Updated    2682               2   2684          2 2025-11-14
+      GRSE Updated    1742               2   1744          2 2025-11-14
+     GICRE Updated    1989               2   1991          2 2025-11-14
+  GILLETTE Updated    2682               2   2684          2 2025-11-14
+     GLAND Updated    1230               2   1232          2 2025-11-14
+     GLAXO Updated    2682               2   2684          2 2025-11-14
+  GLENMARK Updated    2682               2   2684          2 2025-11-14
+   MEDANTA Updated     737               2    739          2 2025-11-14
+   GODIGIT Updated     367               2    369          2 2025-11-14
+      GPIL Updated    2682               2   2684          2 2025-11-14
+GODFRYPHLP Updated    2682               2   2684          2 2025-11-14
+GODREJAGRO Updated    1995               2   1997          2 2025-11-14
+  GODREJCP Updated    2682               2   2684          2 2025-11-14
+ GODREJIND Updated    2682               2   2684          2 2025-11-14
+GODREJPROP Updated    2682               2   2684          2 2025-11-14
+  GRANULES Updated    2682               2   2684          2 2025-11-14
+  GRAPHITE Updated    2682               2   2684          2 2025-11-14
+    GRASIM Updated    2682               2   2684          2 2025-11-14
+   GRAVITA Updated    2682               2   2684          2 2025-11-14
+    GESHIP Updated    2682               2   2684          2 2025-11-14
+FLUOROCHEM Updated    1505               2   1507          2 2025-11-14
+ GUJGASLTD Updated    2506               2   2508          2 2025-11-14
+   GMDCLTD Updated    2682               2   2684          2 2025-11-14
+      GSPL Updated    2682               2   2684          2 2025-11-14
+       HEG Updated    2682               2   2684          2 2025-11-14
+ HBLENGINE Updated     228               2    230          2 2025-11-14
+   HCLTECH Updated    2682               2   2684          2 2025-11-14
+   HDFCAMC Updated    1793               2   1795          2 2025-11-14
+  HDFCBANK Updated    2682               2   2684          2 2025-11-14
+  HDFCLIFE Updated    1972               2   1974          2 2025-11-14
+      HFCL Updated    2682               2   2684          2 2025-11-14
+HAPPSTMNDS Updated    1275               2   1277          2 2025-11-14
+   HAVELLS Updated    2682               2   2684          2 2025-11-14
+HEROMOTOCO Updated    2682               2   2684          2 2025-11-14
+      HEXT Updated     179               2    181          2 2025-11-14
+      HSCL Updated    2682               2   2684          2 2025-11-14
+  HINDALCO Updated    2682               2   2684          2 2025-11-14
+       HAL Updated    1882               2   1884          2 2025-11-14
+HINDCOPPER Updated    2682               2   2684          2 2025-11-14
+ HINDPETRO Updated    2682               2   2684          2 2025-11-14
+HINDUNILVR Updated    2682               2   2684          2 2025-11-14
+  HINDZINC Updated    2682               2   2684          2 2025-11-14
+POWERINDIA Updated    1392               2   1394          2 2025-11-14
+ HOMEFIRST Updated    1180               2   1182          2 2025-11-14
+    HONASA Updated     497               2    499          2 2025-11-14
+    HONAUT Updated    2682               2   2684          2 2025-11-14
+     HUDCO Updated    2097               2   2099          2 2025-11-14
+   HYUNDAI Updated     263               2    265          2 2025-11-14
+ ICICIBANK Updated    2682               2   2684          2 2025-11-14
+   ICICIGI Updated    2007               2   2009          2 2025-11-14
+ICICIPRULI Updated    2253               2   2255          2 2025-11-14
+      IDBI Updated    2682               2   2684          2 2025-11-14
+IDFCFIRSTB Updated    2472               2   2474          2 2025-11-14
+      IFCI Updated    2682               2   2684          2 2025-11-14
+      IIFL Updated    2682               2   2684          2 2025-11-14
+ INOXINDIA Updated     467               2    469          2 2025-11-14
+       IRB Updated    2682               2   2684          2 2025-11-14
+     IRCON Updated    1758               2   1760          2 2025-11-14
+ ITCHOTELS Updated     195               2    197          2 2025-11-14
+       ITC Updated    2682               2   2684          2 2025-11-14
+       ITI Updated    2682               2   2684          2 2025-11-14
+     INDGN Updated     374               2    376          2 2025-11-14
+  INDIACEM Updated    2682               2   2684          2 2025-11-14
+ INDIAMART Updated    1573               2   1575          2 2025-11-14
+   INDIANB Updated    2682               2   2684          2 2025-11-14
+       IEX Updated    1991               2   1993          2 2025-11-14
+  INDHOTEL Updated    2682               2   2684          2 2025-11-14
+       IOC Updated    2682               2   2684          2 2025-11-14
+       IOB Updated    2682               2   2684          2 2025-11-14
+     IRCTC Updated    1507               2   1509          2 2025-11-14
+      IRFC Updated    1183               2   1185          2 2025-11-14
+     IREDA Updated     483               2    485          2 2025-11-14
+       IGL Updated    2682               2   2684          2 2025-11-14
+INDUSTOWER Updated    2682               2   2684          2 2025-11-14
+INDUSINDBK Updated    2682               2   2684          2 2025-11-14
+    NAUKRI Updated    2682               2   2684          2 2025-11-14
+      INFY Updated    2682               2   2684          2 2025-11-14
+  INOXWIND Updated    2617               2   2619          2 2025-11-14
+ INTELLECT Updated    2682               2   2684          2 2025-11-14
+    INDIGO Updated    2470               2   2472          2 2025-11-14
+      IGIL Updated     222               2    224          2 2025-11-14
+       IKS Updated     223               2    225          2 2025-11-14
+   IPCALAB Updated    2682               2   2684          2 2025-11-14
+JBCHEPHARM Updated    2682               2   2684          2 2025-11-14
+  JKCEMENT Updated    2682               2   2684          2 2025-11-14
+    JKTYRE Updated    2682               2   2684          2 2025-11-14
+      JBMA Updated    2682               2   2684          2 2025-11-14
+JMFINANCIL Updated    2682               2   2684          2 2025-11-14
+ JSWENERGY Updated    2682               2   2684          2 2025-11-14
+  JSWINFRA Updated     517               2    519          2 2025-11-14
+  JSWSTEEL Updated    2682               2   2684          2 2025-11-14
+   J&KBANK Updated    2682               2   2684          2 2025-11-14
+   JPPOWER Updated    2682               2   2684          2 2025-11-14
+ JINDALSAW Updated    2682               2   2684          2 2025-11-14
+JINDALSTEL Updated    2682               2   2684          2 2025-11-14
+       JSL Updated    2682               2   2684          2 2025-11-14
+    JIOFIN Updated     546               2    548          2 2025-11-14
+  JUBLFOOD Updated    2682               2   2684          2 2025-11-14
+JUBLINGREA Updated    1149               2   1151          2 2025-11-14
+JUBLPHARMA Updated    2682               2   2684          2 2025-11-14
+       JWL Updated    2682               2   2684          2 2025-11-14
+ JYOTHYLAB Updated    2682               2   2684          2 2025-11-14
+  JYOTICNC Updated     450               2    452          2 2025-11-14
+   KPRMILL Updated    2682               2   2684          2 2025-11-14
+       KEI Updated    2682               2   2684          2 2025-11-14
+  KPITTECH Updated    1623               2   1625          2 2025-11-14
+       KSB Updated    2682               2   2684          2 2025-11-14
+KAJARIACER Updated    2682               2   2684          2 2025-11-14
+      KPIL Updated     590               2    592          2 2025-11-14
+KALYANKJIL Updated    1144               2   1146          2 2025-11-14
+KARURVYSYA Updated    2682               2   2684          2 2025-11-14
+    KAYNES Updated     735               2    737          2 2025-11-14
+       KEC Updated    2682               2   2684          2 2025-11-14
+  KFINTECH Updated     708               2    710          2 2025-11-14
+KIRLOSBROS Updated    2682               2   2684          2 2025-11-14
+ KIRLOSENG Updated    2682               2   2684          2 2025-11-14
+ KOTAKBANK Updated    2682               2   2684          2 2025-11-14
+      KIMS Updated    1083               2   1085          2 2025-11-14
+       LTF Updated    2682               2   2684          2 2025-11-14
+      LTTS Updated    2257               2   2259          2 2025-11-14
+ LICHSGFIN Updated    2682               2   2684          2 2025-11-14
+   LTFOODS Updated     499               2    501          2 2025-11-14
+      LTIM Updated    2300               2   2302          2 2025-11-14
+        LT Updated    2682               2   2684          2 2025-11-14
+LATENTVIEW Updated     983               2    985          2 2025-11-14
+LAURUSLABS Updated    2200               2   2202          2 2025-11-14
+  THELEELA Updated     113               2    115          2 2025-11-14
+      LICI Updated     864               2    866          2 2025-11-14
+ LEMONTREE Updated    1877               2   1879          2 2025-11-14
+LINDEINDIA Updated    2682               2   2684          2 2025-11-14
+  LLOYDSME Updated     574               2    576          2 2025-11-14
+     LODHA Updated    1131               2   1133          2 2025-11-14
+     LUPIN Updated    2682               2   2684          2 2025-11-14
+       MRF Updated    2682               2   2684          2 2025-11-14
+      MMTC Updated    2682               2   2684          2 2025-11-14
+       MGL Updated    2313               2   2315          2 2025-11-14
+MAHSEAMLES Updated    2682               2   2684          2 2025-11-14
+MAHSCOOTER Updated    2632              50   2682         50 2025-11-14
+    M&MFIN Updated    2682               2   2684          2 2025-11-14
+       M&M Updated    2682               2   2684          2 2025-11-14
+MANAPPURAM Updated    2682               2   2684          2 2025-11-14
+      MRPL Updated    2682               2   2684          2 2025-11-14
+   MANKIND Updated     622               2    624          2 2025-11-14
+    MARICO Updated    2682               2   2684          2 2025-11-14
+    MARUTI Updated    2682               2   2684          2 2025-11-14
+      MFSL Updated    2682               2   2684          2 2025-11-14
+ MAXHEALTH Updated    1294               2   1296          2 2025-11-14
+   MAZDOCK Updated    1259               2   1261          2 2025-11-14
+METROPOLIS Updated    1626               2   1628          2 2025-11-14
+ MINDACORP Updated    2682               2   2684          2 2025-11-14
+     MSUMI Updated     897               2    899          2 2025-11-14
+MOTILALOFS Updated    2682               2   2684          2 2025-11-14
+   MPHASIS Updated    2682               2   2684          2 2025-11-14
+       MCX Updated    2682               2   2684          2 2025-11-14
+NATCOPHARM Updated    2682               2   2684          2 2025-11-14
+MUTHOOTFIN Updated    2682               2   2684          2 2025-11-14
+      NBCC Updated    2682               2   2684          2 2025-11-14
+       NCC Updated    2682               2   2684          2 2025-11-14
+      NHPC Updated    2682               2   2684          2 2025-11-14
+  NLCINDIA Updated    2682               2   2684          2 2025-11-14
+      NMDC Updated    2682               2   2684          2 2025-11-14
+   NSLNISP Updated     672               2    674          2 2025-11-14
+ NTPCGREEN Updated     239               2    241          2 2025-11-14
+        NH Updated    2433               2   2435          2 2025-11-14
+      NTPC Updated    2682               2   2684          2 2025-11-14
+NATIONALUM Updated    2682               2   2684          2 2025-11-14
+NAVINFLUOR Updated    2682               2   2684          2 2025-11-14
+      NAVA Updated    2682               2   2684          2 2025-11-14
+ NESTLEIND Updated    2682               2   2684          2 2025-11-14
+    NETWEB Updated     566               2    568          2 2025-11-14
+NEULANDLAB Updated    2682               2   2684          2 2025-11-14
+    NEWGEN Updated    1923               2   1925          2 2025-11-14
+ NAM-INDIA Updated    1981               2   1983          2 2025-11-14
+  NIVABUPA Updated     246               2    248          2 2025-11-14
+    NUVAMA Updated     521               2    523          2 2025-11-14
+    NUVOCO Updated    1045               2   1047          2 2025-11-14
+OBEROIRLTY Updated    2682               2   2684          2 2025-11-14
+      ONGC Updated    2682               2   2684          2 2025-11-14
+       OIL Updated    2682               2   2684          2 2025-11-14
+   OLECTRA Updated    2682               2   2684          2 2025-11-14
+     PAYTM Updated     985               2    987          2 2025-11-14
+ ONESOURCE Updated     198               2    200          2 2025-11-14
+      OFSS Updated    2682               2   2684          2 2025-11-14
+ POLICYBZR Updated     988               2    990          2 2025-11-14
+      PCBL Updated    2682               2   2684          2 2025-11-14
+      PGEL Updated    2682               2   2684          2 2025-11-14
+     PIIND Updated    2682               2   2684          2 2025-11-14
+PNBHOUSING Updated    2229               2   2231          2 2025-11-14
+     PTCIL Updated     599               2    601          2 2025-11-14
+   PVRINOX Updated     724               2    726          2 2025-11-14
+   PAGEIND Updated    2682               2   2684          2 2025-11-14
+ PATANJALI Updated    2682               2   2684          2 2025-11-14
+PERSISTENT Updated    2682               2   2684          2 2025-11-14
+  PETRONET Updated    2682               2   2684          2 2025-11-14
+    PFIZER Updated    2682               2   2684          2 2025-11-14
+PHOENIXLTD Updated    2682               2   2684          2 2025-11-14
+PIDILITIND Updated    2682               2   2684          2 2025-11-14
+ PPLPHARMA Updated     757               2    759          2 2025-11-14
+   POLYMED Updated    2682               2   2684          2 2025-11-14
+   POLYCAB Updated    1625               2   1627          2 2025-11-14
+POONAWALLA Updated    2682               2   2684          2 2025-11-14
+       PFC Updated    2682               2   2684          2 2025-11-14
+ POWERGRID Updated    2682               2   2684          2 2025-11-14
+   PRAJIND Updated    2682               2   2684          2 2025-11-14
+PREMIERENE Updated     297               2    299          2 2025-11-14
+  PRESTIGE Updated    2682               2   2684          2 2025-11-14
+      PGHH Updated    2682               2   2684          2 2025-11-14
+       PNB Updated    2682               2   2684          2 2025-11-14
+   RRKABEL Updated     526               2    528          2 2025-11-14
+   RBLBANK Updated    2272               2   2274          2 2025-11-14
+    RECLTD Updated    2682               2   2684          2 2025-11-14
+      RHIM Updated    2682               2   2684          2 2025-11-14
+     RITES Updated    1817               2   1819          2 2025-11-14
+    RADICO Updated    2682               2   2684          2 2025-11-14
+      RVNL Updated    1628               2   1630          2 2025-11-14
+   RAILTEL Updated    1163               2   1165          2 2025-11-14
+   RAINBOW Updated     869               2    871          2 2025-11-14
+   RKFORGE Updated    2682               2   2684          2 2025-11-14
+       RCF Updated    2682               2   2684          2 2025-11-14
+ REDINGTON Updated    2682               2   2684          2 2025-11-14
+  RELIANCE Updated    2682               2   2684          2 2025-11-14
+    RPOWER Updated    2682               2   2684          2 2025-11-14
+      SBFC Updated     549               2    551          2 2025-11-14
+   SBICARD Updated    1402               2   1404          2 2025-11-14
+   SBILIFE Updated    2004               2   2006          2 2025-11-14
+      SJVN Updated    2682               2   2684          2 2025-11-14
+  SKFINDIA Updated    2682               2   2684          2 2025-11-14
+       SRF Updated    2682               2   2684          2 2025-11-14
+  SAGILITY Updated     248               2    250          2 2025-11-14
+   SAILIFE Updated     224               2    226          2 2025-11-14
+SAMMAANCAP Updated    2682               2   2684          2 2025-11-14
+ MOTHERSON Updated    2682               2   2684          2 2025-11-14
+  SAPPHIRE Updated     985               2    987          2 2025-11-14
+   SARDAEN Updated    2682               2   2684          2 2025-11-14
+  SAREGAMA Updated    2682               2   2684          2 2025-11-14
+SCHAEFFLER Updated    2682               2   2684          2 2025-11-14
+ SCHNEIDER Updated    2682               2   2684          2 2025-11-14
+       SCI Updated    2682               2   2684          2 2025-11-14
+  SHREECEM Updated    2682               2   2684          2 2025-11-14
+SHRIRAMFIN Updated    2682               2   2684          2 2025-11-14
+ SHYAMMETL Updated    1085               2   1087          2 2025-11-14
+     ENRIN Updated     100               2    102          2 2025-11-14
+   SIEMENS Updated    2682               2   2684          2 2025-11-14
+ SIGNATURE Updated     524               2    526          2 2025-11-14
+     SOBHA Updated    2682               2   2684          2 2025-11-14
+ SOLARINDS Updated    2682               2   2684          2 2025-11-14
+  SONACOMS Updated    1085               2   1087          2 2025-11-14
+SONATSOFTW Updated    2682               2   2684          2 2025-11-14
+STARHEALTH Updated     970               2    972          2 2025-11-14
+      SBIN Updated    2682               2   2684          2 2025-11-14
+      SAIL Updated    2682               2   2684          2 2025-11-14
+  SUMICHEM Updated    1435               2   1437          2 2025-11-14
+ SUNPHARMA Updated    2682               2   2684          2 2025-11-14
+     SUNTV Updated    2682               2   2684          2 2025-11-14
+SUNDARMFIN Updated    2682               2   2684          2 2025-11-14
+SUNDRMFAST Updated    2682               2   2684          2 2025-11-14
+SUPREMEIND Updated    2682               2   2684          2 2025-11-14
+    SUZLON Updated    2682               2   2684          2 2025-11-14
+  SWANCORP Updated    2688               2   2690          2 2025-11-14
+    SWIGGY Updated     247               2    249          2 2025-11-14
+   SYNGENE Updated    2531               2   2533          2 2025-11-14
+     SYRMA Updated     793               2    795          2 2025-11-14
+    TBOTEK Updated     372               2    374          2 2025-11-14
+  TVSMOTOR Updated    2682               2   2684          2 2025-11-14
+  TATACHEM Updated    2682               2   2684          2 2025-11-14
+  TATACOMM Updated    2682               2   2684          2 2025-11-14
+       TCS Updated    2682               2   2684          2 2025-11-14
+TATACONSUM Updated    2682               2   2684          2 2025-11-14
+ TATAELXSI Updated    2682               2   2684          2 2025-11-14
+TATAINVEST Updated    2682               2   2684          2 2025-11-14
+      TMPV Updated    2688               2   2690          2 2025-11-14
+ TATAPOWER Updated    2682               2   2684          2 2025-11-14
+ TATASTEEL Updated    2682               2   2684          2 2025-11-14
+  TATATECH Updated     478               2    480          2 2025-11-14
+      TTML Updated    2682               2   2684          2 2025-11-14
+     TECHM Updated    2682               2   2684          2 2025-11-14
+   TECHNOE Updated    2682               2   2684          2 2025-11-14
+  TEJASNET Updated    2071               2   2073          2 2025-11-14
+     NIACL Updated    1976               2   1978          2 2025-11-14
+  RAMCOCEM Updated    2682               2   2684          2 2025-11-14
+   THERMAX Updated    2682               2   2684          2 2025-11-14
+    TIMKEN Updated    2682               2   2684          2 2025-11-14
+  TITAGARH Updated    2682               2   2684          2 2025-11-14
+     TITAN Updated    2682               2   2684          2 2025-11-14
+TORNTPHARM Updated    2682               2   2684          2 2025-11-14
+TORNTPOWER Updated    2682               2   2684          2 2025-11-14
+     TARIL Updated    2682               2   2684          2 2025-11-14
+     TRENT Updated    2682               2   2684          2 2025-11-14
+   TRIDENT Updated    2682               2   2684          2 2025-11-14
+   TRIVENI Updated    2682               2   2684          2 2025-11-14
+TRITURBINE Updated    2682               2   2684          2 2025-11-14
+   TIINDIA Updated    1983               2   1985          2 2025-11-14
+   UCOBANK Updated    2682               2   2684          2 2025-11-14
+  UNOMINDA Updated    2682               2   2684          2 2025-11-14
+       UPL Updated    2682               2   2684          2 2025-11-14
+    UTIAMC Updated    1258               2   1260          2 2025-11-14
+ULTRACEMCO Updated    2682               2   2684          2 2025-11-14
+ UNIONBANK Updated    2682               2   2684          2 2025-11-14
+       UBL Updated    2682               2   2684          2 2025-11-14
+  UNITDSPR Updated     359               2    361          2 2025-11-14
+  USHAMART Updated    2682               2   2684          2 2025-11-14
+    VGUARD Updated    2682               2   2684          2 2025-11-14
+  DBREALTY Updated    2682               2   2684          2 2025-11-14
+       VBL Updated    2228               2   2230          2 2025-11-14
+       VTL Updated    2682               2   2684          2 2025-11-14
+  MANYAVAR Updated     923               2    925          2 2025-11-14
+      VEDL Updated    2682               2   2684          2 2025-11-14
+   VENTIVE Updated     217               2    219          2 2025-11-14
+    VIJAYA Updated    1030               2   1032          2 2025-11-14
+      IDEA Updated    2682               2   2684          2 2025-11-14
+       VMM Updated     224               2    226          2 2025-11-14
+    VOLTAS Updated    2682               2   2684          2 2025-11-14
+   WELCORP Updated    2682               2   2684          2 2025-11-14
+WAAREEENER Updated     259               2    261          2 2025-11-14
+WELSPUNLIV Updated    2682               2   2684          2 2025-11-14
+ WHIRLPOOL Updated    2682               2   2684          2 2025-11-14
+     WIPRO Updated    2682               2   2684          2 2025-11-14
+WOCKPHARMA Updated    2682               2   2684          2 2025-11-14
+   YESBANK Updated    2682               2   2684          2 2025-11-14
+ ZFCVINDIA Updated    2682               2   2684          2 2025-11-14
+      ZEEL Updated    2682               2   2684          2 2025-11-14
+    ZENTEC Updated    2623               2   2625          2 2025-11-14
+ZENSARTECH Updated    2682               2   2684          2 2025-11-14
+ ZYDUSLIFE Updated    2682               2   2684          2 2025-11-14
+    ECLERX Updated    2682               2   2684          2 2025-11-14
 
 STATISTICS:
   Total symbols processed: 747
   New symbols added: 0
   Existing symbols updated: 747
-  Total rows added: 747
-  Average rows per symbol: 1.0
+  Total rows added: 1542
+  Average rows per symbol: 2.1

@@ -27,7 +27,7 @@
    ✓ Processed 1000/2140 tickers...
    ✓ Processed 1500/2140 tickers...
    ✓ Processed 2000/2140 tickers...
-✅ Daily features complete: (4234854, 32)
+✅ Daily features complete: (4234858, 32)
 ✅ Final dataframe ready with 2134 tickers
    Index range: 2015-01-01 00:00:00 to 2025-11-24 00:00:00
 
@@ -38,7 +38,7 @@
 ✅ Tags distribution:
 tag
 Other 500 Stocks      1311231
-Not Needed             906123
+Not Needed             906127
 Nifty Micro 250        672500
 Nifty SmallCap 250     672500
 Nifty Midcap 150       403500
