@@ -2,13 +2,10 @@
 MERGE SUMMARY
 ================================================================================
 
-  Symbol  Before  New_Downloaded  After  Net_Added  Last_Date
-     ADL    1272               1   1273          1 2025-11-24
-LOYALTEX     810               1    811          1 2025-11-24
-  NBIFIN    2215               1   2216          1 2025-11-24
-  DICIND    2689               1   2690          1 2025-11-24
+Symbol  Before  New_Downloaded  After  Net_Added  Last_Date
+ NKIND    2382               1   2383          1 2025-11-25
 
 STATISTICS:
-  Total symbols merged: 4
-  Total rows added: 4
+  Total symbols merged: 1
+  Total rows added: 1
   Average rows per symbol: 1.0
