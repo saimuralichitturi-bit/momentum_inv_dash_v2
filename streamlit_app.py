@@ -65,8 +65,8 @@ page = st.sidebar.radio(
 st.sidebar.markdown("---")
 st.sidebar.markdown("### ⏰ Last Update")
 try:
-    if os.path.exists('daily_signals_with_all_data.csv'):
-        last_modified = os.path.getmtime('daily_signals_with_all_data.csv')
+    if os.path.exists('data/daily_signals_with_all_data.csv'):
+        last_modified = os.path.getmtime('data/daily_signals_with_all_data.csv')
         last_update = datetime.fromtimestamp(last_modified).strftime('%Y-%m-%d %H:%M:%S')
         st.sidebar.success(f"📅 {last_update}")
     else:
@@ -94,8 +94,8 @@ if page == "🏠 Home":
     
     try:
         # Load signals data
-        if os.path.exists('daily_signals_with_all_data.csv'):
-            df_signals = pd.read_csv('daily_signals_with_all_data.csv')
+        if os.path.exists('data/daily_signals_with_all_data.csv'):
+            df_signals = pd.read_csv('data/daily_signals_with_all_data.csv')
             
             with col1:
                 st.info("### 📈 Daily Signals")
@@ -107,8 +107,8 @@ if page == "🏠 Home":
                     st.write(f"🟢 Buy: {buy_count} | 🔴 Sell: {sell_count}")
         
         # Load top stocks data
-        if os.path.exists('output/top30_stocks.csv'):
-            df_top30 = pd.read_csv('output/top30_stocks.csv')
+        if os.path.exists('data/top30_stocks.csv'):
+            df_top30 = pd.read_csv('data/top30_stocks.csv')
             
             with col2:
                 st.success("### 🏆 Top Stocks")
@@ -137,11 +137,11 @@ if page == "🏠 Home":
         files_status = []
         
         files_to_check = [
-            ('daily_signals_with_all_data.csv', 'Daily Signals'),
-            ('output/top30_stocks.csv', 'Top 30 Stocks'),
-            ('output/top20_stocks.csv', 'Top 20 Stocks'),
-            ('output/top10_stocks.csv', 'Top 10 Stocks'),
-            ('output/top5_stocks.csv', 'Top 5 Stocks'),
+            ('data/daily_signals_with_all_data.csv', 'Daily Signals'),
+            ('data/top30_stocks.csv', 'Top 30 Stocks'),
+            ('data/top20_stocks.csv', 'Top 20 Stocks'),
+            ('data/top10_stocks.csv', 'Top 10 Stocks'),
+            ('data/top5_stocks.csv', 'Top 5 Stocks'),
         ]
         
         for file_path, file_name in files_to_check:
@@ -187,7 +187,7 @@ elif page == "📈 Daily Signals":
     
     try:
         # Load the signals CSV
-        df_signals = pd.read_csv('daily_signals_with_all_data.csv')
+        df_signals = pd.read_csv('data/daily_signals_with_all_data.csv')
         
         # Check for required columns
         if df_signals.empty:
@@ -361,7 +361,7 @@ elif page == "🏆 Top Stocks Analysis":
     st.markdown('<p class="main-header">🏆 Top Stocks Analysis</p>', unsafe_allow_html=True)
     
     # Check if output directory exists
-    if not os.path.exists('output'):
+    if not os.path.exists('data'):
         st.warning("⚠️ Output folder not found. The analysis will create it automatically.")
         st.info("💡 Files will be available after the first run at 3:00 PM IST.")
         st.stop()
@@ -568,16 +568,16 @@ elif page == "🏆 Top Stocks Analysis":
                 st.code(str(e))
     
     with tab1:
-        display_stock_data('output/top30_stocks.csv', 'Top 30 Stocks', 'top30')
+        display_stock_data('data/top30_stocks.csv', 'Top 30 Stocks', 'top30')
     
     with tab2:
-        display_stock_data('output/top20_stocks.csv', 'Top 20 Stocks', 'top20')
+        display_stock_data('data/top20_stocks.csv', 'Top 20 Stocks', 'top20')
     
     with tab3:
-        display_stock_data('output/top10_stocks.csv', 'Top 10 Stocks', 'top10')
+        display_stock_data('data/top10_stocks.csv', 'Top 10 Stocks', 'top10')
     
     with tab4:
-        display_stock_data('output/top5_stocks.csv', 'Top 5 Stocks', 'top5')
+        display_stock_data('data/top5_stocks.csv', 'Top 5 Stocks', 'top5')
 
 # Page: About
 elif page == "ℹ️ About":
@@ -800,4 +800,5 @@ if st.sidebar.button("🔄 Refresh Data", use_container_width=True):
     st.rerun()
 
 st.sidebar.markdown("---")
+
 st.sidebar.caption("💡 Tip: Data updates automatically at 3:00 PM IST on trading days")
