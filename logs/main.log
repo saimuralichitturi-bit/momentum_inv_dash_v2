@@ -14,8 +14,8 @@ Python-dotenv could not parse statement starting at line 18
 📥 Loading historical data from Google Drive...
 📊 Loading DataFrame...
 ✅ Data loaded successfully!
-   Shape: (2708, 12840)
-   Date Range: 2015-01-01 00:00:00 to 2025-12-18 00:00:00
+   Shape: (2709, 12840)
+   Date Range: 2015-01-01 00:00:00 to 2025-12-19 00:00:00
 
 🎯 Starting analysis with loaded data...
 📊 Processing 2140 tickers for analysis...
@@ -24,8 +24,8 @@ Python-dotenv could not parse statement starting at line 18
 
 🔍 Debug first ticker 'LTTS.NS':
    Columns: ['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
-   Shape: (2708, 6)
-   Index range: 2015-01-01 00:00:00 to 2025-12-18 00:00:00
+   Shape: (2709, 6)
+   Index range: 2015-01-01 00:00:00 to 2025-12-19 00:00:00
    ✓ Processed 500/2140 tickers...
    ✓ Processed 1000/2140 tickers...
    ✓ Processed 1500/2140 tickers...
@@ -38,9 +38,9 @@ Python-dotenv could not parse statement starting at line 18
    ✓ Processed 1000/2140 tickers...
    ✓ Processed 1500/2140 tickers...
    ✓ Processed 2000/2140 tickers...
-✅ Daily features complete: (4273381, 32)
+✅ Daily features complete: (4273382, 32)
 ✅ Final dataframe ready with 2134 tickers
-   Index range: 2015-01-01 00:00:00 to 2025-12-18 00:00:00
+   Index range: 2015-01-01 00:00:00 to 2025-12-19 00:00:00
 
 🔄 Step 3: Merging with market cap data...
    Market cap data shape: (1719, 2)
@@ -53,16 +53,16 @@ Not Needed             922150
 Nifty Micro 250        677000
 Nifty SmallCap 250     677000
 Nifty Midcap 150       406200
-Nifty 50               135400
+Nifty 50               135401
 Nifty Next 50          135400
 Name: count, dtype: int64
 
 ================================================================================
 📊 FINAL RESULTS:
 ================================================================================
-   Final DF shape: (3351231, 35)
+   Final DF shape: (3351232, 35)
    Unique tickers: 1948
-   Date range: 2015-01-01 00:00:00 to 2025-12-18 00:00:00
+   Date range: 2015-01-01 00:00:00 to 2025-12-19 00:00:00
 ================================================================================
 
 
