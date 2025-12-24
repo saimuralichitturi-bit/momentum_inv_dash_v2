@@ -14,8 +14,8 @@ Python-dotenv could not parse statement starting at line 18
 📥 Loading historical data from Google Drive...
 📊 Loading DataFrame...
 ✅ Data loaded successfully!
-   Shape: (2710, 12840)
-   Date Range: 2015-01-01 00:00:00 to 2025-12-22 00:00:00
+   Shape: (2712, 12840)
+   Date Range: 2015-01-01 00:00:00 to 2025-12-24 00:00:00
 
 🎯 Starting analysis with loaded data...
 📊 Processing 2140 tickers for analysis...
@@ -24,8 +24,8 @@ Python-dotenv could not parse statement starting at line 18
 
 🔍 Debug first ticker 'LTTS.NS':
    Columns: ['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
-   Shape: (2710, 6)
-   Index range: 2015-01-01 00:00:00 to 2025-12-22 00:00:00
+   Shape: (2712, 6)
+   Index range: 2015-01-01 00:00:00 to 2025-12-24 00:00:00
    ✓ Processed 500/2140 tickers...
    ✓ Processed 1000/2140 tickers...
    ✓ Processed 1500/2140 tickers...
@@ -38,9 +38,9 @@ Python-dotenv could not parse statement starting at line 18
    ✓ Processed 1000/2140 tickers...
    ✓ Processed 1500/2140 tickers...
    ✓ Processed 2000/2140 tickers...
-✅ Daily features complete: (4277740, 32)
+✅ Daily features complete: (4281680, 32)
 ✅ Final dataframe ready with 2135 tickers
-   Index range: 2015-01-01 00:00:00 to 2025-12-22 00:00:00
+   Index range: 2015-01-01 00:00:00 to 2025-12-24 00:00:00
 
 🔄 Step 3: Merging with market cap data...
    Market cap data shape: (1719, 2)
@@ -48,37 +48,37 @@ Python-dotenv could not parse statement starting at line 18
 🔄 Step 4: Computing ranks and tags...
 ✅ Tags distribution:
 tag
-Other 500 Stocks      1321231
-Not Needed             924009
-Nifty Micro 250        677500
-Nifty SmallCap 250     677500
-Nifty Midcap 150       406500
-Nifty 50               135500
-Nifty Next 50          135500
+Other 500 Stocks      1322231
+Not Needed             925449
+Nifty Micro 250        678000
+Nifty SmallCap 250     678000
+Nifty Midcap 150       406800
+Nifty 50               135600
+Nifty Next 50          135600
 Name: count, dtype: int64
 
 ================================================================================
 📊 FINAL RESULTS:
 ================================================================================
-   Final DF shape: (3353731, 35)
+   Final DF shape: (3356231, 35)
    Unique tickers: 1948
-   Date range: 2015-01-01 00:00:00 to 2025-12-22 00:00:00
+   Date range: 2015-01-01 00:00:00 to 2025-12-24 00:00:00
 ================================================================================
 
 
 ================================================================================
 📊 TOP STOCKS ANALYSIS FOR LATEST DAY
 ================================================================================
-📅 Latest Date: 2025-12-22
+📅 Latest Date: 2025-12-24
 💰 Capital for Allocation: $200,000
 ================================================================================
-✅ Total stocks available: 167
+✅ Total stocks available: 177
 
 ================================================================================
 📊 SIGNAL CHECK
 ================================================================================
-Volume Condition (v2_vol_ema_4 > v2_vol_ema_10): ❌ FALSE
-Return Condition (cumulative_return > cumulative_return_20EMA): ✅ TRUE
+Volume Condition (v2_vol_ema_4 > v2_vol_ema_10): ✅ TRUE
+Return Condition (cumulative_return > cumulative_return_20EMA): ❌ FALSE
 
 🔴 SIGNAL = 0 (BEARISH)
 ❌ Conditions not met - STAY IN CASH (but showing stocks for reference)
@@ -96,42 +96,42 @@ Return Condition (cumulative_return > cumulative_return_20EMA): ✅ TRUE
 
 📊 Allocation Summary:
 Total Capital: $200,000.00
-Total Invested: $160,464.12
-Remaining Cash: $39,535.88
-Utilization: 80.23%
+Total Invested: $161,278.67
+Remaining Cash: $38,721.33
+Utilization: 80.64%
 
 📋 Detailed Allocation:
     ticker   market_cap  Rank                tag    Close  v61          v65  v65_proportion  allocation  shares_to_buy  actual_investment
-     CUPID 4.809596e+10   633    Nifty Micro 250   457.80    1 1.416170e+09            1.93     3853.83              8            3662.40
-SHRIRAMFIN 1.115393e+12    66      Nifty Next 50   933.80    2 7.600895e+09           10.34    20684.35             22           20543.60
-       LTF 5.762450e+11   142   Nifty Midcap 150   303.10    3 1.035858e+09            1.41     2818.89              9            2727.90
-FEDERALBNK 4.681953e+11   168   Nifty Midcap 150   269.00    4 1.377443e+09            1.87     3748.44             13            3497.00
-MUTHOOTFIN 1.139326e+12    62      Nifty Next 50  3789.90    5 9.708417e+08            1.32     2641.96              0               0.00
-LAURUSLABS 4.753969e+11   166   Nifty Midcap 150  1063.00    6 1.017309e+09            1.38     2768.41              2            2126.00
-  ASHOKLEY 7.680188e+11   106   Nifty Midcap 150   177.06    7 2.145396e+09            2.92     5838.28             32            5665.92
-     CANBK 9.718295e+11    83      Nifty Next 50   150.19    8 2.653027e+09            3.61     7219.70             48            7209.12
-ASHAPURMIN 5.370000e+10   606    Nifty Micro 250   855.00    9 5.379798e+08            0.73     1464.01              1             855.00
-    M&MFIN 3.741466e+11   187   Nifty Midcap 150   392.45   10 1.438401e+09            1.96     3914.33              9            3532.05
-NATIONALUM 3.896227e+11   183   Nifty Midcap 150   290.05   11 2.181357e+09            2.97     5936.14             20            5801.00
-       CUB 1.482617e+11   359 Nifty SmallCap 250   282.70   12 5.015047e+08            0.68     1364.75              4            1130.80
- ABCAPITAL 7.343428e+11   111   Nifty Midcap 150   346.65   13 9.980469e+08            1.36     2715.99              7            2426.55
-       MCX 3.890753e+11   184   Nifty Midcap 150 10822.00   14 3.636010e+09            4.95     9894.69              0               0.00
-  HINDALCO 1.660504e+12    38           Nifty 50   863.45   15 2.605547e+09            3.55     7090.49              8            6907.60
-    MARUTI 4.683033e+12     8           Nifty 50 16673.00   16 3.560382e+09            4.84     9688.88              0               0.00
-    ANURAS 1.264396e+11   390 Nifty SmallCap 250  1333.80   17 4.459618e+08            0.61     1213.60              0               0.00
-      SBIN 7.471261e+12     5           Nifty 50   974.25   18 6.430922e+09            8.75    17500.50             17           16562.25
-CUMMINSIND 1.091572e+12    71      Nifty Next 50  4518.40   19 1.408861e+09            1.92     3833.94              0               0.00
-      VEDL 1.739811e+12    37           Nifty 50   585.15   20 6.700628e+09            9.12    18234.45             31           18139.65
-HINDCOPPER 2.409961e+11   249   Nifty Midcap 150   403.85   21 6.299880e+09            8.57    17143.89             42           16961.70
-  TVSMOTOR 1.650026e+12    40           Nifty 50  3712.70   22 1.567705e+09            2.13     4266.20              1            3712.70
-   SBILIFE 1.809777e+12    36           Nifty 50  2023.60   23 1.022097e+09            1.39     2781.44              1            2023.60
-    JKTYRE 9.538636e+10   462 Nifty SmallCap 250   489.50   24 4.993563e+08            0.68     1358.90              2             979.00
-      IDEA 7.833199e+11   105   Nifty Midcap 150    11.86   25 8.471482e+09           11.53    23053.48           1943           23043.98
-SHRIPISTON 1.135251e+11   418 Nifty SmallCap 250  3167.30   26 1.086598e+09            1.48     2956.96              0               0.00
-   RBLBANK 1.690900e+11   329 Nifty SmallCap 250   303.60   27 9.526784e+08            1.30     2592.53              8            2428.80
-     PAYTM 8.013304e+11   103   Nifty Midcap 150  1329.00   28 2.839439e+09            3.86     7726.98              5            6645.00
-NAVINFLUOR 2.445179e+11   247   Nifty Midcap 150  5881.50   29 6.300100e+08            0.86     1714.45              0               0.00
-       UPL 5.802466e+11   140   Nifty Midcap 150   776.50   30 1.462373e+09            1.99     3979.56              5            3882.50
+     CUPID 4.809596e+10   632    Nifty Micro 250   471.00    1 1.650955e+09            2.03     4065.52              8            3768.00
+SHRIRAMFIN 1.115393e+12    66      Nifty Next 50   973.75    2 9.079085e+09           11.18    22357.47             22           21422.50
+LAURUSLABS 4.753969e+11   166   Nifty Midcap 150  1082.20    3 1.184244e+09            1.46     2916.23              2            2164.40
+       LTF 5.762450e+11   142   Nifty Midcap 150   303.05    4 1.148881e+09            1.41     2829.15              9            2727.45
+FEDERALBNK 4.681953e+11   168   Nifty Midcap 150   261.95    5 1.473505e+09            1.81     3628.54             13            3405.35
+MUTHOOTFIN 1.139326e+12    62      Nifty Next 50  3805.70    6 1.132558e+09            1.39     2788.95              0               0.00
+       CUB 1.482617e+11   359 Nifty SmallCap 250   296.00    7 5.884904e+08            0.72     1449.17              4            1184.00
+NATIONALUM 3.896227e+11   183   Nifty Midcap 150   295.25    8 2.542324e+09            3.13     6260.54             21            6200.25
+ASHAPURMIN 5.370000e+10   605    Nifty Micro 250   878.00    9 6.431036e+08            0.79     1583.66              1             878.00
+  ASHOKLEY 7.680188e+11   106   Nifty Midcap 150   175.50   10 2.268872e+09            2.79     5587.15             31            5440.50
+    M&MFIN 3.741466e+11   187   Nifty Midcap 150   389.95   11 1.684878e+09            2.07     4149.05             10            3899.50
+     CANBK 9.718295e+11    83      Nifty Next 50   149.62   12 2.866960e+09            3.53     7059.96             47            7032.14
+      VEDL 1.739811e+12    37           Nifty 50   598.75   13 7.503523e+09            9.24    18477.61             30           17962.50
+    JKTYRE 9.538636e+10   462 Nifty SmallCap 250   509.75   14 6.715093e+08            0.83     1653.61              3            1529.25
+    MARUTI 4.683033e+12     8           Nifty 50 16688.00   15 3.927072e+09            4.84     9670.51              0               0.00
+       MCX 3.890753e+11   184   Nifty Midcap 150 10829.00   16 4.039437e+09            4.97     9947.21              0               0.00
+HINDCOPPER 2.409961e+11   249   Nifty Midcap 150   437.80   17 8.102861e+09            9.98    19953.49             45           19701.00
+ ABCAPITAL 7.343428e+11   111   Nifty Midcap 150   347.30   18 1.111689e+09            1.37     2737.56              7            2431.10
+  HINDALCO 1.660504e+12    38           Nifty 50   864.50   19 2.975256e+09            3.66     7326.64              8            6916.00
+      SBIN 7.471261e+12     5           Nifty 50   968.55   20 6.798466e+09            8.37    16741.39             17           16465.35
+   SBILIFE 1.809777e+12    36           Nifty 50  2025.70   21 1.082759e+09            1.33     2666.32              1            2025.70
+CUMMINSIND 1.091572e+12    71      Nifty Next 50  4420.30   22 1.484293e+09            1.83     3655.11              0               0.00
+    ANURAS 1.264396e+11   390 Nifty SmallCap 250  1319.00   23 4.822074e+08            0.59     1187.45              0               0.00
+SHRIPISTON 1.135251e+11   418 Nifty SmallCap 250  3199.30   24 1.113843e+09            1.37     2742.87              0               0.00
+       UPL 5.802466e+11   140   Nifty Midcap 150   774.90   25 1.695964e+09            2.09     4176.35              5            3874.50
+NAVINFLUOR 2.445179e+11   247   Nifty Midcap 150  5880.00   26 7.033648e+08            0.87     1732.05              0               0.00
+    PFOCUS 4.908472e+10   625    Nifty Micro 250   238.49   27 2.154153e+09            2.65     5304.66             22            5246.78
+      IDEA 7.833199e+11   105   Nifty Midcap 150    12.04   28 9.486135e+09           11.68    23359.84           1940           23357.60
+      IIFL 1.848711e+11   306 Nifty SmallCap 250   601.00   29 5.313021e+08            0.65     1308.34              2            1202.00
+   RBLBANK 1.690900e+11   329 Nifty SmallCap 250   305.60   30 1.089773e+09            1.34     2683.59              8            2444.80
 
 ✅ Saved to: output/top30_stocks.csv
 
@@ -141,32 +141,32 @@ NAVINFLUOR 2.445179e+11   247   Nifty Midcap 150  5881.50   29 6.300100e+08     
 
 📊 Allocation Summary:
 Total Capital: $200,000.00
-Total Invested: $175,602.62
-Remaining Cash: $24,397.38
-Utilization: 87.80%
+Total Invested: $177,274.14
+Remaining Cash: $22,725.86
+Utilization: 88.64%
 
 📋 Detailed Allocation:
     ticker   market_cap  Rank                tag    Close  v61          v65  v65_proportion  allocation  shares_to_buy  actual_investment
-     CUPID 4.809596e+10   633    Nifty Micro 250   457.80    1 1.416170e+09            2.91     5820.37             12            5493.60
-SHRIRAMFIN 1.115393e+12    66      Nifty Next 50   933.80    2 7.600895e+09           15.62    31239.20             33           30815.40
-       LTF 5.762450e+11   142   Nifty Midcap 150   303.10    3 1.035858e+09            2.13     4257.31             14            4243.40
-FEDERALBNK 4.681953e+11   168   Nifty Midcap 150   269.00    4 1.377443e+09            2.83     5661.20             21            5649.00
-MUTHOOTFIN 1.139326e+12    62      Nifty Next 50  3789.90    5 9.708417e+08            2.00     3990.10              1            3789.90
-LAURUSLABS 4.753969e+11   166   Nifty Midcap 150  1063.00    6 1.017309e+09            2.09     4181.08              3            3189.00
-  ASHOKLEY 7.680188e+11   106   Nifty Midcap 150   177.06    7 2.145396e+09            4.41     8817.44             49            8675.94
-     CANBK 9.718295e+11    83      Nifty Next 50   150.19    8 2.653027e+09            5.45    10903.78             72           10813.68
-ASHAPURMIN 5.370000e+10   606    Nifty Micro 250   855.00    9 5.379798e+08            1.11     2211.06              2            1710.00
-    M&MFIN 3.741466e+11   187   Nifty Midcap 150   392.45   10 1.438401e+09            2.96     5911.74             15            5886.75
-NATIONALUM 3.896227e+11   183   Nifty Midcap 150   290.05   11 2.181357e+09            4.48     8965.24             30            8701.50
-       CUB 1.482617e+11   359 Nifty SmallCap 250   282.70   12 5.015047e+08            1.03     2061.15              7            1978.90
- ABCAPITAL 7.343428e+11   111   Nifty Midcap 150   346.65   13 9.980469e+08            2.05     4101.91             11            3813.15
-       MCX 3.890753e+11   184   Nifty Midcap 150 10822.00   14 3.636010e+09            7.47    14943.77              1           10822.00
-  HINDALCO 1.660504e+12    38           Nifty 50   863.45   15 2.605547e+09            5.35    10708.64             12           10361.40
-    MARUTI 4.683033e+12     8           Nifty 50 16673.00   16 3.560382e+09            7.32    14632.95              0               0.00
-    ANURAS 1.264396e+11   390 Nifty SmallCap 250  1333.80   17 4.459618e+08            0.92     1832.88              1            1333.80
-      SBIN 7.471261e+12     5           Nifty 50   974.25   18 6.430922e+09           13.22    26430.69             27           26304.75
-CUMMINSIND 1.091572e+12    71      Nifty Next 50  4518.40   19 1.408861e+09            2.90     5790.33              1            4518.40
-      VEDL 1.739811e+12    37           Nifty 50   585.15   20 6.700628e+09           13.77    27539.16             47           27502.05
+     CUPID 4.809596e+10   632    Nifty Micro 250   471.00    1 1.650955e+09            2.69     5378.26             11            5181.00
+SHRIRAMFIN 1.115393e+12    66      Nifty Next 50   973.75    2 9.079085e+09           14.79    29576.62             30           29212.50
+LAURUSLABS 4.753969e+11   166   Nifty Midcap 150  1082.20    3 1.184244e+09            1.93     3857.87              3            3246.60
+       LTF 5.762450e+11   142   Nifty Midcap 150   303.05    4 1.148881e+09            1.87     3742.67             12            3636.60
+FEDERALBNK 4.681953e+11   168   Nifty Midcap 150   261.95    5 1.473505e+09            2.40     4800.18             18            4715.10
+MUTHOOTFIN 1.139326e+12    62      Nifty Next 50  3805.70    6 1.132558e+09            1.84     3689.49              0               0.00
+       CUB 1.482617e+11   359 Nifty SmallCap 250   296.00    7 5.884904e+08            0.96     1917.10              6            1776.00
+NATIONALUM 3.896227e+11   183   Nifty Midcap 150   295.25    8 2.542324e+09            4.14     8282.04             28            8267.00
+ASHAPURMIN 5.370000e+10   605    Nifty Micro 250   878.00    9 6.431036e+08            1.05     2095.02              2            1756.00
+  ASHOKLEY 7.680188e+11   106   Nifty Midcap 150   175.50   10 2.268872e+09            3.70     7391.22             42            7371.00
+    M&MFIN 3.741466e+11   187   Nifty Midcap 150   389.95   11 1.684878e+09            2.74     5488.77             14            5459.30
+     CANBK 9.718295e+11    83      Nifty Next 50   149.62   12 2.866960e+09            4.67     9339.59             62            9276.44
+      VEDL 1.739811e+12    37           Nifty 50   598.75   13 7.503523e+09           12.22    24443.96             40           23950.00
+    JKTYRE 9.538636e+10   462 Nifty SmallCap 250   509.75   14 6.715093e+08            1.09     2187.55              4            2039.00
+    MARUTI 4.683033e+12     8           Nifty 50 16688.00   15 3.927072e+09            6.40    12793.08              0               0.00
+       MCX 3.890753e+11   184   Nifty Midcap 150 10829.00   16 4.039437e+09            6.58    13159.13              1           10829.00
+HINDCOPPER 2.409961e+11   249   Nifty Midcap 150   437.80   17 8.102861e+09           13.20    26396.41             60           26268.00
+ ABCAPITAL 7.343428e+11   111   Nifty Midcap 150   347.30   18 1.111689e+09            1.81     3621.51             10            3473.00
+  HINDALCO 1.660504e+12    38           Nifty 50   864.50   19 2.975256e+09            4.85     9692.39             11            9509.50
+      SBIN 7.471261e+12     5           Nifty 50   968.55   20 6.798466e+09           11.07    22147.12             22           21308.10
 
 ✅ Saved to: output/top20_stocks.csv
 
@@ -176,22 +176,22 @@ CUMMINSIND 1.091572e+12    71      Nifty Next 50  4518.40   19 1.408861e+09     
 
 📊 Allocation Summary:
 Total Capital: $200,000.00
-Total Invested: $195,675.56
-Remaining Cash: $4,324.44
-Utilization: 97.84%
+Total Invested: $194,742.55
+Remaining Cash: $5,257.45
+Utilization: 97.37%
 
 📋 Detailed Allocation:
-    ticker   market_cap  Rank              tag   Close  v61          v65  v65_proportion  allocation  shares_to_buy  actual_investment
-     CUPID 4.809596e+10   633  Nifty Micro 250  457.80    1 1.416170e+09            7.01    14026.13             30           13734.00
-SHRIRAMFIN 1.115393e+12    66    Nifty Next 50  933.80    2 7.600895e+09           37.64    75281.28             80           74704.00
-       LTF 5.762450e+11   142 Nifty Midcap 150  303.10    3 1.035858e+09            5.13    10259.41             33           10002.30
-FEDERALBNK 4.681953e+11   168 Nifty Midcap 150  269.00    4 1.377443e+09            6.82    13642.56             50           13450.00
-MUTHOOTFIN 1.139326e+12    62    Nifty Next 50 3789.90    5 9.708417e+08            4.81     9615.47              2            7579.80
-LAURUSLABS 4.753969e+11   166 Nifty Midcap 150 1063.00    6 1.017309e+09            5.04    10075.70              9            9567.00
-  ASHOKLEY 7.680188e+11   106 Nifty Midcap 150  177.06    7 2.145396e+09           10.62    21248.57            120           21247.20
-     CANBK 9.718295e+11    83    Nifty Next 50  150.19    8 2.653027e+09           13.14    26276.29            174           26133.06
-ASHAPURMIN 5.370000e+10   606  Nifty Micro 250  855.00    9 5.379798e+08            2.66     5328.29              6            5130.00
-    M&MFIN 3.741466e+11   187 Nifty Midcap 150  392.45   10 1.438401e+09            7.12    14246.30             36           14128.20
+    ticker   market_cap  Rank                tag   Close  v61          v65  v65_proportion  allocation  shares_to_buy  actual_investment
+     CUPID 4.809596e+10   632    Nifty Micro 250  471.00    1 1.650955e+09            7.60    15207.75             32           15072.00
+SHRIRAMFIN 1.115393e+12    66      Nifty Next 50  973.75    2 9.079085e+09           41.82    83631.89             85           82768.75
+LAURUSLABS 4.753969e+11   166   Nifty Midcap 150 1082.20    3 1.184244e+09            5.45    10908.65             10           10822.00
+       LTF 5.762450e+11   142   Nifty Midcap 150  303.05    4 1.148881e+09            5.29    10582.91             34           10303.70
+FEDERALBNK 4.681953e+11   168   Nifty Midcap 150  261.95    5 1.473505e+09            6.79    13573.17             51           13359.45
+MUTHOOTFIN 1.139326e+12    62      Nifty Next 50 3805.70    6 1.132558e+09            5.22    10432.54              2            7611.40
+       CUB 1.482617e+11   359 Nifty SmallCap 250  296.00    7 5.884904e+08            2.71     5420.87             18            5328.00
+NATIONALUM 3.896227e+11   183   Nifty Midcap 150  295.25    8 2.542324e+09           11.71    23418.59             79           23324.75
+ASHAPURMIN 5.370000e+10   605    Nifty Micro 250  878.00    9 6.431036e+08            2.96     5923.94              6            5268.00
+  ASHOKLEY 7.680188e+11   106   Nifty Midcap 150  175.50   10 2.268872e+09           10.45    20899.69            119           20884.50
 
 ✅ Saved to: output/top10_stocks.csv
 
@@ -201,41 +201,41 @@ ASHAPURMIN 5.370000e+10   606  Nifty Micro 250  855.00    9 5.379798e+08        
 
 📊 Allocation Summary:
 Total Capital: $200,000.00
-Total Invested: $198,648.10
-Remaining Cash: $1,351.90
-Utilization: 99.32%
+Total Invested: $199,409.75
+Remaining Cash: $590.25
+Utilization: 99.70%
 
 📋 Detailed Allocation:
-    ticker   market_cap  Rank              tag  Close  v61          v65  v65_proportion  allocation  shares_to_buy  actual_investment
-     CUPID 4.809596e+10   633  Nifty Micro 250  457.8    1 1.416170e+09           11.42    22839.23             49            22432.2
-SHRIRAMFIN 1.115393e+12    66    Nifty Next 50  933.8    2 7.600895e+09           61.29   122583.14            131           122327.8
-       LTF 5.762450e+11   142 Nifty Midcap 150  303.1    3 1.035858e+09            8.35    16705.76             55            16670.5
-FEDERALBNK 4.681953e+11   168 Nifty Midcap 150  269.0    4 1.377443e+09           11.11    22214.65             82            22058.0
-MUTHOOTFIN 1.139326e+12    62    Nifty Next 50 3789.9    5 9.708417e+08            7.83    15657.21              4            15159.6
+    ticker   market_cap  Rank              tag   Close  v61          v65  v65_proportion  allocation  shares_to_buy  actual_investment
+     CUPID 4.809596e+10   632  Nifty Micro 250  471.00    1 1.650955e+09           11.36    22714.35             48           22608.00
+SHRIRAMFIN 1.115393e+12    66    Nifty Next 50  973.75    2 9.079085e+09           62.46   124912.86            128          124640.00
+LAURUSLABS 4.753969e+11   166 Nifty Midcap 150 1082.20    3 1.184244e+09            8.15    16293.20             15           16233.00
+       LTF 5.762450e+11   142 Nifty Midcap 150  303.05    4 1.148881e+09            7.90    15806.66             52           15758.60
+FEDERALBNK 4.681953e+11   168 Nifty Midcap 150  261.95    5 1.473505e+09           10.14    20272.93             77           20170.15
 
 ✅ Saved to: output/top5_stocks.csv
 
 ================================================================================
 🎯 FINAL SUMMARY
 ================================================================================
-📅 Date: 2025-12-22
+📅 Date: 2025-12-24
 📊 Signal: 0 (Bearish)
 ⚠️  RECOMMENDATION: STAY IN CASH (stocks shown for reference only)
 
 📋 Files Generated:
-   - output/top30_stocks_2025-12-22.csv
-   - output/top20_stocks_2025-12-22.csv
-   - output/top10_stocks_2025-12-22.csv
-   - output/top5_stocks_2025-12-22.csv
+   - output/top30_stocks_2025-12-24.csv
+   - output/top20_stocks_2025-12-24.csv
+   - output/top10_stocks_2025-12-24.csv
+   - output/top5_stocks_2025-12-24.csv
 
 ================================================================================
 
 📊 Quick Access:
 Signal: 0 (Bearish)
-Date: 2025-12-22
+Date: 2025-12-24
 
-Top 30 - Total Investment: $160,464.12
+Top 30 - Total Investment: $161,278.67
 
-Top 20 - Total Investment: $175,602.62
-Top 10 - Total Investment: $195,675.56
-Top 5 - Total Investment: $198,648.10
+Top 20 - Total Investment: $177,274.14
+Top 10 - Total Investment: $194,742.55
+Top 5 - Total Investment: $199,409.75
