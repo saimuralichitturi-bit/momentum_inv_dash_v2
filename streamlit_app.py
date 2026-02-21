@@ -747,23 +747,41 @@ def render_page(key, title, subtitle):
     st.markdown('<div class="sec-label">Charts</div>', unsafe_allow_html=True)
     t1,t2,t3,t4,t5,t6 = st.tabs(["Returns","Momentum","Z-Scores","Mom Ratio","Risk / Return","Categories"])
     with t1:
-        fig=ch_returns(df)
-        st.plotly_chart(fig,use_container_width=True) if fig else st.info("Returns data not available.")
+        fig = ch_returns(df)
+        if fig is not None:
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("Returns data not available.")
     with t2:
-        fig=ch_momentum(df)
-        st.plotly_chart(fig,use_container_width=True) if fig else st.info("Momentum data not available.")
+        fig = ch_momentum(df)
+        if fig is not None:
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("Momentum data not available.")
     with t3:
-        fig=ch_zscore(df)
-        st.plotly_chart(fig,use_container_width=True) if fig else st.info("Z-Score data not available.")
+        fig = ch_zscore(df)
+        if fig is not None:
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("Z-Score data not available.")
     with t4:
-        fig=ch_mom_ratio(df)
-        st.plotly_chart(fig,use_container_width=True) if fig else st.info("Momentum ratio columns not in this file.")
+        fig = ch_mom_ratio(df)
+        if fig is not None:
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("Momentum ratio columns not in this file.")
     with t5:
-        fig=ch_risk_return(df)
-        st.plotly_chart(fig,use_container_width=True) if fig else st.info("Needs Returns_pct_1y + standard_deviation_1y.")
+        fig = ch_risk_return(df)
+        if fig is not None:
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("Needs Returns_pct_1y + standard_deviation_1y.")
     with t6:
-        fig=ch_category(df)
-        st.plotly_chart(fig,use_container_width=True) if fig else st.info("No 'tag' column found.")
+        fig = ch_category(df)
+        if fig is not None:
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("No 'tag' column found.")
 
     st.markdown('<div class="sec-label">Filter and Explore</div>', unsafe_allow_html=True)
     fc1,fc2,fc3 = st.columns([2,2,2])
