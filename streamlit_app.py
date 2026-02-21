@@ -2,7 +2,8 @@
 NSE Trading Dashboard
 ─────────────────────
 Google Drive auth via Service Account JSON stored in Streamlit secrets.
-Secrets required (.streamlit/secrets.toml):
+
+Secrets format (.streamlit/secrets.toml):
 
     DRIVE_FOLDER_ID = "your_folder_id_here"
 
@@ -24,7 +25,7 @@ Grant the service account email Viewer access on your TradingData folder.
 import streamlit as st
 import pandas as pd
 import io
-import os
+import json
 import plotly.graph_objects as go
 from datetime import datetime
 
@@ -94,18 +95,101 @@ COL_RENAME = {
     "allocation":"Allocation %","shares_to_buy":"Shares to Buy","actual_investment":"Investment (₹)",
 }
 
+# ── Per-page important column presets (date + ticker always prepended automatically) ──
+PAGE_COLS = {
+    # Top 5 / Top 10 / Top 20 / Top 30 — focus on rank, price, returns, momentum
+    "top5": [
+        "Rank","ticker","tag","Close","market_cap",
+        "Returns_pct_1y","Returns_pct_6m","Returns_pct_3m","Returns_pct_1m",
+        "momentum_1y","momentum_6m","momentum_3m",
+        "Momentum_ratio_1y_6m_3m",
+        "z_score_1y","z_score_6m","z_score_3m",
+        "52_WEEK_HIGH","v22","ema20","SMA200",
+        "standard_deviation_1y","v65",
+    ],
+    "top10": [
+        "Rank","ticker","tag","Close","market_cap",
+        "Returns_pct_1y","Returns_pct_6m","Returns_pct_3m","Returns_pct_1m",
+        "momentum_1y","momentum_6m","momentum_3m",
+        "Momentum_ratio_1y_6m_3m",
+        "z_score_1y","z_score_6m","z_score_3m",
+        "52_WEEK_HIGH","v22","ema20","SMA200",
+        "standard_deviation_1y","v65",
+    ],
+    "top20": [
+        "Rank","ticker","tag","Close","market_cap",
+        "Returns_pct_1y","Returns_pct_6m","Returns_pct_3m","Returns_pct_1m",
+        "momentum_1y","momentum_6m","momentum_3m",
+        "Momentum_ratio_1y_6m_3m","Momentum_ratio_1y_6m",
+        "z_score_1y","z_score_6m","z_score_3m",
+        "52_WEEK_HIGH","v22","ema20","SMA200",
+        "standard_deviation_1y","standard_deviation_6m","v65",
+    ],
+    "top30": [
+        "Rank","ticker","tag","Close","market_cap",
+        "Returns_pct_1y","Returns_pct_6m","Returns_pct_3m","Returns_pct_1m",
+        "momentum_1y","momentum_6m","momentum_3m",
+        "Momentum_ratio_1y_6m_3m","Momentum_ratio_1y_6m",
+        "z_score_1y","z_score_6m","z_score_3m",
+        "52_WEEK_HIGH","v22","ema20","SMA200","SMA50",
+        "standard_deviation_1y","standard_deviation_6m","v65",
+    ],
+    # Top 100 Z-Score — highlight z-scores and rankings
+    "top100_z": [
+        "Rank","ticker","tag","Close","market_cap",
+        "z_score_1y","z_score_6m","z_score_3m","z_score_1m",
+        "z_score_1y_6m_3m","z_score_1y_6m","v58","v59",
+        "Rank_based_on_z_score_1y_6m_3m","Rank_based_on_z_score_1y_6m",
+        "v38","v39","v40","v60","v61",
+        "Returns_pct_1y","Returns_pct_6m","Returns_pct_3m",
+        "momentum_1y","momentum_6m",
+        "52_WEEK_HIGH","v22","standard_deviation_1y","v65",
+    ],
+    # Top 100 Momentum — highlight momentum ratio and rankings
+    "top100_m": [
+        "Rank","ticker","tag","Close","market_cap",
+        "Momentum_ratio_1y_6m_3m","Momentum_ratio_1y_6m",
+        "momentum_1y","momentum_6m","momentum_3m","momentum_1m",
+        "Rank_based_on_Momentum_ratio_1y_3m_6m","Rank_based_on_Momentum_ratio_1y_6m",
+        "v35","v36","v37",
+        "Returns_pct_1y","Returns_pct_6m","Returns_pct_3m","Returns_pct_1m",
+        "z_score_1y","z_score_6m",
+        "52_WEEK_HIGH","v22","standard_deviation_1y","v65",
+    ],
+    # Bottom 20 — short candidates, focus on negative signals
+    "bottom20": [
+        "Rank","ticker","tag","Close","market_cap",
+        "Returns_pct_1y","Returns_pct_6m","Returns_pct_3m","Returns_pct_1m",
+        "momentum_1y","momentum_6m","momentum_3m",
+        "z_score_1y","z_score_6m","z_score_3m",
+        "52_WEEK_HIGH","v22","52weeklow","52weeklow_pct",
+        "standard_deviation_1y","v65","ema20","SMA200",
+    ],
+    # Portfolio — focus on portfolio tracking columns
+    "portfolio": [
+        "ticker","tag","Close",
+        "total_account_value","total_portfolio_value",
+        "allocation","shares_to_buy","actual_investment",
+        "daily_return","cumulative_return","cumulative_return_20EMA",
+        "Returns_pct_1y","Returns_pct_6m","Returns_pct_3m",
+        "momentum_1y","z_score_1y",
+        "52_WEEK_HIGH","v22",
+    ],
+}
+
+# Column groups for the "More columns" expander
 COL_GROUPS = {
-    "🏷️ Identity":      ["ticker","tag","market_cap","Rank"],
-    "💰 Price & SMAs":  ["Close","Open","High","Low","Volume","Adj Close","ema20","SMA200","SMA50","SMA100"],
-    "📈 Returns %":     ["Returns_pct_1y","Returns_pct_6m","Returns_pct_3m","Returns_pct_1m","v62"],
-    "📦 Returns Raw":   ["Returns_1y","Returns_6m","Returns_3m","Returns_1m","v75","daily_returns"],
-    "🔁 Momentum":      ["momentum_1y","momentum_6m","momentum_3m","momentum_1m","Momentum_ratio_1y_6m_3m","Momentum_ratio_1y_6m"],
-    "📐 Z-Scores":      ["Z_score_1y","Z_score_6m","Z_score_3m","z_score_1y","z_score_6m","z_score_3m","z_score_1m","z_score_1y_6m_3m","z_score_1y_6m","v58","v59"],
-    "📊 Std Dev & Mean":["standard_deviation_1y","standard_deviation_6m","standard_deviation_3m","standard_deviation_1m","Mean_daily_returns_1y","Mean_daily_returns_6m","Mean_daily_returns_3m","Mean_daily_returns_1m"],
-    "📉 52-Week":       ["52_WEEK_HIGH","v22","52weeklow","52weeklow_pct"],
-    "📦 Volume":        ["Volume","v65","v67","v1_vol","v2_vol","v2_vol_nif_100","v2_vol_midcap","v2_vol_smallcap","v2_vol_microcap","v2_vol_ema_4","v2_vol_ema_10","v65_proportion"],
-    "🏅 Rankings":      ["v32","v33","v34","v35","v36","v37","v38","v39","v40","v47","v48","v49","v50","v51","v52","v53","v60","v61","v63","v64","v76","v81","v84","v85","v86","Rank_based_on_Momentum_ratio_1y_3m_6m","Rank_based_on_Momentum_ratio_1y_6m","Rank_based_on_z_score_1y_6m_3m","Rank_based_on_z_score_1y_6m","Rank_Based_3m_returns","Rank_Based_1m_returns","Rank_Based_avg_3m_1m_returns"],
-    "💼 Portfolio":     ["total_account_value","total_portfolio_value","daily_return","cumulative_return","cumulative_return_20EMA","allocation","shares_to_buy","actual_investment"],
+    "Identity":      ["ticker","tag","market_cap","Rank"],
+    "Price & SMAs":  ["Close","Open","High","Low","Volume","Adj Close","ema20","SMA200","SMA50","SMA100"],
+    "Returns %":     ["Returns_pct_1y","Returns_pct_6m","Returns_pct_3m","Returns_pct_1m","v62"],
+    "Returns Raw":   ["Returns_1y","Returns_6m","Returns_3m","Returns_1m","v75","daily_returns"],
+    "Momentum":      ["momentum_1y","momentum_6m","momentum_3m","momentum_1m","Momentum_ratio_1y_6m_3m","Momentum_ratio_1y_6m"],
+    "Z-Scores":      ["Z_score_1y","Z_score_6m","Z_score_3m","z_score_1y","z_score_6m","z_score_3m","z_score_1m","z_score_1y_6m_3m","z_score_1y_6m","v58","v59"],
+    "Std Dev & Mean":["standard_deviation_1y","standard_deviation_6m","standard_deviation_3m","standard_deviation_1m","Mean_daily_returns_1y","Mean_daily_returns_6m","Mean_daily_returns_3m","Mean_daily_returns_1m"],
+    "52-Week":       ["52_WEEK_HIGH","v22","52weeklow","52weeklow_pct"],
+    "Volume":        ["Volume","v65","v67","v1_vol","v2_vol","v2_vol_nif_100","v2_vol_midcap","v2_vol_smallcap","v2_vol_microcap","v2_vol_ema_4","v2_vol_ema_10","v65_proportion"],
+    "Rankings":      ["v32","v33","v34","v35","v36","v37","v38","v39","v40","v47","v48","v49","v50","v51","v52","v53","v60","v61","v63","v64","v76","v81","v84","v85","v86","Rank_based_on_Momentum_ratio_1y_3m_6m","Rank_based_on_Momentum_ratio_1y_6m","Rank_based_on_z_score_1y_6m_3m","Rank_based_on_z_score_1y_6m","Rank_Based_3m_returns","Rank_Based_1m_returns","Rank_Based_avg_3m_1m_returns"],
+    "Portfolio":     ["total_account_value","total_portfolio_value","daily_return","cumulative_return","cumulative_return_20EMA","allocation","shares_to_buy","actual_investment"],
 }
 
 FILE_MAP = {
@@ -136,36 +220,77 @@ html,body,[class*="css"]{font-family:'Inter',sans-serif;}
 .stApp{background:#0a0e1a;color:#e2e8f0;}
 section[data-testid="stSidebar"]{background:#0d1220;border-right:1px solid #1e2d4a;}
 section[data-testid="stSidebar"] *{color:#cbd5e1 !important;}
-section[data-testid="stSidebar"] .stRadio label{font-size:.88rem !important;}
-.page-title{font-family:'IBM Plex Mono',monospace;font-size:1.65rem;font-weight:600;
+
+/* Sidebar nav buttons */
+.nav-btn{
+  display:block;width:100%;text-align:left;padding:9px 14px;margin:2px 0;
+  border-radius:8px;border:none;background:transparent;
+  font-family:'Inter',sans-serif;font-size:.83rem;color:#94a3b8;
+  cursor:pointer;transition:all .18s;text-decoration:none;
+}
+.nav-btn:hover{background:#1e293b;color:#e2e8f0;}
+.nav-btn.active{background:#172554;color:#38bdf8;border-left:3px solid #38bdf8;font-weight:600;}
+.nav-section{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;
+  color:#334155;padding:8px 14px 3px;font-family:'IBM Plex Mono',monospace;}
+
+/* Page title */
+.page-title{font-family:'IBM Plex Mono',monospace;font-size:1.5rem;font-weight:600;
   background:linear-gradient(90deg,#38bdf8,#818cf8,#34d399);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin:.5rem 0 .2rem;letter-spacing:-.5px;}
-.page-sub{font-size:.76rem;color:#475569;font-family:'IBM Plex Mono',monospace;
+  margin:.5rem 0 .2rem;}
+.page-sub{font-size:.72rem;color:#475569;font-family:'IBM Plex Mono',monospace;
   margin-bottom:1.2rem;letter-spacing:1px;text-transform:uppercase;}
+
+/* Metrics */
 div[data-testid="metric-container"]{background:#0f172a;border:1px solid #1e293b;
   border-radius:10px;padding:.85rem 1rem;transition:border-color .2s,transform .15s;}
 div[data-testid="metric-container"]:hover{border-color:#38bdf844;transform:translateY(-1px);}
 div[data-testid="stMetricValue"]{font-family:'IBM Plex Mono',monospace !important;font-size:1.35rem !important;color:#38bdf8 !important;}
 div[data-testid="stMetricLabel"]{color:#64748b !important;font-size:.7rem !important;}
+
+/* Tabs */
 .stTabs [data-baseweb="tab-list"]{background:#0f172a;border-radius:10px 10px 0 0;padding:5px 6px 0;gap:3px;border-bottom:1px solid #1e293b;}
-.stTabs [data-baseweb="tab"]{background:transparent;color:#64748b;border-radius:7px 7px 0 0;font-size:.79rem;font-weight:500;padding:7px 12px;border:none;}
+.stTabs [data-baseweb="tab"]{background:transparent;color:#64748b;border-radius:7px 7px 0 0;font-size:.8rem;font-weight:500;padding:8px 14px;border:none;}
 .stTabs [aria-selected="true"]{background:#1e293b !important;color:#38bdf8 !important;border-bottom:2px solid #38bdf8 !important;}
 .stTabs [data-baseweb="tab-panel"]{background:#0f172a;border:1px solid #1e293b;border-top:none;border-radius:0 0 10px 10px;padding:1.1rem;}
+
+/* Table */
 div[data-testid="stDataFrame"]{border:1px solid #1e293b;border-radius:10px;overflow:hidden;}
+
+/* Inputs */
 div[data-baseweb="select"]>div{background:#0f172a !important;border-color:#1e293b !important;}
 div[data-baseweb="input"]>div{background:#0f172a !important;border-color:#1e293b !important;}
 div[data-baseweb="select"] span{color:#cbd5e1 !important;}
-.stButton>button{background:#1e293b;color:#38bdf8;border:1px solid #38bdf833;border-radius:8px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;transition:all .2s;}
+
+/* Buttons */
+.stButton>button{background:#1e293b;color:#38bdf8;border:1px solid #38bdf833;border-radius:8px;
+  font-family:'IBM Plex Mono',monospace;font-size:.75rem;transition:all .2s;}
 .stButton>button:hover{background:#38bdf811;border-color:#38bdf8;}
-.stDownloadButton>button{background:#0f2e1e !important;color:#34d399 !important;border:1px solid #34d39933 !important;border-radius:8px;font-size:.75rem;}
-.sec-label{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:#334155;border-bottom:1px solid #1e293b;padding-bottom:4px;margin:1.1rem 0 .65rem;}
-.stock-card{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:.85rem .65rem;text-align:center;transition:border-color .2s,transform .15s;}
+.stDownloadButton>button{background:#0f2e1e !important;color:#34d399 !important;
+  border:1px solid #34d39933 !important;border-radius:8px;font-size:.75rem;}
+
+/* Section labels */
+.sec-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:2px;
+  text-transform:uppercase;color:#334155;border-bottom:1px solid #1e293b;
+  padding-bottom:4px;margin:1.1rem 0 .65rem;}
+
+/* Stock cards */
+.stock-card{background:#0f172a;border:1px solid #1e293b;border-radius:12px;
+  padding:.85rem .65rem;text-align:center;transition:border-color .2s,transform .15s;}
 .stock-card:hover{border-color:#38bdf855;transform:translateY(-2px);}
+
+/* Misc */
 hr{border-color:#1e293b !important;}
-div[data-testid="stAlert"]{border-radius:10px;}
 code{background:#1e293b !important;color:#34d399 !important;border-radius:4px;}
 pre{background:#0f172a !important;border:1px solid #1e293b !important;border-radius:8px !important;}
+div[data-testid="stAlert"]{border-radius:10px;}
+
+/* Progress bar */
+.stProgress > div > div > div > div {background:#38bdf8 !important;}
+
+/* Secrets form */
+.secrets-card{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:1.3rem;margin-bottom:.8rem;}
+.secrets-card h4{font-family:'IBM Plex Mono',monospace;margin:0 0 .7rem;}
 </style>
 """, unsafe_allow_html=True)
 
@@ -182,7 +307,7 @@ def _drive_service():
             sa, scopes=["https://www.googleapis.com/auth/drive.readonly"]
         )
         return build("drive", "v3", credentials=creds, cache_discovery=False)
-    except Exception:
+    except Exception as e:
         return None
 
 
@@ -208,8 +333,40 @@ def _folder_index() -> dict:
         return {}
 
 
+def _fetch_csv_with_progress(file_id: str, label: str = "Loading data") -> pd.DataFrame | None:
+    """Fetch CSV from Drive with a visible progress bar."""
+    svc = _drive_service()
+    if svc is None:
+        return None
+    try:
+        from googleapiclient.http import MediaIoBaseDownload
+        req  = svc.files().get_media(fileId=file_id)
+        buf  = io.BytesIO()
+        dl   = MediaIoBaseDownload(buf, req)
+
+        progress_bar = st.progress(0, text=f"{label} — connecting...")
+        done = False
+        pct  = 0
+        while not done:
+            status, done = dl.next_chunk()
+            if status:
+                pct = int(status.progress() * 100)
+            else:
+                pct = min(pct + 10, 95)
+            progress_bar.progress(pct, text=f"{label} — {pct}%")
+
+        progress_bar.progress(100, text=f"{label} — complete")
+        progress_bar.empty()
+
+        buf.seek(0)
+        return pd.read_csv(buf)
+    except Exception:
+        return None
+
+
 @st.cache_data(ttl=1800, show_spinner=False)
-def _fetch_csv(file_id: str) -> pd.DataFrame | None:
+def _fetch_csv_cached(file_id: str) -> pd.DataFrame | None:
+    """Cached version (no progress bar) for repeated access."""
     svc = _drive_service()
     if svc is None:
         return None
@@ -227,27 +384,16 @@ def _fetch_csv(file_id: str) -> pd.DataFrame | None:
         return None
 
 
-LOCAL = {
-    "top5":     "data/top5_stocks.csv",
-    "top10":    "data/top10_stocks.csv",
-    "top20":    "data/top20_stocks.csv",
-    "top30":    "data/top30_stocks.csv",
-    "top100_z": "data/top_100_filtered_latest_based_on_z_score.csv",
-    "top100_m": "data/top_100_filtered_latest_based_on_momentum_ratio.csv",
-    "bottom20": "data/bottom_20_filtered_latest.csv",
-    "portfolio":"data/daily_portfolio_history_with_all_data.csv",
-}
-
-def load_df(key: str) -> pd.DataFrame | None:
+def load_df(key: str, show_progress: bool = False) -> pd.DataFrame | None:
     idx = _folder_index()
     if key in idx:
-        df = _fetch_csv(idx[key])
+        if show_progress:
+            df = _fetch_csv_with_progress(idx[key], label=f"Fetching {key} from Google Drive")
+        else:
+            df = _fetch_csv_cached(idx[key])
         if df is not None and not df.empty:
             return df
-    p = LOCAL.get(key, "")
-    if p and os.path.exists(p):
-        try: return pd.read_csv(p)
-        except Exception: pass
+    st.error(f"Could not load '{key}' from Google Drive. Check your secrets and folder permissions.")
     return None
 
 
@@ -264,14 +410,25 @@ def fnum(v):
     try: return float(v)
     except Exception: return None
 
+def gf_link(ticker: str) -> str:
+    """Build a Google Finance URL for an NSE ticker.
+    e.g. RELIANCE  ->  https://www.google.com/finance/quote/RELIANCE:NSE
+    Strips .NS / .BO suffixes if present.
+    """
+    t = str(ticker).strip().upper()
+    for sfx in (".NS", ".BO"):
+        if t.endswith(sfx):
+            t = t[:-len(sfx)]
+    return f"https://www.google.com/finance/quote/{t}:NSE"
+
 PBASE = dict(
     paper_bgcolor="#0f172a", plot_bgcolor="#0f172a",
     font=dict(color="#94a3b8", family="Inter", size=11),
-    title_font=dict(family="IBM Plex Mono", size=12, color="#cbd5e1"),
+    title_font=dict(family="IBM Plex Mono", size=13, color="#cbd5e1"),
     xaxis=dict(showgrid=False, color="#475569", tickangle=-35),
     yaxis=dict(showgrid=True, gridcolor="#1e293b", color="#475569"),
     legend=dict(bgcolor="#0f172a", bordercolor="#1e293b", font=dict(size=10)),
-    margin=dict(t=44, b=54, l=14, r=14),
+    margin=dict(t=50, b=60, l=14, r=14),
 )
 
 # ── Charts ─────────────────────────────────────────────────
@@ -358,8 +515,8 @@ def ch_category(df):
         textinfo="label+percent", textfont=dict(size=10,color="#cbd5e1")))
     fig.update_layout(title="Category Breakdown", paper_bgcolor="#0f172a",
         font=dict(color="#94a3b8",family="Inter"),
-        title_font=dict(family="IBM Plex Mono",size=12,color="#cbd5e1"),
-        legend=dict(bgcolor="#0f172a",bordercolor="#1e293b"), margin=dict(t=44,b=20,l=20,r=20))
+        title_font=dict(family="IBM Plex Mono",size=13,color="#cbd5e1"),
+        legend=dict(bgcolor="#0f172a",bordercolor="#1e293b"), margin=dict(t=50,b=20,l=20,r=20))
     return fig
 
 def kpi_row(df):
@@ -394,11 +551,20 @@ def stock_cards(df, n=10):
         ret=fnum(row.get("Returns_pct_1y")); ret6=fnum(row.get("Returns_pct_6m"))
         mom=fnum(row.get("momentum_1y")); price=fnum(row.get("Close"))
         rc = "#34d399" if (ret is not None and ret>=0) else "#f87171"
+        ticker = str(row['ticker'])
+        link = gf_link(ticker)
         with cols[i]:
             st.markdown(f"""
             <div class="stock-card">
                 <div style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:#38bdf8;margin-bottom:3px">#{row.get('Rank','')}</div>
-                <div style="font-family:'IBM Plex Mono',monospace;font-size:.92rem;font-weight:600;color:#e2e8f0">{row['ticker']}</div>
+                <a href="{link}" target="_blank" style="text-decoration:none;">
+                  <div style="font-family:'IBM Plex Mono',monospace;font-size:.92rem;font-weight:600;
+                    color:#e2e8f0;transition:color .15s;" 
+                    onmouseover="this.style.color='#38bdf8'" 
+                    onmouseout="this.style.color='#e2e8f0'">{ticker}
+                    <span style="font-size:.55rem;color:#38bdf8;vertical-align:super;margin-left:2px">↗</span>
+                  </div>
+                </a>
                 <div style="font-size:.78rem;color:#94a3b8;margin:3px 0">{'₹'+f'{price:,.0f}' if price else '—'}</div>
                 <div style="font-family:'IBM Plex Mono',monospace;font-size:.98rem;font-weight:600;color:{rc}">{f'{ret:+.1f}%' if ret is not None else '—'}</div>
                 <div style="font-size:.62rem;color:#475569">1Y Return</div>
@@ -407,28 +573,128 @@ def stock_cards(df, n=10):
                 <div style="font-size:.62rem;color:#475569;margin-top:3px">{str(row.get('tag',''))}</div>
             </div>""", unsafe_allow_html=True)
 
-def grouped_table(df, key):
+def _build_col_config(cols, all_cols):
+    """Build st.column_config dict for given list of raw column names."""
+    cfg = {}
+    for orig in cols:
+        if orig not in all_cols: continue
+        lbl = pretty(orig)
+        if "pct" in orig.lower() or orig in ("Returns_pct_1y","Returns_pct_6m","Returns_pct_3m","Returns_pct_1m","52weeklow_pct","v22","allocation"):
+            cfg[lbl] = st.column_config.NumberColumn(lbl, format="%.2f %%")
+        elif orig in ("Close","Open","High","Low","Adj Close","ema20","SMA200","SMA50","SMA100","52_WEEK_HIGH","52weeklow","actual_investment","total_account_value","total_portfolio_value"):
+            cfg[lbl] = st.column_config.NumberColumn(lbl, format="₹%.2f")
+        elif "market_cap" in orig:
+            cfg[lbl] = st.column_config.NumberColumn(lbl, format="%.2e")
+        elif "volume" in orig.lower() or orig in ("Volume","v65","v67"):
+            cfg[lbl] = st.column_config.NumberColumn(lbl, format="%,.0f")
+        elif orig in ("momentum_1y","momentum_6m","momentum_3m","momentum_1m","Momentum_ratio_1y_6m_3m","Momentum_ratio_1y_6m"):
+            cfg[lbl] = st.column_config.NumberColumn(lbl, format="%.4f")
+        elif "z_score" in orig.lower() or orig.startswith("Z_score") or orig in ("v58","v59"):
+            cfg[lbl] = st.column_config.NumberColumn(lbl, format="%.3f")
+        elif "return" in orig.lower() and "pct" not in orig.lower() and orig not in ("cumulative_return","cumulative_return_20EMA","daily_return"):
+            cfg[lbl] = st.column_config.NumberColumn(lbl, format="₹%.2f")
+        elif orig in ("cumulative_return","cumulative_return_20EMA","daily_return","daily_returns"):
+            cfg[lbl] = st.column_config.NumberColumn(lbl, format="%.4f")
+    return cfg
+
+
+def smart_table(df, page_key):
+    """
+    Personalized table per page:
+    - Date column (if present) always first
+    - Ticker always second, with a clickable Google Finance link column right after
+    - Default shows curated important columns for that page
+    - Expander lets user add more column groups
+    """
     all_cols = set(df.columns)
-    gd = {g:[c for c in cs if c in all_cols] for g,cs in COL_GROUPS.items()}
-    gd = {g:cs for g,cs in gd.items() if cs}
-    sel = st.selectbox("Column Group", ["📋 All Columns"]+list(gd.keys()), key=f"cg_{key}")
-    if sel=="📋 All Columns":
+
+    # Detect date column
+    date_col = next((c for c in df.columns if "date" in c.lower()), None)
+
+    # Get this page's preset important columns
+    preset = [c for c in PAGE_COLS.get(page_key, []) if c in all_cols]
+
+    # Build the pinned front columns: date (if exists) + ticker
+    pinned = []
+    if date_col:
+        pinned.append(date_col)
+    if "ticker" in all_cols and "ticker" not in pinned:
+        pinned.append("ticker")
+
+    # Remove pinned from preset to avoid duplication, then prepend
+    preset = [c for c in preset if c not in pinned]
+    default_show = list(dict.fromkeys(pinned + preset))
+
+    # ── Controls row ──────────────────────────────────────────
+    ctrl1, ctrl2 = st.columns([3, 1])
+    with ctrl1:
+        st.markdown(
+            f'<div style="font-size:.72rem;color:#475569;font-family:IBM Plex Mono,monospace;">'
+            f'Showing <span style="color:#38bdf8;font-weight:600">{len(default_show)}</span> key columns '
+            f'out of <span style="color:#64748b">{len(all_cols)}</span> total &nbsp;'
+            f'<span style="color:#334155">— click any ticker to open Google Finance</span></div>',
+            unsafe_allow_html=True
+        )
+    with ctrl2:
+        show_all = st.toggle("Show all columns", key=f"showall_{page_key}", value=False)
+
+    if show_all:
         show = list(df.columns)
     else:
-        anc = [c for c in ["ticker","tag","Rank","Close"] if c in all_cols]
-        show = list(dict.fromkeys(anc+gd.get(sel,[])))
+        with st.expander("Add more column groups", expanded=False):
+            gd = {g: [c for c in cs if c in all_cols and c not in default_show]
+                  for g, cs in COL_GROUPS.items()}
+            gd = {g: cs for g, cs in gd.items() if cs}
+            extra_groups = st.multiselect(
+                "Select additional column groups to append",
+                list(gd.keys()),
+                key=f"extra_{page_key}"
+            )
+        extra_cols = []
+        for g in extra_groups:
+            extra_cols += [c for c in gd.get(g, []) if c not in default_show]
+        show = default_show + list(dict.fromkeys(extra_cols))
+
+    # ── Build view dataframe ──────────────────────────────────
     view = df[[c for c in show if c in all_cols]].copy()
+
+    # Format date column nicely
+    if date_col and date_col in view.columns:
+        try:
+            view[date_col] = pd.to_datetime(view[date_col]).dt.strftime("%d %b %Y")
+        except Exception:
+            pass
+
+    # Inject Google Finance link column right after ticker
+    if "ticker" in view.columns:
+        view["gf_url"] = view["ticker"].apply(gf_link)
+        # Reorder: put gf_url immediately after ticker
+        cols_list = list(view.columns)
+        cols_list.remove("gf_url")
+        ticker_pos = cols_list.index("ticker")
+        cols_list.insert(ticker_pos + 1, "gf_url")
+        view = view[cols_list]
+
     view = ren(view)
-    cfg = {}
-    for orig in show:
-        if orig not in all_cols: continue
-        lbl=pretty(orig)
-        if "pct" in orig.lower(): cfg[lbl]=st.column_config.NumberColumn(lbl,format="%.2f%%")
-        elif orig in ("Close","Open","High","Low","Adj Close","ema20","SMA200","SMA50","SMA100","52_WEEK_HIGH","52weeklow"):
-            cfg[lbl]=st.column_config.NumberColumn(lbl,format="₹%.2f")
-        elif "market_cap" in orig: cfg[lbl]=st.column_config.NumberColumn(lbl,format="%.2e")
-        elif "volume" in orig.lower() or orig in ("Volume","v65"): cfg[lbl]=st.column_config.NumberColumn(lbl,format="%,.0f")
-    st.dataframe(view, use_container_width=True, height=420, column_config=cfg)
+    cfg = _build_col_config(show, all_cols)
+
+    # Ticker column — plain text, narrow
+    if "ticker" in all_cols:
+        cfg["Ticker"] = st.column_config.TextColumn("Ticker", width="small")
+
+    # Google Finance link column
+    cfg["gf_url"] = st.column_config.LinkColumn(
+        "Google Finance",
+        display_text="Open ↗",
+        width="small",
+    )
+
+    # Date column — text, narrow
+    if date_col and date_col in all_cols:
+        lbl = pretty(date_col)
+        cfg[lbl] = st.column_config.TextColumn(lbl, width="small")
+
+    st.dataframe(view, use_container_width=True, height=460, column_config=cfg)
 
 
 # ══════════════════════════════════════════════════════════════
@@ -437,10 +703,10 @@ def grouped_table(df, key):
 def render_page(key, title, subtitle):
     st.markdown(f'<div class="page-title">{title}</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="page-sub">{subtitle}</div>', unsafe_allow_html=True)
-    with st.spinner("Fetching from Google Drive…"):
-        df = load_df(key)
+
+    df = load_df(key, show_progress=True)
     if df is None or df.empty:
-        st.warning(f"⚠️ **{title}** data not available. Check Drive access or local `data/` folder.")
+        st.warning(f"{title} data not available. Check Drive access.")
         return
 
     st.markdown('<div class="sec-label">Key Metrics</div>', unsafe_allow_html=True)
@@ -451,7 +717,7 @@ def render_page(key, title, subtitle):
         stock_cards(df, n=min(len(df),10))
 
     st.markdown('<div class="sec-label">Charts</div>', unsafe_allow_html=True)
-    t1,t2,t3,t4,t5,t6 = st.tabs(["📈 Returns","🔁 Momentum","📐 Z-Scores","🚀 Mom Ratio","🎯 Risk/Return","🥧 Categories"])
+    t1,t2,t3,t4,t5,t6 = st.tabs(["Returns","Momentum","Z-Scores","Mom Ratio","Risk / Return","Categories"])
     with t1:
         fig=ch_returns(df)
         st.plotly_chart(fig,use_container_width=True) if fig else st.info("Returns data not available.")
@@ -471,12 +737,12 @@ def render_page(key, title, subtitle):
         fig=ch_category(df)
         st.plotly_chart(fig,use_container_width=True) if fig else st.info("No 'tag' column found.")
 
-    st.markdown('<div class="sec-label">Filter & Explore</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sec-label">Filter and Explore</div>', unsafe_allow_html=True)
     fc1,fc2,fc3 = st.columns([2,2,2])
     filtered = df.copy()
     with fc1:
         if "ticker" in df.columns:
-            q=st.text_input("🔎 Search ticker",key=f"s_{key}")
+            q=st.text_input("Search ticker",key=f"s_{key}")
             if q: filtered=filtered[filtered["ticker"].astype(str).str.upper().str.contains(q.upper(),na=False)]
     with fc2:
         if "tag" in df.columns:
@@ -488,16 +754,16 @@ def render_page(key, title, subtitle):
         if nums:
             lbls=[pretty(c) for c in nums]
             sl=st.selectbox("Sort by",lbls,key=f"sb_{key}")
-            asc=st.radio("Order",["↓ Desc","↑ Asc"],horizontal=True,key=f"o_{key}")=="↑ Asc"
+            asc=st.radio("Order",["Descending","Ascending"],horizontal=True,key=f"o_{key}")=="Ascending"
             try: filtered=filtered.sort_values(nums[lbls.index(sl)],ascending=asc)
             except Exception: pass
 
     st.markdown('<div class="sec-label">Data Table</div>', unsafe_allow_html=True)
-    grouped_table(filtered, key)
+    smart_table(filtered, key)
 
     d1,d2,_ = st.columns([1,1,4])
     with d1:
-        st.download_button("📥 Download CSV",
+        st.download_button("Download CSV",
             data=filtered.to_csv(index=False).encode(),
             file_name=f"{key}_{datetime.now().strftime('%Y%m%d')}.csv",
             mime="text/csv",key=f"dl_{key}",use_container_width=True)
@@ -505,22 +771,52 @@ def render_page(key, title, subtitle):
 
 
 # ══════════════════════════════════════════════════════════════
-# SIDEBAR
+# SIDEBAR NAVIGATION
 # ══════════════════════════════════════════════════════════════
+PAGES = {
+    "Home":              "Home",
+    "Top 5":             "Top 5",
+    "Top 10":            "Top 10",
+    "Top 20":            "Top 20",
+    "Top 30":            "Top 30",
+    "Top 100 Z-Score":   "Top 100 Z-Score",
+    "Top 100 Momentum":  "Top 100 Momentum",
+    "Bottom 20":         "Bottom 20",
+    "Portfolio History": "Portfolio History",
+}
+
+if "current_page" not in st.session_state:
+    st.session_state.current_page = "Home"
+
 with st.sidebar:
-    st.markdown('<div class="page-title" style="font-size:.95rem;text-align:center;">NSE Dashboard</div>', unsafe_allow_html=True)
-    st.markdown('<div class="page-sub" style="text-align:center;margin-bottom:.4rem;">Trading Automation</div>', unsafe_allow_html=True)
+    st.markdown('<div class="page-title" style="font-size:.9rem;text-align:center;padding:8px 0">NSE Dashboard</div>', unsafe_allow_html=True)
+    st.markdown('<div style="font-size:.62rem;color:#334155;text-align:center;font-family:IBM Plex Mono,monospace;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Quantitative Momentum</div>', unsafe_allow_html=True)
     st.markdown("---")
 
-    page = st.radio("", [
-        "🏠  Home","🏆  Top 5","⭐  Top 10","📈  Top 20","📊  Top 30",
-        "📐  Top 100 Z-Score","🚀  Top 100 Momentum","🔻  Bottom 20",
-        "📜  Portfolio History","ℹ️  Setup & About",
-    ], label_visibility="collapsed")
+    st.markdown('<div class="nav-section">Navigation</div>', unsafe_allow_html=True)
+    nav_items = [
+        ("Home",             "Home"),
+        ("Top 5",            "Top 5"),
+        ("Top 10",           "Top 10"),
+        ("Top 20",           "Top 20"),
+        ("Top 30",           "Top 30"),
+        ("Top 100 Z-Score",  "Top 100 — Z-Score"),
+        ("Top 100 Momentum", "Top 100 — Momentum"),
+        ("Bottom 20",        "Bottom 20"),
+        ("Portfolio History","Portfolio History"),
+    ]
+    for key, label in nav_items:
+        is_active = st.session_state.current_page == key
+        cls = "nav-btn active" if is_active else "nav-btn"
+        if st.button(label, key=f"nav_{key}", use_container_width=True,
+                     type="primary" if is_active else "secondary"):
+            st.session_state.current_page = key
+            st.rerun()
 
     st.markdown("---")
-    st.markdown('<div class="sec-label">Connection Status</div>', unsafe_allow_html=True)
 
+    # Connection status
+    st.markdown('<div class="nav-section">Connection Status</div>', unsafe_allow_html=True)
     sa_ok     = "gcp_service_account" in st.secrets
     folder_ok = bool(st.secrets.get("DRIVE_FOLDER_ID",""))
     idx       = _folder_index()
@@ -530,12 +826,12 @@ with st.sidebar:
         sym  = "✓" if ok else "✗"
         return f'<div style="background:{bg};color:{c};border:1px solid {c}33;border-radius:6px;padding:4px 10px;font-family:\'IBM Plex Mono\',monospace;font-size:.65rem;margin:3px 0">{sym} {lbl}</div>'
 
-    st.markdown(sbadge(sa_ok,    "Service Account JSON"), unsafe_allow_html=True)
-    st.markdown(sbadge(folder_ok,"Drive Folder ID"),      unsafe_allow_html=True)
+    st.markdown(sbadge(sa_ok,    "Service Account"), unsafe_allow_html=True)
+    st.markdown(sbadge(folder_ok,"Drive Folder ID"), unsafe_allow_html=True)
     st.markdown(sbadge(len(idx)>0, f"{len(idx)}/8 files found"), unsafe_allow_html=True)
 
     if idx:
-        st.markdown('<div class="sec-label" style="margin-top:.7rem">Files</div>', unsafe_allow_html=True)
+        st.markdown('<div class="nav-section" style="margin-top:.7rem">Files</div>', unsafe_allow_html=True)
         for k,lbl in [("top5","Top 5"),("top10","Top 10"),("top20","Top 20"),("top30","Top 30"),
                       ("top100_z","Z100"),("top100_m","Mom100"),("bottom20","Bot20"),("portfolio","Portfolio")]:
             ok=k in idx
@@ -543,22 +839,25 @@ with st.sidebar:
             st.markdown(f'<div style="background:{bg};color:{c};border:1px solid {c}22;border-radius:4px;padding:2px 8px;font-family:\'IBM Plex Mono\',monospace;font-size:.6rem;margin:2px 0">{"✓" if ok else "✗"} {lbl}</div>', unsafe_allow_html=True)
 
     st.markdown("---")
-    if st.button("🔄 Refresh from Drive", use_container_width=True):
+    if st.button("Refresh from Drive", use_container_width=True):
         st.cache_data.clear(); st.rerun()
-    st.caption("⏰ Cache TTL: 30 min")
+    st.caption("Cache TTL: 30 min")
+
+
+page = st.session_state.current_page
 
 
 # ══════════════════════════════════════════════════════════════
 # HOME
 # ══════════════════════════════════════════════════════════════
-if page == "🏠  Home":
-    st.markdown('<div class="page-title">📈 NSE Trading Dashboard</div>', unsafe_allow_html=True)
-    st.markdown('<div class="page-sub">Quantitative Momentum & Factor Analysis · Auto-Updated Daily</div>', unsafe_allow_html=True)
+if page == "Home":
+    st.markdown('<div class="page-title">NSE Trading Dashboard</div>', unsafe_allow_html=True)
+    st.markdown('<div class="page-sub">Quantitative Momentum and Factor Analysis — Auto-Updated Daily</div>', unsafe_allow_html=True)
 
     kc=st.columns(4)
     for i,(k,lbl) in enumerate([("top5","Top 5"),("top10","Top 10"),("top20","Top 20"),("top30","Top 30")]):
         d=load_df(k)
-        with kc[i]: st.metric(f"🏆 {lbl}", len(d) if d is not None else "—")
+        with kc[i]: st.metric(f"{lbl}", len(d) if d is not None else "—")
 
     df5=load_df("top5")
     if df5 is not None and not df5.empty and "ticker" in df5.columns:
@@ -568,10 +867,16 @@ if page == "🏠  Home":
 
     st.markdown("---")
     st.markdown('<div class="sec-label">All Data Sources</div>', unsafe_allow_html=True)
-    sources=[("top5","🏆 Top 5","Elite picks"),("top10","⭐ Top 10","High-conviction"),
-             ("top20","📈 Top 20","Quality screen"),("top30","📊 Top 30","Full universe"),
-             ("top100_z","📐 Z-Score 100","Z-Score ranked"),("top100_m","🚀 Momentum 100","Mom ratio ranked"),
-             ("bottom20","🔻 Bottom 20","Short candidates"),("portfolio","📜 Portfolio","Daily history")]
+    sources=[
+        ("top5",    "Top 5",          "Elite picks"),
+        ("top10",   "Top 10",         "High-conviction"),
+        ("top20",   "Top 20",         "Quality screen"),
+        ("top30",   "Top 30",         "Full universe"),
+        ("top100_z","Z-Score 100",    "Z-Score ranked"),
+        ("top100_m","Momentum 100",   "Mom ratio ranked"),
+        ("bottom20","Bottom 20",      "Short candidates"),
+        ("portfolio","Portfolio",     "Daily history"),
+    ]
     r1,r2=st.columns(2)
     for i,(k,lbl,desc) in enumerate(sources):
         d=load_df(k)
@@ -589,29 +894,30 @@ if page == "🏠  Home":
                 <div style="display:flex;gap:10px;align-items:center">{stat} <span style="font-size:.72rem;color:#94a3b8">{ar}</span></div>
             </div>""", unsafe_allow_html=True)
 
-elif page == "🏆  Top 5":
-    render_page("top5","🏆 Top 5 Stocks","Elite Daily Picks · Momentum + Factor Ranked")
-elif page == "⭐  Top 10":
-    render_page("top10","⭐ Top 10 Stocks","High-Conviction Momentum List")
-elif page == "📈  Top 20":
-    render_page("top20","📈 Top 20 Stocks","Extended Quality Screen")
-elif page == "📊  Top 30":
-    render_page("top30","📊 Top 30 Stocks","Full Ranked Universe")
-elif page == "📐  Top 100 Z-Score":
-    render_page("top100_z","📐 Top 100 — Z-Score","Z-Score Factor Ranked · Multi-Period")
-elif page == "🚀  Top 100 Momentum":
-    render_page("top100_m","🚀 Top 100 — Momentum Ratio","Momentum Ratio 1Y/6M/3M Ranked")
-elif page == "🔻  Bottom 20":
-    render_page("bottom20","🔻 Bottom 20 — Short Candidates","Lowest Composite Score · Short Signals")
+elif page == "Top 5":
+    render_page("top5","Top 5 Stocks","Elite Daily Picks — Momentum + Factor Ranked")
+elif page == "Top 10":
+    render_page("top10","Top 10 Stocks","High-Conviction Momentum List")
+elif page == "Top 20":
+    render_page("top20","Top 20 Stocks","Extended Quality Screen")
+elif page == "Top 30":
+    render_page("top30","Top 30 Stocks","Full Ranked Universe")
+elif page == "Top 100 Z-Score":
+    render_page("top100_z","Top 100 — Z-Score","Z-Score Factor Ranked — Multi-Period")
+elif page == "Top 100 Momentum":
+    render_page("top100_m","Top 100 — Momentum Ratio","Momentum Ratio 1Y/6M/3M Ranked")
+elif page == "Bottom 20":
+    render_page("bottom20","Bottom 20 — Short Candidates","Lowest Composite Score — Short Signals")
 
 
 # ══════════════════════════════════════════════════════════════
 # PORTFOLIO HISTORY
 # ══════════════════════════════════════════════════════════════
-elif page == "📜  Portfolio History":
-    st.markdown('<div class="page-title">📜 Portfolio History</div>', unsafe_allow_html=True)
+elif page == "Portfolio History":
+    st.markdown('<div class="page-title">Portfolio History</div>', unsafe_allow_html=True)
     st.markdown('<div class="page-sub">Daily portfolio log with all signals</div>', unsafe_allow_html=True)
-    with st.spinner("Loading…"): df=load_df("portfolio")
+
+    df = load_df("portfolio", show_progress=True)
     if df is None or df.empty:
         st.warning("Portfolio history not available.")
     else:
@@ -632,7 +938,8 @@ elif page == "📜  Portfolio History":
                 fig.update_layout(title="Cumulative Return — Top 10",xaxis_title="Date",yaxis_title="Cum Return",**PBASE)
                 st.plotly_chart(fig,use_container_width=True)
             except Exception: pass
-        st.markdown('<div class="sec-label">Filter & Explore</div>', unsafe_allow_html=True)
+
+        st.markdown('<div class="sec-label">Filter and Explore</div>', unsafe_allow_html=True)
         fc1,fc2,fc3=st.columns([2,2,2])
         filtered=df.copy()
         with fc1:
@@ -646,7 +953,7 @@ elif page == "📜  Portfolio History":
                 except Exception: pass
         with fc2:
             if "ticker" in df.columns:
-                q=st.text_input("🔎 Search ticker",key="ph_s")
+                q=st.text_input("Search ticker",key="ph_s")
                 if q: filtered=filtered[filtered["ticker"].astype(str).str.upper().str.contains(q.upper(),na=False)]
         with fc3:
             nums=filtered.select_dtypes("number").columns.tolist()
@@ -655,86 +962,11 @@ elif page == "📜  Portfolio History":
                 sl=st.selectbox("Sort by",lbls,key="ph_sort")
                 try: filtered=filtered.sort_values(nums[lbls.index(sl)],ascending=False)
                 except Exception: pass
+
         st.markdown('<div class="sec-label">Data Table</div>', unsafe_allow_html=True)
-        grouped_table(filtered,"portfolio")
+        smart_table(filtered, "portfolio")
         d1,d2,_=st.columns([1,1,4])
         with d1:
-            st.download_button("📥 Download CSV",data=filtered.to_csv(index=False).encode(),
+            st.download_button("Download CSV",data=filtered.to_csv(index=False).encode(),
                 file_name=f"portfolio_{datetime.now().strftime('%Y%m%d')}.csv",mime="text/csv",key="ph_dl",use_container_width=True)
         with d2: st.metric("Rows",len(filtered))
-
-
-# ══════════════════════════════════════════════════════════════
-# SETUP & ABOUT
-# ══════════════════════════════════════════════════════════════
-elif page == "ℹ️  Setup & About":
-    st.markdown('<div class="page-title">ℹ️ Setup & About</div>', unsafe_allow_html=True)
-    st.markdown('<div class="page-sub">Configuration guide & system overview</div>', unsafe_allow_html=True)
-
-    s1,s2=st.columns(2)
-    with s1:
-        st.markdown("""
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:1.3rem;margin-bottom:.8rem">
-        <h4 style="color:#38bdf8;font-family:'IBM Plex Mono',monospace;margin:0 0 .7rem">① Google Cloud</h4>
-        <ol style="color:#94a3b8;font-size:.82rem;line-height:1.9;padding-left:1.1rem">
-            <li>Go to <b style="color:#cbd5e1">console.cloud.google.com</b></li>
-            <li>Enable <b style="color:#cbd5e1">Google Drive API</b></li>
-            <li>IAM → Service Accounts → Create</li>
-            <li>Keys → Add Key → <b style="color:#cbd5e1">JSON</b> → Download</li>
-        </ol>
-        </div>
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:1.3rem">
-        <h4 style="color:#818cf8;font-family:'IBM Plex Mono',monospace;margin:0 0 .7rem">② Share Drive Folder</h4>
-        <ol style="color:#94a3b8;font-size:.82rem;line-height:1.9;padding-left:1.1rem">
-            <li>Right-click <b style="color:#cbd5e1">TradingData</b> folder → Share</li>
-            <li>Paste service account email → <b style="color:#cbd5e1">Viewer</b></li>
-            <li>Copy folder ID from URL:<br><code>drive.google.com/drive/folders/<b>FOLDER_ID</b></code></li>
-        </ol>
-        </div>""", unsafe_allow_html=True)
-
-    with s2:
-        st.markdown("""
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:1.3rem;margin-bottom:.8rem">
-        <h4 style="color:#34d399;font-family:'IBM Plex Mono',monospace;margin:0 0 .7rem">③ Streamlit Secrets</h4>
-        <p style="color:#94a3b8;font-size:.82rem;margin:0 0 .5rem">App Settings → Secrets → paste:</p>
-        </div>""", unsafe_allow_html=True)
-
-        st.code("""# .streamlit/secrets.toml
-
-DRIVE_FOLDER_ID = "1AbCdEfGhIjKlMnOpQrStUvW"
-
-[gcp_service_account]
-type = "service_account"
-project_id = "your-project-id"
-private_key_id = "key-id"
-private_key = \"\"\"-----BEGIN RSA PRIVATE KEY-----
-...your key...
------END RSA PRIVATE KEY-----\"\"\"
-client_email = "sa@project.iam.gserviceaccount.com"
-client_id = "1234567890"
-auth_uri = "https://accounts.google.com/o/oauth2/auth"
-token_uri = "https://oauth2.googleapis.com/token"
-auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
-client_x509_cert_url = "https://www.googleapis.com/robot/v1/metadata/x509/sa%40project.iam.gserviceaccount.com"
-""", language="toml")
-
-        st.markdown("""
-        <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:1.3rem;margin-top:.8rem">
-        <h4 style="color:#fbbf24;font-family:'IBM Plex Mono',monospace;margin:0 0 .5rem">④ requirements.txt</h4>
-        </div>""", unsafe_allow_html=True)
-        st.code("streamlit\npandas\nplotly\ngoogle-api-python-client\ngoogle-auth", language="text")
-
-    st.markdown('<div class="sec-label">How It Works</div>', unsafe_allow_html=True)
-    st.markdown("""
-    <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:1.3rem">
-    <ul style="color:#94a3b8;font-size:.83rem;line-height:2;padding-left:1.2rem;margin:0">
-        <li><b style="color:#cbd5e1">Startup:</b> App lists all CSVs in your Drive folder automatically — no hardcoded file IDs</li>
-        <li><b style="color:#cbd5e1">Download:</b> Each CSV is streamed into memory via <code>files().get_media()</code></li>
-        <li><b style="color:#cbd5e1">Cache:</b> Data cached for 30 minutes — click <em>Refresh from Drive</em> to force reload</li>
-        <li><b style="color:#cbd5e1">Fallback:</b> If Drive is unavailable, reads from local <code>data/</code> folder</li>
-        <li><b style="color:#cbd5e1">Columns:</b> All v-code columns (v22, v32–v86, v65, v67…) auto-renamed to readable labels</li>
-        <li><b style="color:#cbd5e1">Update trigger:</b> GitHub Actions writes new CSVs to Drive at 3 PM IST → app picks them up within 30 min</li>
-    </ul>
-    </div>""", unsafe_allow_html=True)
-
-    st.warning("⚠️ For educational purposes only. Not financial advice.")
