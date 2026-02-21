@@ -638,7 +638,7 @@ def smart_table(df, page_key):
     """
     Personalized table per page:
     - Date column (if present) always first
-    - Ticker always second, with a clickable Google Finance link column right after
+    - Ticker always first/second — clickable link to Google Finance
     - Default shows curated important columns for that page
     - Expander lets user add more column groups
     """
@@ -701,29 +701,21 @@ def smart_table(df, page_key):
         except Exception:
             pass
 
-    # Inject Google Finance link column right after ticker
+    # Replace ticker values with Google Finance URLs so LinkColumn renders them as links
+    # The display_text param shows the ticker name, URL is the cell value
     if "ticker" in view.columns:
-        view["gf_url"] = view["ticker"].apply(gf_link)
-        # Reorder: put gf_url immediately after ticker
-        cols_list = list(view.columns)
-        cols_list.remove("gf_url")
-        ticker_pos = cols_list.index("ticker")
-        cols_list.insert(ticker_pos + 1, "gf_url")
-        view = view[cols_list]
+        view["ticker"] = view["ticker"].apply(gf_link)
 
     view = ren(view)
     cfg = _build_col_config(show, all_cols)
 
-    # Ticker column — plain text, narrow
+    # Ticker → LinkColumn (cell value IS the URL, display_text shows ticker extracted from URL)
     if "ticker" in all_cols:
-        cfg["Ticker"] = st.column_config.TextColumn("Ticker", width="small")
-
-    # Google Finance link column
-    cfg["gf_url"] = st.column_config.LinkColumn(
-        "Google Finance",
-        display_text="Open ↗",
-        width="small",
-    )
+        cfg["Ticker"] = st.column_config.LinkColumn(
+            "Ticker",
+            display_text=r"https://www\.google\.com/finance/quote/(.+):NSE",
+            width="small",
+        )
 
     # Date column — text, narrow
     if date_col and date_col in all_cols:
@@ -980,58 +972,326 @@ elif page == "Bottom 20":
 # ══════════════════════════════════════════════════════════════
 elif page == "Portfolio History":
     st.markdown('<div class="page-title">Portfolio History</div>', unsafe_allow_html=True)
-    st.markdown('<div class="page-sub">Daily portfolio log with all signals</div>', unsafe_allow_html=True)
+    st.markdown('<div class="page-sub">Daily portfolio log — account value, drawdown, returns vs benchmark</div>', unsafe_allow_html=True)
 
     df = load_df("portfolio", show_progress=True)
     if df is None or df.empty:
         st.warning("Portfolio history not available.")
     else:
-        st.markdown('<div class="sec-label">Key Metrics</div>', unsafe_allow_html=True)
-        kpi_row(df)
-        date_col=next((c for c in df.columns if "date" in c.lower()),None)
-        cum_col="cumulative_return" if "cumulative_return" in df.columns else None
-        if date_col and cum_col and "ticker" in df.columns:
-            st.markdown('<div class="sec-label">Cumulative Return Over Time</div>', unsafe_allow_html=True)
-            try:
-                df[date_col]=pd.to_datetime(df[date_col])
-                top_s=df.groupby("ticker")["Returns_pct_1y"].mean().nlargest(10).index.tolist() if "Returns_pct_1y" in df.columns else df["ticker"].unique()[:10]
-                pf=df[df["ticker"].isin(top_s)]
-                fig=go.Figure()
-                for sym,grp in pf.groupby("ticker"):
-                    grp=grp.sort_values(date_col)
-                    fig.add_trace(go.Scatter(x=grp[date_col],y=grp[cum_col],mode="lines",name=sym,line=dict(width=1.5)))
-                fig.update_layout(title="Cumulative Return — Top 10",xaxis_title="Date",yaxis_title="Cum Return",**PBASE)
-                st.plotly_chart(fig,use_container_width=True)
-            except Exception: pass
+        # ── Detect key columns ───────────────────────────────
+        date_col    = next((c for c in df.columns if "date" in c.lower()), None)
+        acct_col    = next((c for c in ["total_account_value","total_portfolio_value"] if c in df.columns), None)
+        cum_col     = "cumulative_return" if "cumulative_return" in df.columns else None
+        daily_col   = next((c for c in ["daily_return","daily_returns"] if c in df.columns), None)
 
+        # Parse dates
+        if date_col:
+            try:
+                df[date_col] = pd.to_datetime(df[date_col])
+            except Exception:
+                date_col = None
+
+        # ── Portfolio summary (unique dates × account value) ─
+        port_ts = None
+        if date_col and acct_col:
+            port_ts = (
+                df.groupby(date_col)[acct_col]
+                .mean()
+                .reset_index()
+                .sort_values(date_col)
+            )
+            port_ts.columns = ["date", "account_value"]
+            port_ts["account_value"] = pd.to_numeric(port_ts["account_value"], errors="coerce")
+            port_ts = port_ts.dropna(subset=["account_value"])
+
+        # ── KPI row ─────────────────────────────────────────
+        st.markdown('<div class="sec-label">Portfolio Overview</div>', unsafe_allow_html=True)
+        k1,k2,k3,k4,k5,k6 = st.columns(6)
+
+        if port_ts is not None and len(port_ts) >= 2:
+            start_val  = port_ts["account_value"].iloc[0]
+            end_val    = port_ts["account_value"].iloc[-1]
+            total_ret  = (end_val / start_val - 1) * 100 if start_val > 0 else 0
+            n_years    = (port_ts["date"].iloc[-1] - port_ts["date"].iloc[0]).days / 365.25
+            cagr       = ((end_val / start_val) ** (1 / n_years) - 1) * 100 if n_years > 0 else 0
+            # Max drawdown
+            running_max = port_ts["account_value"].cummax()
+            drawdown    = (port_ts["account_value"] - running_max) / running_max * 100
+            max_dd      = drawdown.min()
+            # Daily returns for Sharpe
+            if daily_col:
+                dr = pd.to_numeric(df[daily_col], errors="coerce").dropna()
+                sharpe = (dr.mean() / dr.std() * (252 ** 0.5)) if dr.std() > 0 else 0
+            else:
+                port_ts["dr"] = port_ts["account_value"].pct_change()
+                sharpe = (port_ts["dr"].mean() / port_ts["dr"].std() * (252 ** 0.5)) if port_ts["dr"].std() > 0 else 0
+
+            with k1: st.metric("Current Value", f"₹{end_val:,.0f}")
+            with k2: st.metric("Total Return", f"{total_ret:+.1f}%", delta=f"{total_ret:+.1f}%")
+            with k3: st.metric("CAGR", f"{cagr:.1f}%")
+            with k4: st.metric("Max Drawdown", f"{max_dd:.1f}%")
+            with k5: st.metric("Sharpe Ratio", f"{sharpe:.2f}")
+            with k6: st.metric("Period (yrs)", f"{n_years:.1f}")
+        else:
+            kpi_row(df)
+
+        # ── MAIN CHART: Account Value + Nifty 50 benchmark ──
+        if port_ts is not None and len(port_ts) >= 2:
+            st.markdown('<div class="sec-label">Account Value vs Nifty 50 Benchmark</div>', unsafe_allow_html=True)
+
+            # Normalise both series to 100 at start for fair comparison
+            norm_port = port_ts["account_value"] / port_ts["account_value"].iloc[0] * 100
+
+            # Nifty 50 CAGR benchmark line (simple geometric growth from start date)
+            nifty_cagr_pct = 14.0  # approximate Nifty 50 long-run CAGR %
+            days_arr = (port_ts["date"] - port_ts["date"].iloc[0]).dt.days
+            nifty_norm = 100 * ((1 + nifty_cagr_pct / 100) ** (days_arr / 365.25))
+
+            fig_main = go.Figure()
+            fig_main.add_trace(go.Scatter(
+                x=port_ts["date"], y=norm_port,
+                mode="lines", name="Portfolio",
+                line=dict(color="#38bdf8", width=2.5),
+                fill="tozeroy", fillcolor="rgba(56,189,248,0.07)"
+            ))
+            fig_main.add_trace(go.Scatter(
+                x=port_ts["date"], y=nifty_norm,
+                mode="lines", name=f"Nifty 50 ({nifty_cagr_pct}% CAGR)",
+                line=dict(color="#fbbf24", width=1.5, dash="dash")
+            ))
+            fig_main.update_layout(
+                title="Portfolio Growth (Indexed to 100) vs Nifty 50 CAGR",
+                xaxis_title="Date", yaxis_title="Indexed Value (Base 100)",
+                hovermode="x unified",
+                **PBASE
+            )
+            st.plotly_chart(fig_main, use_container_width=True)
+
+        # ── RETURNS DISTRIBUTION ─────────────────────────────
+        if port_ts is not None and len(port_ts) >= 2:
+            port_ts["monthly_ret"] = port_ts["account_value"].pct_change()
+            col_c1, col_c2 = st.columns(2)
+
+            with col_c1:
+                st.markdown('<div class="sec-label">Monthly Returns Distribution</div>', unsafe_allow_html=True)
+                # Resample to monthly
+                monthly = (
+                    port_ts.set_index("date")["account_value"]
+                    .resample("ME").last()
+                    .pct_change()
+                    .dropna() * 100
+                )
+                colors = ["#34d399" if v >= 0 else "#f87171" for v in monthly.values]
+                fig_bar = go.Figure(go.Bar(
+                    x=monthly.index.strftime("%b %Y"),
+                    y=monthly.values,
+                    marker_color=colors,
+                    text=[f"{v:+.1f}%" for v in monthly.values],
+                    textposition="outside",
+                    textfont=dict(size=8)
+                ))
+                fig_bar.update_layout(
+                    title="Monthly Returns %",
+                    xaxis=dict(tickangle=-45, showgrid=False, color="#475569"),
+                    yaxis=dict(showgrid=True, gridcolor="#1e293b", color="#475569"),
+                    paper_bgcolor="#0f172a", plot_bgcolor="#0f172a",
+                    font=dict(color="#94a3b8", size=10),
+                    title_font=dict(family="IBM Plex Mono", size=12, color="#cbd5e1"),
+                    margin=dict(t=44, b=60, l=14, r=14),
+                    showlegend=False
+                )
+                st.plotly_chart(fig_bar, use_container_width=True)
+
+            with col_c2:
+                st.markdown('<div class="sec-label">Rolling CAGR vs Nifty 50</div>', unsafe_allow_html=True)
+                # 1Y rolling CAGR
+                port_ts_idx = port_ts.set_index("date")["account_value"]
+                roll_252 = port_ts_idx.pct_change(252) * 100  # ~252 trading days = 1Y
+                fig_roll = go.Figure()
+                fig_roll.add_trace(go.Scatter(
+                    x=roll_252.index, y=roll_252.values,
+                    mode="lines", name="Portfolio 1Y Roll",
+                    line=dict(color="#818cf8", width=2),
+                    fill="tozeroy", fillcolor="rgba(129,140,248,0.08)"
+                ))
+                fig_roll.add_hline(
+                    y=nifty_cagr_pct,
+                    line_dash="dash", line_color="#fbbf24",
+                    annotation_text=f"Nifty {nifty_cagr_pct}% CAGR",
+                    annotation_font_color="#fbbf24"
+                )
+                fig_roll.update_layout(
+                    title="1-Year Rolling Return %",
+                    xaxis=dict(showgrid=False, color="#475569"),
+                    yaxis=dict(showgrid=True, gridcolor="#1e293b", color="#475569"),
+                    paper_bgcolor="#0f172a", plot_bgcolor="#0f172a",
+                    font=dict(color="#94a3b8", size=10),
+                    title_font=dict(family="IBM Plex Mono", size=12, color="#cbd5e1"),
+                    margin=dict(t=44, b=40, l=14, r=14),
+                    showlegend=False
+                )
+                st.plotly_chart(fig_roll, use_container_width=True)
+
+        # ── DRAWDOWN CHART ───────────────────────────────────
+        if port_ts is not None and len(port_ts) >= 2:
+            st.markdown('<div class="sec-label">Drawdown Analysis</div>', unsafe_allow_html=True)
+
+            running_max = port_ts["account_value"].cummax()
+            drawdown_series = (port_ts["account_value"] - running_max) / running_max * 100
+
+            fig_dd = go.Figure()
+            fig_dd.add_trace(go.Scatter(
+                x=port_ts["date"], y=drawdown_series,
+                mode="lines", name="Drawdown",
+                line=dict(color="#f87171", width=1.5),
+                fill="tozeroy", fillcolor="rgba(248,113,113,0.15)"
+            ))
+            fig_dd.update_layout(
+                title="Portfolio Drawdown %",
+                xaxis_title="Date", yaxis_title="Drawdown %",
+                hovermode="x unified",
+                yaxis=dict(showgrid=True, gridcolor="#1e293b", color="#475569"),
+                xaxis=dict(showgrid=False, color="#475569"),
+                paper_bgcolor="#0f172a", plot_bgcolor="#0f172a",
+                font=dict(color="#94a3b8", family="Inter", size=11),
+                title_font=dict(family="IBM Plex Mono", size=13, color="#cbd5e1"),
+                legend=dict(bgcolor="#0f172a", bordercolor="#1e293b"),
+                margin=dict(t=50, b=50, l=14, r=14),
+            )
+            st.plotly_chart(fig_dd, use_container_width=True)
+
+            # ── DRAWDOWN TABLE ──────────────────────────────
+            st.markdown('<div class="sec-label">Top 10 Worst Drawdown Periods</div>', unsafe_allow_html=True)
+            try:
+                dd_df = pd.DataFrame({
+                    "date": port_ts["date"].values,
+                    "value": port_ts["account_value"].values,
+                    "drawdown_pct": drawdown_series.values,
+                })
+                # Find drawdown periods: start when dd < 0, end when dd returns to 0
+                periods = []
+                in_dd = False
+                dd_start = None
+                dd_peak_val = None
+                dd_min = 0
+                dd_min_date = None
+
+                for _, row in dd_df.iterrows():
+                    if not in_dd and row["drawdown_pct"] < -0.5:
+                        in_dd = True
+                        dd_start = row["date"]
+                        dd_peak_val = row["value"] / (1 + row["drawdown_pct"] / 100)
+                        dd_min = row["drawdown_pct"]
+                        dd_min_date = row["date"]
+                    elif in_dd:
+                        if row["drawdown_pct"] < dd_min:
+                            dd_min = row["drawdown_pct"]
+                            dd_min_date = row["date"]
+                        if row["drawdown_pct"] >= -0.1:
+                            periods.append({
+                                "Start": dd_start.strftime("%d %b %Y"),
+                                "Trough": dd_min_date.strftime("%d %b %Y"),
+                                "Recovery": row["date"].strftime("%d %b %Y"),
+                                "Max Drawdown %": round(dd_min, 2),
+                                "Duration (days)": (row["date"] - dd_start).days,
+                                "Recovery (days)": (row["date"] - dd_min_date).days,
+                            })
+                            in_dd = False
+
+                if in_dd:  # ongoing drawdown
+                    periods.append({
+                        "Start": dd_start.strftime("%d %b %Y"),
+                        "Trough": dd_min_date.strftime("%d %b %Y"),
+                        "Recovery": "Ongoing",
+                        "Max Drawdown %": round(dd_min, 2),
+                        "Duration (days)": (dd_df["date"].iloc[-1] - dd_start).days,
+                        "Recovery (days)": None,
+                    })
+
+                if periods:
+                    dd_table = pd.DataFrame(periods).sort_values("Max Drawdown %").head(10)
+                    st.dataframe(
+                        dd_table,
+                        use_container_width=True,
+                        hide_index=True,
+                        column_config={
+                            "Max Drawdown %": st.column_config.NumberColumn("Max Drawdown %", format="%.2f %%"),
+                            "Duration (days)": st.column_config.NumberColumn("Duration (days)", format="%d"),
+                            "Recovery (days)": st.column_config.NumberColumn("Recovery (days)", format="%d"),
+                        }
+                    )
+                else:
+                    st.info("No significant drawdown periods found.")
+            except Exception as e:
+                st.info(f"Could not compute drawdown periods: {e}")
+
+        # ── CUMULATIVE RETURN per ticker ─────────────────────
+        if date_col and cum_col and "ticker" in df.columns:
+            st.markdown('<div class="sec-label">Cumulative Return by Ticker (Top 10)</div>', unsafe_allow_html=True)
+            try:
+                top_s = (
+                    df.groupby("ticker")["Returns_pct_1y"].mean().nlargest(10).index.tolist()
+                    if "Returns_pct_1y" in df.columns
+                    else df["ticker"].unique()[:10]
+                )
+                pf = df[df["ticker"].isin(top_s)]
+                fig_cum = go.Figure()
+                for sym, grp in pf.groupby("ticker"):
+                    grp = grp.sort_values(date_col)
+                    fig_cum.add_trace(go.Scatter(
+                        x=grp[date_col], y=grp[cum_col],
+                        mode="lines", name=sym, line=dict(width=1.5)
+                    ))
+                fig_cum.update_layout(
+                    title="Cumulative Return — Top 10 Tickers",
+                    xaxis_title="Date", yaxis_title="Cumulative Return",
+                    hovermode="x unified",
+                    **PBASE
+                )
+                st.plotly_chart(fig_cum, use_container_width=True)
+            except Exception:
+                pass
+
+        # ── FILTER + TABLE ───────────────────────────────────
         st.markdown('<div class="sec-label">Filter and Explore</div>', unsafe_allow_html=True)
-        fc1,fc2,fc3=st.columns([2,2,2])
-        filtered=df.copy()
+        fc1, fc2, fc3 = st.columns([2, 2, 2])
+        filtered = df.copy()
         with fc1:
             if date_col:
                 try:
-                    df[date_col]=pd.to_datetime(df[date_col])
-                    mn,mx=df[date_col].min().date(),df[date_col].max().date()
-                    dr=st.date_input("Date range",[mn,mx],key="ph_dr")
-                    if len(dr)==2:
-                        filtered=filtered[(pd.to_datetime(filtered[date_col]).dt.date>=dr[0])&(pd.to_datetime(filtered[date_col]).dt.date<=dr[1])]
-                except Exception: pass
+                    mn, mx = df[date_col].min().date(), df[date_col].max().date()
+                    dr = st.date_input("Date range", [mn, mx], key="ph_dr")
+                    if len(dr) == 2:
+                        filtered = filtered[
+                            (pd.to_datetime(filtered[date_col]).dt.date >= dr[0]) &
+                            (pd.to_datetime(filtered[date_col]).dt.date <= dr[1])
+                        ]
+                except Exception:
+                    pass
         with fc2:
             if "ticker" in df.columns:
-                q=st.text_input("Search ticker",key="ph_s")
-                if q: filtered=filtered[filtered["ticker"].astype(str).str.upper().str.contains(q.upper(),na=False)]
+                q = st.text_input("Search ticker", key="ph_s")
+                if q:
+                    filtered = filtered[filtered["ticker"].astype(str).str.upper().str.contains(q.upper(), na=False)]
         with fc3:
-            nums=filtered.select_dtypes("number").columns.tolist()
+            nums = filtered.select_dtypes("number").columns.tolist()
             if nums:
-                lbls=[pretty(c) for c in nums]
-                sl=st.selectbox("Sort by",lbls,key="ph_sort")
-                try: filtered=filtered.sort_values(nums[lbls.index(sl)],ascending=False)
-                except Exception: pass
+                lbls = [pretty(c) for c in nums]
+                sl = st.selectbox("Sort by", lbls, key="ph_sort")
+                try:
+                    filtered = filtered.sort_values(nums[lbls.index(sl)], ascending=False)
+                except Exception:
+                    pass
 
         st.markdown('<div class="sec-label">Data Table</div>', unsafe_allow_html=True)
         smart_table(filtered, "portfolio")
-        d1,d2,_=st.columns([1,1,4])
+        d1, d2, _ = st.columns([1, 1, 4])
         with d1:
-            st.download_button("Download CSV",data=filtered.to_csv(index=False).encode(),
-                file_name=f"portfolio_{datetime.now().strftime('%Y%m%d')}.csv",mime="text/csv",key="ph_dl",use_container_width=True)
-        with d2: st.metric("Rows",len(filtered))
+            st.download_button(
+                "Download CSV",
+                data=filtered.to_csv(index=False).encode(),
+                file_name=f"portfolio_{datetime.now().strftime('%Y%m%d')}.csv",
+                mime="text/csv", key="ph_dl", use_container_width=True
+            )
+        with d2:
+            st.metric("Rows", len(filtered))
