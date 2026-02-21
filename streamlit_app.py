@@ -303,34 +303,70 @@ def _drive_service():
         from google.oauth2 import service_account
         from googleapiclient.discovery import build
         sa = dict(st.secrets["gcp_service_account"])
+        # Use full drive scope — needed when service account owns the files
         creds = service_account.Credentials.from_service_account_info(
-            sa, scopes=["https://www.googleapis.com/auth/drive.readonly"]
+            sa, scopes=["https://www.googleapis.com/auth/drive"]
         )
         return build("drive", "v3", credentials=creds, cache_discovery=False)
     except Exception as e:
+        st.sidebar.error(f"Drive auth error: {e}")
         return None
 
 
 @st.cache_data(ttl=1800, show_spinner=False)
 def _folder_index() -> dict:
-    """Returns {app_key: file_id} by listing the Drive folder."""
+    """Returns {app_key: file_id} by listing the Drive folder.
+    Tries two strategies:
+    1. Standard files().list() with parent filter
+    2. files().list() without mimeType filter (in case type metadata is off)
+    """
     folder_id = st.secrets.get("DRIVE_FOLDER_ID", "")
     if not folder_id:
         return {}
     svc = _drive_service()
     if svc is None:
         return {}
+
+    name_to_id = {}
+
+    # Strategy 1: filter by CSV mime type
     try:
-        res = svc.files().list(
-            q=f"'{folder_id}' in parents and mimeType='text/csv' and trashed=false",
-            fields="files(id,name)", pageSize=50,
-        ).execute()
-        name_to_id = {f["name"]: f["id"] for f in res.get("files", [])}
-        return {app_key: name_to_id[fname]
-                for fname, app_key in FILE_MAP.items()
-                if fname in name_to_id}
-    except Exception:
-        return {}
+        page_token = None
+        while True:
+            kwargs = dict(
+                q=f"'{folder_id}' in parents and trashed=false",
+                fields="nextPageToken, files(id, name, mimeType)",
+                pageSize=100,
+                supportsAllDrives=True,
+                includeItemsFromAllDrives=True,
+            )
+            if page_token:
+                kwargs["pageToken"] = page_token
+            res = svc.files().list(**kwargs).execute()
+            for f in res.get("files", []):
+                name_to_id[f["name"]] = f["id"]
+            page_token = res.get("nextPageToken")
+            if not page_token:
+                break
+    except Exception as e:
+        # Strategy 2 fallback: broader search by name
+        try:
+            for fname in FILE_MAP:
+                res = svc.files().list(
+                    q=f"name='{fname}' and trashed=false",
+                    fields="files(id, name)",
+                    pageSize=5,
+                    supportsAllDrives=True,
+                    includeItemsFromAllDrives=True,
+                ).execute()
+                for f in res.get("files", []):
+                    name_to_id[f["name"]] = f["id"]
+        except Exception:
+            pass
+
+    return {app_key: name_to_id[fname]
+            for fname, app_key in FILE_MAP.items()
+            if fname in name_to_id}
 
 
 def _fetch_csv_with_progress(file_id: str, label: str = "Loading data") -> pd.DataFrame | None:
@@ -340,9 +376,9 @@ def _fetch_csv_with_progress(file_id: str, label: str = "Loading data") -> pd.Da
         return None
     try:
         from googleapiclient.http import MediaIoBaseDownload
-        req  = svc.files().get_media(fileId=file_id)
-        buf  = io.BytesIO()
-        dl   = MediaIoBaseDownload(buf, req)
+        req = svc.files().get_media(fileId=file_id, supportsAllDrives=True)
+        buf = io.BytesIO()
+        dl  = MediaIoBaseDownload(buf, req)
 
         progress_bar = st.progress(0, text=f"{label} — connecting...")
         done = False
@@ -357,10 +393,10 @@ def _fetch_csv_with_progress(file_id: str, label: str = "Loading data") -> pd.Da
 
         progress_bar.progress(100, text=f"{label} — complete")
         progress_bar.empty()
-
         buf.seek(0)
         return pd.read_csv(buf)
-    except Exception:
+    except Exception as e:
+        st.error(f"Download error for file {file_id}: {e}")
         return None
 
 
@@ -372,7 +408,7 @@ def _fetch_csv_cached(file_id: str) -> pd.DataFrame | None:
         return None
     try:
         from googleapiclient.http import MediaIoBaseDownload
-        req  = svc.files().get_media(fileId=file_id)
+        req  = svc.files().get_media(fileId=file_id, supportsAllDrives=True)
         buf  = io.BytesIO()
         dl   = MediaIoBaseDownload(buf, req)
         done = False
@@ -393,7 +429,7 @@ def load_df(key: str, show_progress: bool = False) -> pd.DataFrame | None:
             df = _fetch_csv_cached(idx[key])
         if df is not None and not df.empty:
             return df
-    st.error(f"Could not load '{key}' from Google Drive. Check your secrets and folder permissions.")
+    st.warning(f"'{key}' not found in Drive folder. Files detected: {list(_folder_index().keys()) or 'none'}")
     return None
 
 
@@ -842,6 +878,35 @@ with st.sidebar:
     if st.button("Refresh from Drive", use_container_width=True):
         st.cache_data.clear(); st.rerun()
     st.caption("Cache TTL: 30 min")
+
+    # Debug expander — shows raw file listing from Drive
+    with st.expander("Debug Drive listing", expanded=False):
+        if st.button("Run diagnostic", key="diag_btn"):
+            st.cache_data.clear()
+            svc = _drive_service()
+            folder_id = st.secrets.get("DRIVE_FOLDER_ID", "")
+            if svc is None:
+                st.error("Drive service failed — check gcp_service_account secret")
+            elif not folder_id:
+                st.error("DRIVE_FOLDER_ID is empty")
+            else:
+                try:
+                    res = svc.files().list(
+                        q=f"'{folder_id}' in parents and trashed=false",
+                        fields="files(id, name, mimeType)",
+                        pageSize=50,
+                        supportsAllDrives=True,
+                        includeItemsFromAllDrives=True,
+                    ).execute()
+                    files = res.get("files", [])
+                    if files:
+                        st.success(f"Found {len(files)} files in folder:")
+                        for f in files:
+                            st.code(f"{f['name']}  ({f['mimeType']})\n{f['id']}")
+                    else:
+                        st.warning("Folder is empty or service account cannot see files.\nTry changing folder share to 'Viewer' instead of 'Content Manager'.")
+                except Exception as e:
+                    st.error(f"API error: {e}")
 
 
 page = st.session_state.current_page
